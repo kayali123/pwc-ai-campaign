@@ -4,8 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>document.documentElement.classList.add('js')</script>
-<title>Human, on Camera — A PwC AI campaign concept · Qiaochu Li</title>
+<title>Human, on Camera · A PwC AI campaign concept · Qiaochu Li</title>
 <meta name="description" content="An EU integrated-campaign concept that turns PwC's 'human-led, tech-powered' slogan into a Clarkson's-Farm-style documentary. UCD MSc capstone, presented to PwC. Case study by Qiaochu Li.">
+<meta name="theme-color" content="#FAFAF8">
+<link rel="canonical" href="https://kayali123.github.io/pwc-ai-campaign/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kayali123.github.io/pwc-ai-campaign/">
+<meta property="og:title" content="Human, on Camera · A PwC AI campaign concept">
+<meta property="og:description" content="An EU integrated-campaign concept that turns PwC's 'human-led, tech-powered' slogan into a Clarkson's-Farm-style documentary. UCD MSc capstone, presented to PwC. Case study by Qiaochu Li.">
+<meta property="og:image" content="https://kayali123.github.io/pwc-ai-campaign/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Human, on Camera · A PwC AI campaign concept">
+<meta name="twitter:description" content="Turning PwC's 'human-led, tech-powered' slogan into footage: an EU documentary campaign concept. Case study by Qiaochu Li.">
+<meta name="twitter:image" content="https://kayali123.github.io/pwc-ai-campaign/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
@@ -15,9 +28,9 @@
    ============================================================ */
 :root {
   /* PwC core greys */
-  --ink:#000000; --ink-2:#2D2D2D; --ink-3:#464646; --grey:#7D7D7D;
+  --ink:#000000; --ink-2:#2D2D2D; --ink-3:#464646; --grey:#5F5F5F;
   --line:#DEDEDE; --paper:#FAFAF8; --paper-2:#F2F1ED; --white:#FFFFFF;
-  /* Warm appeal accents — used sparingly */
+  /* Warm appeal accents, used sparingly */
   --orange:#D04A02; --tangerine:#EB8C00; --yellow:#FFB600; --rose:#DB536A; --red:#E0301E;
   --orange-12:rgba(208,74,2,.12); --orange-06:rgba(208,74,2,.06);
   /* Cold / clinical (contrast panel only) */
@@ -25,17 +38,17 @@
   --shadow:rgba(0,0,0,.08); --shadow-2:rgba(0,0,0,.14);
 
   /* type scale */
-  --step--1:clamp(.80rem,.76rem+.18vw,.92rem);
-  --step-0:clamp(1.00rem,.95rem+.25vw,1.125rem);
-  --step-1:clamp(1.20rem,1.10rem+.50vw,1.50rem);
-  --step-2:clamp(1.50rem,1.30rem+1.00vw,2.25rem);
-  --step-3:clamp(2.00rem,1.55rem+2.10vw,3.50rem);
-  --step-4:clamp(2.70rem,1.90rem+4.00vw,5.75rem);
-  --step-5:clamp(3.40rem,2.10rem+6.60vw,8.50rem);
+  --step--1:clamp(1.0rem,.95rem + .25vw,1.125rem);
+  --step-0:clamp(1.16rem,1.06rem + .42vw,1.32rem);
+  --step-1:clamp(1.34rem,1.18rem + .62vw,1.72rem);
+  --step-2:clamp(1.7rem,1.4rem + 1.2vw,2.6rem);
+  --step-3:clamp(2.2rem,1.7rem + 2.3vw,3.9rem);
+  --step-4:clamp(2.70rem,1.90rem + 4.00vw,5.75rem);
+  --step-5:clamp(3.40rem,2.10rem + 6.60vw,8.50rem);
 
   /* spacing */
   --s-3:12px; --s-4:16px; --s-5:24px; --s-6:32px; --s-7:48px; --s-8:64px; --s-9:96px;
-  --section-y:clamp(72px,9vw,150px);
+  --section-y:clamp(52px,5.5vw,96px);
   --gutter:clamp(20px,5vw,72px);
   --measure:66ch; --content:1160px;
   --r-1:4px; --r-2:8px; --r-pill:999px;
@@ -46,7 +59,7 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 body{
   margin:0; background:var(--paper); color:var(--ink-2);
   font:400 var(--step-0)/1.62 'Inter',Arimo,Arial,'Helvetica Neue',sans-serif;
-  font-feature-settings:'tnum' 1,'cv05' 1; -webkit-font-smoothing:antialiased;
+  font-feature-settings:'cv05' 1; -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
 h1,h2,h3{font-family:'Newsreader',Charter,Georgia,'Times New Roman',serif; color:var(--ink); font-weight:500; letter-spacing:-.01em; margin:0}
@@ -85,7 +98,7 @@ section{padding-block:var(--section-y); position:relative}
 .railnav .track{position:absolute; left:3px; top:4px; bottom:4px; width:2px; background:var(--line)}
 .railnav .track i{position:absolute; inset:0; background:var(--orange); transform:scaleY(var(--p,0)); transform-origin:top}
 .railnav li{position:relative; padding-left:20px}
-.railnav a{display:flex; align-items:center; gap:9px; color:var(--grey); font:500 13px/1 'Newsreader',serif; letter-spacing:.01em; transition:color .25s}
+.railnav a{display:flex; align-items:center; gap:11px; color:var(--grey); font:500 15.5px/1.15 'Newsreader',serif; letter-spacing:.01em; transition:color .25s}
 .railnav .dot{position:absolute; left:-1px; width:9px; height:9px; border-radius:50%; background:var(--paper); border:1.5px solid var(--line); transition:all .25s}
 .railnav li.active a{color:var(--ink)}
 .railnav li.active .dot{background:var(--orange); border-color:var(--orange); box-shadow:0 0 0 4px var(--orange-12)}
@@ -106,10 +119,13 @@ section{padding-block:var(--section-y); position:relative}
 .hero .sub{font-size:var(--step-1); line-height:1.45; color:var(--ink-3); max-width:54ch; margin-bottom:var(--s-7)}
 
 /* documentary frame device */
-.docframe{position:relative; aspect-ratio:16/9; width:100%; border-radius:2px; overflow:hidden;
+.docframe{position:relative; aspect-ratio:2.3/1; width:100%; border-radius:2px; overflow:hidden;
   background:linear-gradient(180deg,#1a2030,#0e1320); box-shadow:0 30px 70px -30px var(--shadow-2); isolation:isolate}
 .docframe .scene{position:absolute; inset:0}
-.docframe .sky{position:absolute; inset:0; background:linear-gradient(180deg,#cdd6dd 0%,#e6dcc8 62%,#e9d9b6 100%)}
+.docframe .sky{position:absolute; inset:0; background:linear-gradient(165deg,#f1e7d5 0%,#ecd2a6 52%,#d6b884 100%)}
+.docframe .scene-art{position:absolute; inset:0; width:100%; height:100%; display:block}
+.docframe .scene-photo{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; z-index:0}
+.docframe .chrome-grad{position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,transparent 15%,transparent 85%,rgba(0,0,0,.55) 100%)}
 .docframe .sun{position:absolute; width:46%; aspect-ratio:1; right:10%; top:6%; border-radius:50%;
   background:radial-gradient(circle,rgba(255,182,0,.85),rgba(255,182,0,.15) 55%,transparent 70%); filter:blur(2px)}
 .docframe svg.hills{position:absolute; inset:auto 0 0 0; width:100%; height:62%; display:block}
@@ -119,9 +135,9 @@ section{padding-block:var(--section-y); position:relative}
 @keyframes grain{0%{background-position:0 0}100%{background-position:30px 18px}}
 .docframe .scan{position:absolute; inset:0; pointer-events:none; opacity:.5;
   background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(0,0,0,.045) 2px 3px)}
-.docframe .bar{position:absolute; left:0; right:0; height:7.5%; background:#000; z-index:3}
+.docframe .bar{position:absolute; left:0; right:0; height:6%; background:#000; z-index:3}
 .docframe .bar.t{top:0} .docframe .bar.b{bottom:0}
-.docframe .hud{position:absolute; z-index:4; font:600 12px/1 'Inter'; letter-spacing:.08em; color:rgba(255,255,255,.9); font-variant-numeric:tabular-nums}
+.docframe .hud{position:absolute; z-index:4; font:600 12px/1 'Inter'; letter-spacing:.08em; color:rgba(255,255,255,.95); font-variant-numeric:tabular-nums; text-shadow:0 1px 4px rgba(0,0,0,.7)}
 .docframe .rec{top:11%; left:4%; display:flex; align-items:center; gap:7px}
 .docframe .rec b{width:9px; height:9px; border-radius:50%; background:var(--red); display:inline-block; animation:blink 1.4s steps(1) infinite}
 @keyframes blink{50%{opacity:.25}}
@@ -137,7 +153,7 @@ section{padding-block:var(--section-y); position:relative}
 /* meta strip + disclaimer */
 .metastrip{margin-top:var(--s-8); border-top:var(--border); border-bottom:var(--border); padding-block:var(--s-5);
   display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--s-5) var(--s-6)}
-.metastrip .m .k{font:600 11px/1 'Inter'; text-transform:uppercase; letter-spacing:.13em; color:var(--grey); margin-bottom:8px}
+.metastrip .m .k{font:600 12px/1 'Inter'; text-transform:uppercase; letter-spacing:.13em; color:var(--grey); margin-bottom:8px}
 .metastrip .m .v{font:500 var(--step-0)/1.3 'Newsreader',serif; color:var(--ink)}
 .disclaimer{margin-top:var(--s-6); display:flex; gap:14px; align-items:flex-start; max-width:64ch;
   font-size:var(--step--1); color:var(--ink-3); line-height:1.6}
@@ -146,17 +162,17 @@ section{padding-block:var(--section-y); position:relative}
 
 /* callout chips */
 .callouts{display:flex; flex-wrap:wrap; gap:var(--s-4); margin-top:var(--s-7)}
-.chip{border:var(--border); border-radius:var(--r-2); padding:16px 20px; background:var(--white); min-width:140px; flex:1 1 auto}
-.chip .stat{font:500 var(--step-2)/1 'Newsreader',serif; color:var(--ink); display:block}
+.chip{border:var(--border); border-radius:var(--r-2); padding:22px 26px; background:var(--white); min-width:170px; flex:1 1 auto}
+.chip .stat{font-family:'Newsreader',serif; font-weight:600; font-size:clamp(2.05rem,1.55rem + 1.95vw,3.2rem); line-height:1.04; color:var(--ink); display:block; letter-spacing:-.015em}
 .chip .stat.warm{color:var(--orange)}
-.chip .lbl{font-size:var(--step--1); color:var(--ink-3); margin-top:8px; display:block; line-height:1.35}
+.chip .lbl{font-size:var(--step--1); color:var(--ink-3); margin-top:12px; display:block; line-height:1.4}
 
 /* body prose two-col */
 .cols{display:grid; grid-template-columns:1fr; gap:var(--s-7)}
 @media(min-width:880px){ .cols.split{grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:var(--s-9); align-items:start} }
-.prose p{color:var(--ink-2)}
+.prose p{color:var(--ink-2); max-width:var(--measure)}
 
-/* reveal — hidden only when JS runs; no-JS / archived = everything visible */
+/* reveal: hidden only when JS runs; no-JS / archived = everything visible */
 .js [data-reveal]{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1)}
 .js [data-reveal].in{opacity:1; transform:none}
 
@@ -199,7 +215,7 @@ section{padding-block:var(--section-y); position:relative}
 .pillar .pq .pn{font:600 12px/1 'Inter'; color:var(--orange); flex:0 0 auto}
 .pillar .step{padding:14px 0; border-top:var(--border)}
 .pillar .step:first-of-type{border-top:0; padding-top:0}
-.pillar .step .lbl{font:600 10px/1 'Inter'; letter-spacing:.13em; text-transform:uppercase; color:var(--grey); margin-bottom:8px; display:flex; align-items:center; gap:7px}
+.pillar .step .lbl{font:600 11px/1 'Inter'; letter-spacing:.13em; text-transform:uppercase; color:var(--grey); margin-bottom:8px; display:flex; align-items:center; gap:7px}
 .pillar .step .lbl::before{content:""; width:5px; height:5px; border-radius:50%; background:var(--line)}
 .pillar .step.fit .lbl{color:var(--orange)}
 .pillar .step.fit .lbl::before{background:var(--orange)}
@@ -281,7 +297,7 @@ section{padding-block:var(--section-y); position:relative}
 .node{border:var(--border); border-radius:var(--r-2); padding:var(--s-5); background:var(--white)}
 .node.hero{border-color:var(--ink); border-width:1.5px}
 .node .tier{font:600 11px/1 'Inter'; text-transform:uppercase; letter-spacing:.12em; color:var(--orange); margin-bottom:10px}
-.node h4{margin:0 0 8px; font:500 var(--step-1)/1.15 'Newsreader',serif; color:var(--ink)}
+.node h3{margin:0 0 8px; font:500 var(--step-1)/1.15 'Newsreader',serif; color:var(--ink)}
 .node p{margin:0; font-size:var(--step--1); color:var(--ink-3); line-height:1.5}
 .flowline{display:flex; align-items:center; gap:10px; color:var(--grey); font:600 var(--step--1)/1 'Inter';
   text-transform:uppercase; letter-spacing:.1em; margin:var(--s-6) 0 0; flex-wrap:wrap}
@@ -310,7 +326,7 @@ section{padding-block:var(--section-y); position:relative}
    ============================================================ */
 .budget{margin-top:var(--s-7)}
 .budget .total{display:flex; align-items:baseline; gap:14px; margin-bottom:var(--s-5); flex-wrap:wrap}
-.budget .total .big{font:500 var(--step-3)/1 'Newsreader',serif; color:var(--ink)}
+.budget .total .big{font:600 var(--step-3)/1 'Newsreader',serif; color:var(--ink); letter-spacing:-.015em}
 .budget .total .cap{font-size:var(--step--1); color:var(--grey)}
 .bar{display:flex; width:100%; height:60px; border-radius:var(--r-2); overflow:hidden; background:var(--paper-2)}
 .bar .seg{height:100%; transform-origin:left; transition:transform .9s cubic-bezier(.2,.7,.2,1); position:relative}
@@ -322,8 +338,8 @@ section{padding-block:var(--section-y); position:relative}
 .legend .sw{width:13px; height:13px; border-radius:3px; align-self:center}
 .legend .nm{font-size:var(--step--1); color:var(--ink-2)}
 .legend .amt{font:600 var(--step--1)/1 'Inter'; color:var(--ink); font-variant-numeric:tabular-nums}
-.legend .pc{font-size:12px; color:var(--grey); font-variant-numeric:tabular-nums; min-width:34px; text-align:right}
-.legend .rat{grid-column:2/-1; font-size:12px; color:var(--grey); line-height:1.45; margin-top:3px}
+.legend .pc{font-size:13px; color:var(--grey); font-variant-numeric:tabular-nums; min-width:34px; text-align:right}
+.legend .rat{grid-column:2/-1; font-size:var(--step--1); color:var(--ink-3); line-height:1.5; margin-top:4px}
 .logicnote{margin-top:var(--s-6); padding:var(--s-5) var(--s-6); background:var(--paper-2); border-left:3px solid var(--orange);
   border-radius:0 var(--r-1) var(--r-1) 0; font-size:var(--step--1); color:var(--ink-3); line-height:1.6}
 .logicnote b{color:var(--ink)}
@@ -363,12 +379,12 @@ section{padding-block:var(--section-y); position:relative}
   background:var(--line); border:var(--border); border-radius:var(--r-2); overflow:hidden}
 .kpi{background:var(--paper); padding:var(--s-6)}
 .kpi .obj{font-size:var(--step--1); color:var(--grey); min-height:2.6em; line-height:1.4; margin-bottom:14px}
-.kpi .num{font:500 var(--step-3)/1 'Newsreader',serif; color:var(--ink); font-variant-numeric:tabular-nums}
+.kpi .num{font:600 var(--step-3)/1 'Newsreader',serif; color:var(--ink); font-variant-numeric:tabular-nums; letter-spacing:-.015em}
 .kpi .num.warm{color:var(--orange)}
 .kpi .met{font-size:var(--step--1); color:var(--ink-3); margin-top:10px; line-height:1.45}
-.kpi .basis{font-size:12px; color:var(--grey); margin-top:12px; line-height:1.5; border-top:var(--border); padding-top:12px}
+.kpi .basis{font-size:var(--step--1); color:var(--ink-3); margin-top:12px; line-height:1.55; border-top:var(--border); padding-top:12px}
 .kpi .pillrow{margin-bottom:14px}
-/* the one real result — full-width banner */
+/* the one real result: full-width banner */
 .realbanner{margin-top:var(--s-5); background:var(--ink); color:#cfcfcf; border-radius:var(--r-2); padding:clamp(28px,4vw,48px); display:grid; gap:var(--s-6); align-items:center}
 @media(min-width:780px){ .realbanner{grid-template-columns:minmax(240px,.85fr) 1.15fr; gap:var(--s-9)} }
 .realbanner .rb-num{font:500 var(--step-3)/1.02 'Newsreader',serif; color:#fff; margin-top:18px}
@@ -417,9 +433,94 @@ section{padding-block:var(--section-y); position:relative}
   a{color:#111; text-decoration:underline}
   .band-ink{background:#fff; color:#333} .band-ink h2{color:#111}
 }
+
+/* ============================================================
+   APPENDED: a11y utilities + new content blocks
+   ============================================================ */
+/* visually-hidden utility (screen-reader-only) */
+.vh{position:absolute!important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+  clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap; border:0}
+
+/* skip link: off-screen until focused */
+.skip{position:absolute; left:-9999px; top:0; z-index:100;
+  background:var(--ink); color:#fff; padding:12px 18px; border-radius:0 0 var(--r-2) 0;
+  font:600 var(--step--1)/1 'Inter',sans-serif; text-decoration:none}
+.skip:focus{left:0}
+
+/* at-a-glance strip in the hero */
+.glance{margin-top:var(--s-7); display:grid; gap:var(--s-5) var(--s-6);
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  border-top:var(--border); border-bottom:var(--border); padding-block:var(--s-5)}
+.glance .g .k{font:600 11px/1 'Inter',sans-serif; text-transform:uppercase; letter-spacing:.13em;
+  color:var(--grey); margin-bottom:8px}
+.glance .g .v{font:500 var(--step-0)/1.32 'Newsreader',serif; color:var(--ink)}
+
+/* footer contact block */
+.foot .contact{margin-top:var(--s-7); padding-top:var(--s-7); border-top:1px solid #2c2c2c}
+.foot .contact .lead{color:#bdbdbd; margin-bottom:14px; max-width:46ch}
+.foot .contact ul{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:10px var(--s-7)}
+.foot .contact li{font:500 var(--step-0)/1.4 'Newsreader',serif; color:#fff}
+.foot .contact .k{font:600 11px/1 'Inter',sans-serif; text-transform:uppercase; letter-spacing:.13em;
+  color:#8a8a8a; margin-right:9px}
+.foot .contact a{color:var(--tangerine)}
+
+/* ---- supporting framed photo ---- */
+.shot-img{margin:var(--s-7) 0 0; border-radius:var(--r-2); overflow:hidden; box-shadow:0 24px 60px -34px var(--shadow-2)}
+.shot-img img{display:block; width:100%; aspect-ratio:2.1/1; object-fit:cover}
+.shot-img.warm img{filter:saturate(1.06) sepia(.1)}
+
+/* ---- atomisation diagram (one hero film -> many cut-downs) ---- */
+.atomise{display:flex; flex-wrap:wrap; align-items:center; gap:var(--s-6) var(--s-8); margin-top:var(--s-7); padding:clamp(24px,3.5vw,40px); border:var(--border); border-radius:var(--r-2); background:var(--white)}
+.atom-hero{display:flex; flex-direction:column; align-items:center; gap:13px; flex:0 0 auto}
+.atom-film{width:138px; aspect-ratio:16/9; border-radius:5px; background:linear-gradient(135deg,#3a2c20,#0f0c08); display:grid; place-items:center; box-shadow:0 12px 26px -14px var(--shadow-2); position:relative; overflow:hidden}
+.atom-film::before,.atom-film::after{content:""; position:absolute; left:0; right:0; height:13%; background:#000}
+.atom-film::before{top:0} .atom-film::after{bottom:0}
+.atom-film .play{width:0; height:0; border-left:17px solid rgba(255,255,255,.92); border-top:11px solid transparent; border-bottom:11px solid transparent; margin-left:4px}
+.atom-hero .cap{font:600 var(--step--1)/1.25 'Inter',sans-serif; color:var(--ink); text-align:center}
+.atom-hero .cap small{display:block; font-weight:400; color:var(--grey); margin-top:3px}
+.atom-link{display:flex; flex-direction:column; align-items:center; gap:6px; flex:0 0 auto}
+.atom-link .arr{font-size:30px; color:var(--orange); line-height:1}
+.atom-link .t{font:600 11px/1 'Inter',sans-serif; text-transform:uppercase; letter-spacing:.12em; color:var(--grey)}
+.atom-clips{flex:1 1 280px; min-width:240px}
+.atom-clips .ttl{font:600 var(--step--1)/1 'Inter',sans-serif; color:var(--ink); margin-bottom:13px}
+.clip-grid{display:flex; flex-wrap:wrap; gap:6px}
+.clip{width:17px; height:30px; border-radius:3px}
+.atom-legend{display:flex; flex-wrap:wrap; gap:var(--s-5); margin-top:16px}
+.atom-legend span{display:flex; align-items:center; gap:8px; font-size:var(--step--1); color:var(--ink-3)}
+.atom-legend i{width:13px; height:13px; border-radius:3px; display:inline-block; flex:0 0 auto}
+@media(max-width:680px){ .atom-link .arr{transform:rotate(90deg)} }
+
+/* ---- The System engine ---- */
+.engine{display:grid; gap:var(--s-5); margin-top:var(--s-7); align-items:stretch}
+@media(min-width:920px){ .engine{grid-template-columns:1fr auto .82fr auto 1fr} }
+.engine > .ar{align-self:center; color:var(--orange); font-size:30px; text-align:center; line-height:1}
+.stage{border:var(--border); border-radius:var(--r-2); padding:var(--s-5); background:var(--white); display:flex; flex-direction:column}
+.stage-h{display:flex; align-items:center; gap:11px; font:600 var(--step-1)/1 'Newsreader',serif; color:var(--ink); margin-bottom:var(--s-4)}
+.stage-h .sn{width:27px; height:27px; border-radius:50%; background:var(--orange); color:#fff; display:grid; place-items:center; font:600 13px/1 'Inter',sans-serif; flex:0 0 auto}
+.ecard{padding:14px 0; border-top:var(--border)}
+.stage .ecard:first-of-type{border-top:0; padding-top:0}
+.ecard b{display:block; font:600 var(--step-0)/1.25 'Inter',sans-serif; color:var(--ink); margin-bottom:5px}
+.ecard b i{color:var(--orange); font-style:normal; font-size:var(--step--1); font-weight:600}
+.ecard p{margin:0; font-size:var(--step--1); color:var(--ink-3); line-height:1.5}
+.ecard.moat{background:var(--orange-06); border-radius:var(--r-1); padding:13px 14px; margin-top:12px; border-top:0}
+.loopline{margin-top:var(--s-5); font-size:var(--step--1); color:var(--grey); display:flex; gap:11px; align-items:baseline; max-width:var(--measure)}
+.loopline .lar{color:var(--orange); font-size:22px; line-height:1; flex:0 0 auto}
+.subh{margin:var(--s-8) 0 0; font:500 var(--step-2)/1.12 'Newsreader',serif; color:var(--ink)}
+.mechs{display:grid; gap:2px; margin-top:var(--s-5); background:var(--line); border:var(--border); border-radius:var(--r-2); overflow:hidden}
+@media(min-width:760px){ .mechs{grid-template-columns:repeat(4,1fr)} }
+.mech{background:var(--paper); padding:var(--s-5)}
+.mech b{display:block; font:600 var(--step-0)/1.2 'Inter',sans-serif; color:var(--ink); margin-bottom:6px}
+.mech p{margin:0; font-size:var(--step--1); color:var(--ink-3); line-height:1.5}
+@media(max-width:919px){ .engine > .ar{transform:rotate(90deg)} }
+
+/* ---- scroll-snap page-turn ---- */
+html{scroll-snap-type:y proximity; scroll-padding-top:6px}
+.hero, section[id], .foot{scroll-snap-align:start; scroll-snap-stop:normal}
+@media (prefers-reduced-motion:reduce){ html{scroll-snap-type:none} }
 </style>
 </head>
 <body>
+<a href="#challenge" class="skip">Skip to content</a>
 
 <div class="topbar" aria-hidden="true"><div class="fill"></div></div>
 
@@ -430,6 +531,7 @@ section{padding-block:var(--section-y); position:relative}
     <li data-link="challenge"><a href="#challenge"><span class="dot"></span><span class="rn-label">Challenge</span></a></li>
     <li data-link="insight"><a href="#insight"><span class="dot"></span><span class="rn-label">Insight</span></a></li>
     <li data-link="idea"><a href="#idea"><span class="dot"></span><span class="rn-label">The idea</span></a></li>
+    <li data-link="system"><a href="#system"><span class="dot"></span><span class="rn-label">The system</span></a></li>
     <li data-link="contrast"><a href="#contrast"><span class="dot"></span><span class="rn-label">Cold vs warm</span></a></li>
     <li data-link="plan"><a href="#plan"><span class="dot"></span><span class="rn-label">The plan</span></a></li>
     <li data-link="budget"><a href="#budget"><span class="dot"></span><span class="rn-label">Budget</span></a></li>
@@ -447,32 +549,25 @@ section{padding-block:var(--section-y); position:relative}
     <span class="tag">Integrated marketing · EU B2B · 2023–2024</span>
   </div>
   <h1 data-reveal>We turned PwC's own slogan into <span class="hl">footage.</span></h1>
-  <p class="sub" data-reveal>An EU campaign concept that makes <strong>“human-led, tech-powered”</strong> something you can watch — a behind-the-scenes documentary of PwC's AI experts getting it wrong before they get it right.</p>
+  <p class="sub" data-reveal>An EU campaign concept that makes <strong>“human-led, tech-powered”</strong> something you can watch: a behind-the-scenes documentary of PwC's AI experts getting it wrong before they get it right.</p>
 
-  <div class="docframe" data-reveal role="img" aria-label="Illustrative documentary frame: a person standing in a field at golden hour, styled as a film still.">
-    <div class="scene">
-      <div class="sky"></div>
-      <div class="sun"></div>
-      <svg class="hills" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,230 C220,150 420,200 640,170 C860,140 1040,210 1200,180 L1200,400 L0,400 Z" fill="#c9a86a" opacity=".55"/>
-        <path d="M0,300 C260,240 500,290 760,260 C980,235 1080,300 1200,275 L1200,400 L0,400 Z" fill="#9c8246" opacity=".7"/>
-        <path d="M0,360 C300,330 560,360 820,345 C1010,335 1120,360 1200,350 L1200,400 L0,400 Z" fill="#6f5d33"/>
-      </svg>
-      <svg class="figure" viewBox="0 0 100 220" aria-hidden="true">
-        <ellipse cx="50" cy="36" rx="17" ry="19" fill="#3a3326"/>
-        <path d="M33,70 C33,58 67,58 67,70 L72,150 C72,162 60,168 50,168 C40,168 28,162 28,150 Z" fill="#2f2a20"/>
-        <rect x="30" y="120" width="13" height="92" rx="6" fill="#26221a"/>
-        <rect x="57" y="120" width="13" height="92" rx="6" fill="#26221a"/>
-      </svg>
-    </div>
-    <div class="grain"></div>
-    <div class="scan"></div>
+  <div class="glance" data-reveal>
+    <div class="g"><div class="k">Role</div><div class="v">Team lead & creative originator</div></div>
+    <div class="g"><div class="k">Brief</div><div class="v">Make PwC's “human-led, tech-powered” line something you can watch</div></div>
+    <div class="g"><div class="k">Result</div><div class="v">Top grade, and presented to PwC's team</div></div>
+    <div class="g"><div class="k">Scope</div><div class="v">A €420k integrated EU pilot</div></div>
+    <div class="g"><div class="k">Why it travels</div><div class="v">Make one strong asset, then atomise it across channels and markets</div></div>
+  </div>
+
+  <div class="docframe" data-reveal role="img" aria-label="A photograph of a documentary film shoot: a crew filming a seated subject under studio lights, with a clapperboard and a director's chair. Representative stock image, not footage of the concept.">
+    <img class="scene-photo" src="hero.jpg" alt="" width="1600" height="900" loading="eager" decoding="async">
+    <div class="chrome-grad"></div>
     <div class="bar t"></div><div class="bar b"></div>
     <div class="hud rec"><b></b> REC</div>
     <div class="hud tc">00:14:32:09</div>
     <span class="br tr"></span><span class="br bl"></span><span class="br brr"></span>
   </div>
-  <span class="frame-cap">Illustrative frame — concept visualization, not actual footage.</span>
+  <span class="frame-cap">A documentary film shoot. Representative stock image, not footage of the concept, which was presented to PwC rather than produced.</span>
 
   <div class="metastrip" data-reveal>
     <div class="m"><div class="k">Subject</div><div class="v">PwC AI advisory</div></div>
@@ -484,7 +579,7 @@ section{padding-block:var(--section-y); position:relative}
 
   <div class="disclaimer" data-reveal>
     <span class="badge">Honest note</span>
-    <span>A UCD MSc Digital Marketing capstone concept presented to PwC's team — <strong>not a PwC-commissioned campaign</strong>. The only hard wins are the top grade and the presentation; every performance figure on this page is a defensible projection, labelled as one.</span>
+    <span>A UCD MSc capstone concept presented to PwC, <strong>not a campaign PwC ran</strong>. Every figure here is a labelled projection; the real wins are the top grade and the presentation.</span>
   </div>
 
   <div class="callouts" data-reveal data-reveal-group>
@@ -503,12 +598,12 @@ section{padding-block:var(--section-y); position:relative}
     </div>
     <div class="cols split">
       <div class="prose" data-reveal>
-        <p class="lede">The EU AI market is trust-gated, not performance-gated. American buyers tend to use first and trust later; European buyers do the reverse — trust before they deploy.</p>
+        <p class="lede">The EU AI market is trust-gated, not performance-gated. American buyers tend to use first and trust later; European buyers do the reverse, trusting before they deploy.</p>
         <p>With the EU AI Act carrying fines up to €35M or 7% of global turnover, and high-risk obligations enforceable from 2 August 2026, the question in the room isn't “is it powerful?” It's <strong>“will this get me personally blamed?”</strong></p>
       </div>
       <div class="prose" data-reveal>
         <p>The market is also early and anxious. Only around 20% of EU enterprises used AI in 2025, and the number-one barrier to adoption is lack of expertise. Even among firms claiming AI is “scaled”, only a third have proper responsible-AI protocols.</p>
-        <p>PwC has the answer to all of this — IDC MarketScape Leader for European AI Services, ~500 active AI clients, responsible-AI assurance aligned to the Act. The challenge was never the substance. It was that PwC's marketing, like everyone's, spoke the cold language of capability to an audience governed by fear.</p>
+        <p>PwC has the answer to all of this: IDC MarketScape Leader for European AI Services, ~500 active AI clients, responsible-AI assurance aligned to the Act. The challenge was never the substance. It was that PwC's marketing, like everyone's, spoke the cold language of capability to an audience governed by fear.</p>
       </div>
     </div>
     <div class="callouts" data-reveal data-reveal-group>
@@ -522,7 +617,7 @@ section{padding-block:var(--section-y); position:relative}
 <!-- ===================== 03 INSIGHT (pull quote) ===================== -->
 <section id="insight" class="band">
   <div class="wrap">
-    <span class="eyebrow" data-reveal><span class="num">03</span>Audience Insight</span>
+    <span class="eyebrow" data-reveal><span class="num">02</span>Audience Insight</span>
     <div class="pull">
       <div class="rule" data-reveal></div>
       <blockquote data-reveal><span class="q" aria-hidden="true">“</span>Behind every cautious AI decision is a person afraid of being personally accountable for a black box.</blockquote>
@@ -530,7 +625,7 @@ section{padding-block:var(--section-y); position:relative}
     </div>
     <div class="cols split">
       <div class="prose" data-reveal>
-        <p>The sharpest thing we found wasn't a statistic — it was the human truth underneath the statistics. The EU decision-maker evaluating an AI partner isn't really worried about model accuracy. They're worried about standing in front of a board, or a regulator, and being personally accountable for a system they can't fully explain.</p>
+        <p>The sharpest thing we found wasn't a statistic. It was the human truth underneath the statistics. The EU decision-maker evaluating an AI partner isn't really worried about model accuracy. They're worried about standing in front of a board, or a regulator, and being personally accountable for a system they can't fully explain.</p>
       </div>
       <div class="prose" data-reveal>
         <p>Cold competence doesn't soothe that fear; it amplifies it. A firm that only ever shows polished authority implies that any mistake is yours alone. But a firm that shows its own experts wrestling honestly with hard problems says something different: <strong>you won't be alone in the room.</strong> The way to sell trust to a frightened buyer is to be the one brand willing to be human about how hard this is.</p>
@@ -538,7 +633,7 @@ section{padding-block:var(--section-y); position:relative}
     </div>
     <div class="callouts" data-reveal data-reveal-group>
       <div class="chip" style="--d:0"><span class="stat warm">~71%</span><span class="lbl">Of non-adopters cite lack of expertise</span></div>
-      <div class="chip" style="--d:90"><span class="stat">56%</span><span class="lbl">Of CEOs say they get “nothing” from AI</span></div>
+      <div class="chip" style="--d:90"><span class="stat">56%</span><span class="lbl">Of CEOs say AI gives them “nothing” <span style="opacity:.7">· PwC CEO Survey</span></span></div>
     </div>
   </div>
 </section>
@@ -547,17 +642,21 @@ section{padding-block:var(--section-y); position:relative}
 <section id="idea">
   <div class="wrap">
     <div class="section-head" data-reveal>
-      <span class="eyebrow"><span class="num">04</span>The Big Idea</span>
+      <span class="eyebrow"><span class="num">03</span>The Big Idea</span>
       <h2>A documentary about PwC's AI experts getting it wrong before they get it right.</h2>
     </div>
-    <div class="cols split">
+    <figure class="shot-img warm" data-reveal>
+      <img src="idea.jpg" alt="A small team, including a senior expert, working through a problem together at a laptop." width="1600" height="900" loading="lazy" decoding="async">
+    </figure>
+    <span class="frame-cap">What the film follows: PwC's people in the ordinary middle of an AI project, the wins and the misfires both. Representative stock image.</span>
+    <div class="cols split" style="margin-top:var(--s-7)">
       <div class="prose" data-reveal>
         <p class="lede">One sentence, and the logic is fully traceable.</p>
-        <p><strong>Insight</strong> — EU buyers fear being personally accountable for a black box, so they trust before they deploy. <strong>Idea</strong> — a behind-the-scenes documentary, in the candid, affectionate style of Clarkson's Farm, that follows real PwC consultants through the messy middle of AI projects, mistakes included. <strong>Objective</strong> — shift perception from cold to human, because admitting the hard parts is exactly what earns trust in a trust-gated market.</p>
+        <p><strong>Insight.</strong> EU buyers fear being personally accountable for a black box, so they trust before they deploy. <strong>Idea.</strong> A behind-the-scenes documentary, in the candid, affectionate style of Clarkson's Farm, that follows PwC's people as they actually use AI on real client work. Not a highlight reel. The ordinary days: the tool that nails one task and fumbles the next, the model that gets it confidently wrong, the human who catches it, the slow climb from a half-working prototype to something a client can rely on. <strong>Objective.</strong> Move perception from cold to human, because showing the hard parts honestly is what earns trust in a market that trusts before it buys.</p>
       </div>
       <div class="prose" data-reveal>
-        <p>The elegant part is that it doesn't fight PwC's brand — it dramatises it. PwC already says its AI is “human-led, tech-powered”. Nobody had ever shown the “human-led” part as anything more than a line in a deck.</p>
-        <p>The documentary makes the slogan literal: not a claim about humans, but footage of them. That's the strategic spine, and everything else hangs off it.</p>
+        <p>The move is counter-intuitive on purpose. Every competitor sells AI as a clean, finished superpower. This does the opposite. It puts AI on camera as the double-edged tool it really is, the wins and the misfires both, and lets the audience watch PwC's people handle that edge with judgment.</p>
+        <p>Nobody pretends the tech is flawless, and that is the whole point. You do not win a cautious buyer by insisting your service is great. You win them by being open about the hard parts and letting them decide for themselves. Trust given heart to heart, not bought with a louder claim. It also makes PwC's own line, “human-led, tech-powered”, literal: not a claim about humans, but footage of them.</p>
       </div>
     </div>
 
@@ -598,8 +697,54 @@ section{padding-block:var(--section-y); position:relative}
   </div>
 </section>
 
+<!-- ===================== 04 THE SYSTEM ===================== -->
+<section id="system">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow"><span class="num">04</span>The Strategy</span>
+      <h2>The film is the trailer. The trust engine is the product.</h2>
+    </div>
+    <p class="lede measure" data-reveal>Most teams would stop at the documentary. The bigger idea is to turn that honesty into a system PwC can own, one named platform where the film is only the most visible part. Call it <strong>The Open Standard</strong>: show the seams, so a personally liable board can sign its name.</p>
+
+    <div class="engine" data-reveal>
+      <div class="stage">
+        <div class="stage-h"><span class="sn">1</span>Show</div>
+        <div class="ecard"><b>The Messy Middle</b><p>The documentary. Real consultants, real misfires, the human who catches them before they ship. The Pratfall engine, and the source of dozens of social cut-downs.</p></div>
+        <div class="ecard moat"><b>The Open Post-Mortem Register <i>· the moat</i></b><p>An always-on, published log of real AI failures and fixes, in the governance format a risk committee already trusts. Cheap to keep, and impossible for a perfection-marketer to copy without indicting their own past claims.</p></div>
+      </div>
+      <div class="ar">→</div>
+      <div class="stage">
+        <div class="stage-h"><span class="sn">2</span>Standardise</div>
+        <div class="ecard"><b>The Open Standard</b><p>A named, public PwC standard for AI transparency, mapped to the EU AI Act. It discloses model failure, human oversight, and recovery. Once buyers ask "is it to the Open Standard?", PwC owns the vocabulary, the way SOC 2 and ISO became un-ignorable.</p></div>
+      </div>
+      <div class="ar">→</div>
+      <div class="stage">
+        <div class="stage-h"><span class="sn">3</span>Convert</div>
+        <div class="ecard"><b>Client-as-Witness</b><p>Named clients on record: not "PwC was flawless," but "PwC was honest, and the governed process is what let us defend it to our own board."</p></div>
+        <div class="ecard"><b>Witness Pilots</b><p>A first engagement with part of the fee at risk, where the buyer sits inside the process and sees the failures surfaced live.</p></div>
+        <div class="ecard"><b>The Board-Defensible Pack</b><p>The audit trail mapped to AI Act obligations. It reframes the buy from "best capability" to "most defensible judgment," and turns brand trust into signed revenue.</p></div>
+      </div>
+    </div>
+    <p class="loopline" data-reveal><span class="lar">↩</span> Every signed deal feeds new consented post-mortems back into the Register, so the engine fuels itself instead of ending like a campaign.</p>
+
+    <h3 class="subh" data-reveal>Why a skeptical C-suite buys it</h3>
+    <div class="mechs" data-reveal data-reveal-group>
+      <div class="mech"><b>Pratfall Effect</b><p>A visible flaw raises trust, but only for an expert already assumed competent. PwC can borrow it; a weaker rival who confesses just looks unsafe.</p></div>
+      <div class="mech"><b>Reactance</b><p>Hype hardens a skeptic. Candour removes the claim they were braced to argue against, so there is nothing to push back on.</p></div>
+      <div class="mech"><b>Transparency to trust</b><p>Comfort with business AI is about 44% and falling. Showing the work supplies the one signal the category is starving for.</p></div>
+      <div class="mech"><b>Costly signal</b><p>Only a firm genuinely good at the recovery can afford to broadcast the failure. That is proof a brochure cannot fake.</p></div>
+    </div>
+
+    <div class="callouts" data-reveal data-reveal-group>
+      <div class="chip"><span class="stat warm">2 Aug 2026</span><span class="lbl">EU AI Act high-risk obligations enforceable. Liability turns personal and board-level, so a defensible record sells harder than capability.</span></div>
+      <div class="chip"><span class="stat">Empty lane</span><span class="lbl">Six Big-Four and tech rivals all chose perfection messaging. The honest ground is structurally empty, and the first mover owns it.</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== 05 COLD vs WARM ===================== -->
 <section id="contrast" style="padding:0">
+  <h2 class="vh">Why Clarkson's Farm</h2>
   <div class="cw" id="cwPanel" role="group" aria-label="Comparison: conventional cold AI marketing versus the warm documentary concept">
     <div class="layer cold">
       <svg class="grid" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -626,7 +771,7 @@ section{padding-block:var(--section-y); position:relative}
     </div>
     <div class="layer warm">
       <div class="sun" aria-hidden="true"></div>
-      <svg class="hills" viewBox="0 0 1200 300" preserveAspectRatio="none">
+      <svg class="hills" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true">
         <path d="M0,170 C260,110 520,150 780,130 C980,115 1100,160 1200,140 L1200,300 L0,300 Z" fill="#d8b878" opacity=".6"/>
         <path d="M0,230 C300,190 560,225 820,210 C1010,200 1110,235 1200,222 L1200,300 L0,300 Z" fill="#a9893f"/>
       </svg>
@@ -645,34 +790,34 @@ section{padding-block:var(--section-y); position:relative}
     <input class="scrub" type="range" min="15" max="85" value="50" aria-label="Drag to compare cold versus warm" />
     <div class="seam"></div>
     <div class="handle-ic" aria-hidden="true">↔</div>
-    <div class="subcap">Illustrative — competitive territory built from public AI marketing; frames are concept visualizations.</div>
+    <div class="subcap">Illustrative. Competitive territory built from public AI marketing; frames are concept visualizations.</div>
   </div>
 
   <div class="wrap" style="padding-top:var(--section-y)">
-    <p class="lede measure" data-reveal>Clarkson's Farm isn't a tone we borrowed — its three defining qualities <em>are</em> the strategy. The show is unscripted, funny, and unafraid to show its star failing; each one is a precise answer to a specific reason the EU buyer keeps their wallet shut. We're not dressing up a sales asset — we're removing the reasons to resist it.</p>
+    <p class="lede measure" data-reveal>Clarkson's Farm isn't a tone we borrowed. Its three defining qualities <em>are</em> the strategy. The show is unscripted, funny, and unafraid to show its star failing; each one is a precise answer to a specific reason the EU buyer keeps their wallet shut. We're not dressing up a sales asset; we're removing the reasons to resist it.</p>
 
     <div class="pillars" data-reveal data-reveal-group>
       <div class="pillar" style="--d:0">
         <div class="pq"><span class="pn">01</span>Authentic, not advertised</div>
         <div class="step"><div class="lbl">The show</div><p>Real working farmers, filmed mid-job. Clarkson's own words: "It isn't created or written or planned. The cameras just film us doing stuff."</p></div>
-        <div class="step"><div class="lbl">The effect</div><p>Perceived realness reads as the <em>absence</em> of a sales motive — the audience's persuasion-detector never fires, so the trust gate opens (brand authenticity → trust).</p></div>
+        <div class="step"><div class="lbl">The effect</div><p>Perceived realness reads as the <em>absence</em> of a sales motive: the audience's persuasion-detector never fires, so the trust gate opens (brand authenticity → trust).</p></div>
         <div class="step fit"><div class="lbl">Why it fits PwC</div><p>Comfort with AI in marketing now sits around 44%, and polished AI-speak reads as a red flag. Observed realness is the one credibility a rival can't fake with another whitepaper.</p></div>
       </div>
       <div class="pillar" style="--d:90">
         <div class="pq"><span class="pn">02</span>Funny, so the hard parts feel safe to look at</div>
-        <div class="step"><div class="lbl">The show</div><p>Clarkson plays the buffoon who gets it wrong while the real experts are right — so viewers happily sit with hard, high-stakes problems because it's entertaining, not preachy.</p></div>
+        <div class="step"><div class="lbl">The show</div><p>Clarkson plays the buffoon who gets it wrong while the real experts are right, so viewers happily sit with hard, high-stakes problems because it's entertaining, not preachy.</p></div>
         <div class="step"><div class="lbl">The effect</div><p>Humour lowers defences: it occupies the energy that would otherwise build counter-arguments, and positive mood shifts people into open, receptive processing (mood-as-information).</p></div>
         <div class="step fit"><div class="lbl">Why it fits PwC</div><p>A buyer facing €35M fines and personal board-level accountability is threat-primed and flinches from jargon-heavy "risk &amp; governance" pitches. Humour relaxes them enough to stay in the room.</p></div>
       </div>
       <div class="pillar" style="--d:180">
         <div class="pq"><span class="pn">03</span>Shows the struggle, not just the win</div>
-        <div class="step"><div class="lbl">The show</div><p>Year one cleared £144 profit after a ~£90,000 hole — and Clarkson filmed his disasters on purpose. The engine is a capable person visibly humbled, working through it.</p></div>
-        <div class="step"><div class="lbl">The effect</div><p>The pratfall effect (Aronson, 1966): a visible stumble makes an already-competent expert <em>more</em> likeable and human — and showing the process reads as documentary truth, not a sales claim.</p></div>
-        <div class="step fit"><div class="lbl">Why it fits PwC</div><p>Lack of expertise is the #1 EU adoption barrier, and ~76% of executives can't explain their AI's outputs. An expert who wrestles honestly on camera says: "you won't be alone when you own this."</p></div>
+        <div class="step"><div class="lbl">The show</div><p>Year one cleared £144 profit after a ~£90,000 hole, and Clarkson filmed his disasters on purpose. The engine is a capable person visibly humbled, working through it.</p></div>
+        <div class="step"><div class="lbl">The effect</div><p>The pratfall effect (Aronson, 1966): a visible stumble makes an already-competent expert <em>more</em> likeable and human, and showing the process reads as documentary truth, not a sales claim.</p></div>
+        <div class="step fit"><div class="lbl">Why it fits PwC</div><p>Lack of expertise is the #1 EU adoption barrier, and ~76% of executives can't explain their AI's outputs (Accenture). An expert who wrestles honestly on camera says: "you won't be alone when you own this."</p></div>
       </div>
     </div>
 
-    <p class="prose measure" data-reveal style="margin-top:var(--s-8)">Rivals can copy the documentary format; they can't copy realness, because their own glossy AI marketing is built to suppress it. That leaves the warm, human, fallible lane completely empty — exactly as public comfort with AI in marketing is falling. <strong>The differentiation is structural, not decorative.</strong></p>
+    <p class="prose measure" data-reveal style="margin-top:var(--s-8)">Rivals can copy the documentary format; they can't copy realness, because their own glossy AI marketing is built to suppress it. That leaves the warm, human, fallible lane completely empty, exactly as public comfort with AI in marketing is falling. <strong>The differentiation is structural, not decorative.</strong></p>
     <p class="grounding" data-reveal>Grounded in the pratfall effect (Aronson, Willerman &amp; Floyd, 1966), reduced counter-arguing (Lyttle, 2001), mood-as-information (Schwarz &amp; Clore), and brand-authenticity → trust research (Edelman). Full sources in the project notes.</p>
   </div>
 </section>
@@ -684,21 +829,40 @@ section{padding-block:var(--section-y); position:relative}
       <span class="eyebrow"><span class="num">06</span>Integrated Channel Plan</span>
       <h2>One exceptional owned asset, sequenced to earn its own reach.</h2>
     </div>
-    <p class="lede measure" data-reveal>The architecture is hero-and-spokes. The documentary is the hero — the thing worth making well. From it we cut roughly twenty social pieces, each engineered for a channel and a moment in the funnel.</p>
+    <p class="lede measure" data-reveal>The architecture is hero-and-spokes. The documentary is the hero, the thing worth making well. From it we cut roughly twenty social pieces, each engineered for a channel and a moment in the funnel.</p>
+
+    <div class="atomise" data-reveal role="img" aria-label="One hero documentary is cut into about twenty channel-native clips, split across LinkedIn, YouTube Shorts and Meta.">
+      <div class="atom-hero">
+        <div class="atom-film" aria-hidden="true"><span class="play"></span></div>
+        <div class="cap">1 hero documentary<small>4 × 8–12 min</small></div>
+      </div>
+      <div class="atom-link" aria-hidden="true"><span class="arr">→</span><span class="t">atomised into</span></div>
+      <div class="atom-clips">
+        <div class="ttl">~20 channel-native cut-downs</div>
+        <div class="clip-grid" aria-hidden="true">
+          <span class="clip" style="background:var(--orange)"></span><span class="clip" style="background:var(--orange)"></span><span class="clip" style="background:var(--orange)"></span><span class="clip" style="background:var(--orange)"></span><span class="clip" style="background:var(--orange)"></span><span class="clip" style="background:var(--orange)"></span><span class="clip" style="background:var(--orange)"></span><span class="clip" style="background:var(--orange)"></span><span class="clip" style="background:var(--tangerine)"></span><span class="clip" style="background:var(--tangerine)"></span><span class="clip" style="background:var(--tangerine)"></span><span class="clip" style="background:var(--tangerine)"></span><span class="clip" style="background:var(--tangerine)"></span><span class="clip" style="background:var(--tangerine)"></span><span class="clip" style="background:var(--tangerine)"></span><span class="clip" style="background:var(--rose)"></span><span class="clip" style="background:var(--rose)"></span><span class="clip" style="background:var(--rose)"></span><span class="clip" style="background:var(--rose)"></span><span class="clip" style="background:var(--rose)"></span>
+        </div>
+        <div class="atom-legend">
+          <span><i style="background:var(--orange)"></i>LinkedIn · 8</span>
+          <span><i style="background:var(--tangerine)"></i>YouTube Shorts · 7</span>
+          <span><i style="background:var(--rose)"></i>Meta · 5</span>
+        </div>
+      </div>
+    </div>
 
     <div class="spokes" data-reveal data-reveal-group>
-      <div class="node hero" style="--d:0"><div class="tier">Hero</div><h4>The documentary</h4><p>4 × 8–12 min episodes. Hosted on YouTube + gated. The asset everything else is cut from.</p></div>
-      <div class="node" style="--d:90"><div class="tier">Convert engine</div><h4>LinkedIn-led</h4><p>Primary EU B2B channel — thought-leadership, paid, and lead-gen where the decision-makers are.</p></div>
-      <div class="node" style="--d:180"><div class="tier">Reach</div><h4>Social cut-downs</h4><p>~20 vertical clips — one expert, one mistake, one fix — plus Meta retargeting.</p></div>
-      <div class="node" style="--d:270"><div class="tier">Earned</div><h4>PR & premiere</h4><p>An invite-only screening turns the film into trade-press coverage and share of voice.</p></div>
+      <div class="node hero" style="--d:0"><div class="tier">Hero</div><h3>The documentary</h3><p>4 × 8–12 min episodes. Hosted on YouTube + gated. The asset everything else is cut from.</p></div>
+      <div class="node" style="--d:90"><div class="tier">Convert engine</div><h3>LinkedIn-led</h3><p>Primary EU B2B channel: thought-leadership, paid, and lead-gen where the decision-makers are.</p></div>
+      <div class="node" style="--d:180"><div class="tier">Reach</div><h3>Social cut-downs</h3><p>~20 vertical clips (one expert, one mistake, one fix), plus Meta retargeting.</p></div>
+      <div class="node" style="--d:270"><div class="tier">Earned</div><h3>PR & premiere</h3><p>An invite-only screening turns the film into trade-press coverage and share of voice.</p></div>
     </div>
 
     <div class="flowline" data-reveal>
       <b>Tease</b><span class="ar">→</span><b>Launch</b><span class="ar">→</span><b>Sustain</b><span class="ar">→</span><b>Convert</b>
-      <span style="color:var(--grey); text-transform:none; letter-spacing:0; font-weight:400">— trust is built first; the ask comes only once it's real.</span>
+      <span style="color:var(--grey); text-transform:none; letter-spacing:0; font-weight:400">Trust is built first; the ask comes only once it's real.</span>
     </div>
 
-    <p class="prose measure" data-reveal style="margin-top:var(--s-7)">The bet is deliberate: we weighted spend toward production rather than media because one genuinely good owned asset earns organic reach in a category where every rival runs cold paid content. And it's worth naming the relevance — <strong>this video-first, hero-then-cut-downs logic is exactly how a small, aesthetics-driven China-to-overseas agency wins</strong>: make one beautiful thing, then atomise it across channels and markets.</p>
+    <p class="prose measure" data-reveal style="margin-top:var(--s-7)">The bet is deliberate: we weighted spend toward production rather than media because one genuinely good owned asset earns organic reach in a category where every rival runs cold paid content. And it's worth naming the relevance. <strong>This video-first, hero-then-cut-downs logic is exactly how a small, aesthetics-driven China-to-overseas agency wins</strong>: make one beautiful thing, then atomise it across channels and markets.</p>
 
     <!-- calendar -->
     <div class="section-head" data-reveal style="margin-top:var(--s-9)">
@@ -711,7 +875,7 @@ section{padding-block:var(--section-y); position:relative}
         <div class="detail">
           <div class="ch"><span>LinkedIn (organic + exec)</span><span>Consultant profiles</span><span>YouTube trailer</span></div>
           <div class="ct">30–60s teaser cut, “confessions” stills of experts admitting AI is hard, the 56%-of-CEOs hook card, premiere save-the-dates. 2–3 organic posts/week, employee advocacy seeded.</div>
-          <div class="obj"><b>Objective</b> — awareness + intrigue; establish the human, candid tone before any sell.</div>
+          <div class="obj"><b>Objective.</b> Awareness + intrigue; establish the human, candid tone before any sell.</div>
         </div>
       </div>
       <div class="phase">
@@ -719,7 +883,7 @@ section{padding-block:var(--section-y); position:relative}
         <div class="detail">
           <div class="ch"><span>YouTube (hero film)</span><span>LinkedIn (paid + organic)</span><span>PR / trade press</span><span>Premiere event</span></div>
           <div class="ct">Hero film drops week 4; invite-only premiere generates earned press; a partner explains on the record why PwC chose to film its own mistakes. Then 3–4 posts/week sustaining the spike.</div>
-          <div class="obj"><b>Objective</b> — reach + perception shift; land “human-led, tech-powered” as lived footage.</div>
+          <div class="obj"><b>Objective.</b> Reach + perception shift; land “human-led, tech-powered” as lived footage.</div>
         </div>
       </div>
       <div class="phase">
@@ -727,7 +891,7 @@ section{padding-block:var(--section-y); position:relative}
         <div class="detail">
           <div class="ch"><span>LinkedIn cut-downs</span><span>YouTube Shorts</span><span>Meta retargeting</span><span>Newsletter</span></div>
           <div class="ct">~20 episodic cut-downs and verticals, behind-the-scenes, an EU AI Act explainer tied to the characters, proof-point carousels (IDC Leader, 500 clients). 3–4 cut-downs/week.</div>
-          <div class="obj"><b>Objective</b> — sustained engagement + mid-funnel nurture; move warmed viewers toward consideration.</div>
+          <div class="obj"><b>Objective.</b> Sustained engagement + mid-funnel nurture; move warmed viewers toward consideration.</div>
         </div>
       </div>
       <div class="phase">
@@ -735,7 +899,7 @@ section{padding-block:var(--section-y); position:relative}
         <div class="detail">
           <div class="ch"><span>LinkedIn Lead Gen</span><span>Document Ads</span><span>Retargeting</span><span>Email nurture</span></div>
           <div class="ct">Gated assets (Responsible-AI guide, “pilots-to-production” playbook, agent OS 30-day explainer) served to people who watched to the end. Retargeting prioritised by video-completion audiences.</div>
-          <div class="obj"><b>Objective</b> — lead generation; turn trust earned by the film into qualified conversations.</div>
+          <div class="obj"><b>Objective.</b> Lead generation; turn trust earned by the film into qualified conversations.</div>
         </div>
       </div>
     </div>
@@ -747,7 +911,7 @@ section{padding-block:var(--section-y); position:relative}
   <div class="wrap">
     <div class="section-head" data-reveal>
       <span class="eyebrow"><span class="num">08</span>Budget</span>
-      <h2>€420k, weighted toward the asset — not the ad spend.</h2>
+      <h2>€420k, weighted toward the asset, not the ad spend.</h2>
     </div>
     <div class="budget">
       <div class="total" data-reveal>
@@ -769,13 +933,13 @@ section{padding-block:var(--section-y); position:relative}
         <div class="row"><span class="sw" style="background:var(--orange)"></span><span class="nm">Documentary production <span style="color:var(--grey)">(hero film)</span></span><span class="amt">€130k</span><span class="pc">31%</span><span class="rat">Crew, 6–8 shoot days, real-consultant releases. You can't fake Clarkson's-Farm authenticity with stock B-roll.</span></div>
         <div class="row"><span class="sw" style="background:var(--tangerine)"></span><span class="nm">Post & edit <span style="color:var(--grey)">(+ cut-downs)</span></span><span class="amt">€55k</span><span class="pc">13%</span><span class="rat">One hero edit + ~20 cut-downs. The “human, imperfect” narrative is actually built in the edit.</span></div>
         <div class="row"><span class="sw" style="background:var(--yellow)"></span><span class="nm">Paid social amplification</span><span class="amt">€95k</span><span class="pc">23%</span><span class="rat">Largest media line. EU B2B LinkedIn CPMs of €25–40 make decision-maker reach genuinely expensive.</span></div>
-        <div class="row"><span class="sw" style="background:var(--rose)"></span><span class="nm">LinkedIn lead-gen</span><span class="amt">€40k</span><span class="pc">10%</span><span class="rat">The conversion layer — gated responsible-AI assets for the ~71% citing “lack of expertise.”</span></div>
+        <div class="row"><span class="sw" style="background:var(--rose)"></span><span class="nm">LinkedIn lead-gen</span><span class="amt">€40k</span><span class="pc">10%</span><span class="rat">The conversion layer: gated responsible-AI assets for the ~71% citing “lack of expertise.”</span></div>
         <div class="row"><span class="sw" style="background:#b06a3a"></span><span class="nm">PR & earned media</span><span class="amt">€30k</span><span class="pc">7%</span><span class="rat">An invite premiere + embargoed trade coverage buys share of voice cheaply vs paid.</span></div>
         <div class="row"><span class="sw" style="background:var(--grey)"></span><span class="nm">Creative, strategy & PM</span><span class="amt">€25k</span><span class="pc">6%</span><span class="rat">Concepting, channel architecture, calendar, governance with a risk-averse brand team.</span></div>
         <div class="row"><span class="sw" style="background:#9a9a9a"></span><span class="nm">Analytics & brand-lift study</span><span class="amt">€15k</span><span class="pc">4%</span><span class="rat">Perception shift is the #1 goal, so a pre/post survey is funded explicitly, not assumed.</span></div>
-        <div class="row"><span class="sw" style="background:var(--line)"></span><span class="nm">Contingency</span><span class="amt">€30k</span><span class="pc">7%</span><span class="rat">Standard reserve for production-heavy work — shoot overruns and Big-Four compliance review.</span></div>
+        <div class="row"><span class="sw" style="background:var(--line)"></span><span class="nm">Contingency</span><span class="amt">€30k</span><span class="pc">7%</span><span class="rat">Standard reserve for production-heavy work: shoot overruns and Big-Four compliance review.</span></div>
       </div>
-      <div class="logicnote" data-reveal><b>How it's sized (so I can defend every line).</b> €420k reads as a single-market EU pilot for one business line — big enough to be credible for a Big-Four documentary, small enough to be an academically realistic pilot, not an inflated agency pitch. Production + post take ~44% on purpose: the strategic bet is that one exceptional owned asset out-earns a wall of cold paid content. Media is ~33% because EU B2B reach genuinely costs that much; the rest is PR, fees, explicit measurement, and a disciplined 7% contingency.</div>
+      <div class="logicnote" data-reveal><b>How it's sized (so I can defend every line).</b> €420k reads as a single-market EU pilot for one business line: big enough to be credible for a Big-Four documentary, small enough to be an academically realistic pilot, not an inflated agency pitch. Production + post take ~44% on purpose: the strategic bet is that one exceptional owned asset out-earns a wall of cold paid content. Media is ~33% because EU B2B reach genuinely costs that much; the rest is PR, fees, explicit measurement, and a disciplined 7% contingency.</div>
     </div>
   </div>
 </section>
@@ -804,8 +968,8 @@ section{padding-block:var(--section-y); position:relative}
       </div>
       <div class="prose" data-reveal>
         <p class="lede">Map the field and it converges.</p>
-        <p>McKinsey publishes agentic-AI reports. Deloitte sells process and efficiency through “State of AI”. Accenture has “AI Refinery” and the “digital core”. EY and KPMG run Microsoft-partnership press releases with no faces in them. IBM watsonx's “Let's create” is the most human of the set — and still glossy. Every one of them lives in the cold, capability-first register. The warm, behind-the-scenes territory isn't crowded; it's vacant.</p>
-        <p>And the differentiation ties straight back to PwC's real assets. “The New Equation” and “human-led, tech-powered” already point here; the documentary just delivers on them. The boldness lives in the <strong>story</strong>, never in the brand assets — which stay locked to PwC's restrained grey palette and plain voice. That's how you claim an empty lane without breaking a conservative brand: out-human the category, don't out-shout it.</p>
+        <p>McKinsey publishes agentic-AI reports. Deloitte sells process and efficiency through “State of AI”. Accenture has “AI Refinery” and the “digital core”. EY and KPMG run Microsoft-partnership press releases with no faces in them. IBM watsonx's “Let's create” is the most human of the set, and still glossy. Every one of them lives in the cold, capability-first register. The warm, behind-the-scenes territory isn't crowded; it's vacant.</p>
+        <p>And the differentiation ties straight back to PwC's real assets. “The New Equation” and “human-led, tech-powered” already point here; the documentary just delivers on them. The boldness lives in the <strong>story</strong>, never in the brand assets, which stay locked to PwC's restrained grey palette and plain voice. That's how you claim an empty lane without breaking a conservative brand: out-human the category, don't out-shout it.</p>
       </div>
     </div>
   </div>
@@ -816,9 +980,9 @@ section{padding-block:var(--section-y); position:relative}
   <div class="wrap">
     <div class="section-head" data-reveal>
       <span class="eyebrow"><span class="num">10</span>Projected Results</span>
-      <h2>What it could do — and the one thing it actually did.</h2>
+      <h2>What it could do, and the one thing it actually did.</h2>
     </div>
-    <p class="lede measure" data-reveal>Every number here is a projection, mapped one-to-one to the objectives and benchmarked against published B2B norms — deliberately set conservative. We'd rather under-promise on paper than inflate a student concept.</p>
+    <p class="lede measure" data-reveal>Every number here is a projection, mapped one-to-one to the objectives and benchmarked against published B2B norms, and deliberately set conservative. We'd rather under-promise on paper than inflate a student concept.</p>
 
     <div class="kpigrid" data-reveal data-reveal-group>
       <div class="kpi" style="--d:0">
@@ -826,28 +990,28 @@ section{padding-block:var(--section-y); position:relative}
         <div class="obj">Shift perception toward “human-led, tech-powered”</div>
         <div class="num warm" data-count="13" data-prefix="+" data-suffix="pt">+13pt</div>
         <div class="met">+9 to +13pt brand-lift among exposed decision-makers (target +12pt).</div>
-        <div class="basis">Basis — strong B2B creative typically shifts attributes high-single to low-double digits; conservative for an empty “warm” territory.</div>
+        <div class="basis">Basis: strong B2B creative typically shifts attributes high-single to low-double digits; conservative for an empty “warm” territory.</div>
       </div>
       <div class="kpi" style="--d:90">
         <div class="pillrow"><span class="tagchip proj">Projected</span></div>
         <div class="obj">Generate qualified pipeline interest</div>
         <div class="num" data-count="1300" data-suffix="">1,300</div>
         <div class="met">~1,000–1,300 LinkedIn MQLs from gated responsible-AI assets.</div>
-        <div class="basis">Basis — €40k lead-gen at a realistic €30–40 cost-per-MQL for high-intent EU B2B.</div>
+        <div class="basis">Basis: €40k lead-gen at a realistic €30–40 cost-per-MQL for high-intent EU B2B.</div>
       </div>
       <div class="kpi" style="--d:180">
         <div class="pillrow"><span class="tagchip proj">Projected</span></div>
         <div class="obj">Prove the content actually holds attention</div>
         <div class="num" data-count="35" data-suffix="%">35%</div>
         <div class="met">28–35% completion on long-form; 50–60% on cut-downs.</div>
-        <div class="basis">Basis — B2B video VTR norms ~15–25%; the “imperfect human” hook drives retention above them.</div>
+        <div class="basis">Basis: B2B video VTR norms ~15–25%; the “imperfect human” hook drives retention above them.</div>
       </div>
       <div class="kpi" style="--d:270">
         <div class="pillrow"><span class="tagchip proj">Projected</span></div>
         <div class="obj">Acquire pipeline efficiently</div>
         <div class="num warm" data-count="110" data-prefix="€">€110</div>
         <div class="met">Blended €95–130 cost per qualified lead.</div>
-        <div class="basis">Basis — EU professional-services CPQL commonly €120–250; documentary earned reach lowers the blended cost.</div>
+        <div class="basis">Basis: EU professional-services CPQL commonly €120–250; documentary earned reach lowers the blended cost.</div>
       </div>
     </div>
     <div class="realbanner" data-reveal>
@@ -856,7 +1020,7 @@ section{padding-block:var(--section-y); position:relative}
         <div class="rb-num">Top grade<span class="rb-sub">· and presented directly to PwC's team</span></div>
       </div>
       <div class="rb-right">
-        <p>The one thing that isn't a projection: this concept earned the <strong>top grade</strong> in the UCD MSc programme and was presented to PwC's team. The differentiation argument held up under scrutiny — because it was anchored in PwC's own research and brand strategy, not in our taste.</p>
+        <p>The one thing that isn't a projection: this concept earned the <strong>top grade</strong> in the UCD MSc programme and was presented to PwC's team. The differentiation argument held up under scrutiny because it was anchored in PwC's own research and brand strategy, not in our taste.</p>
       </div>
     </div>
   </div>
@@ -872,12 +1036,13 @@ section{padding-block:var(--section-y); position:relative}
     <div class="cols split">
       <div class="prose" data-reveal>
         <p class="lede">I was team lead and creative originator.</p>
-        <p>I came up with the documentary idea, turned PwC's “human-led, tech-powered” tagline into the creative spine, architected the integrated channel plan, and owned the budget, the KPI framework and the top-down sizing logic. I coordinated a five-person team — media planner, content strategist, competitive analyst, design & production lead — set the work split, and integrated five workstreams into one coherent story I then presented to PwC.</p>
+        <p>I came up with the documentary idea, turned PwC's “human-led, tech-powered” tagline into the creative spine, architected the integrated channel plan, and owned the budget, the KPI framework and the top-down sizing logic. I coordinated a five-person team (media planner, content strategist, competitive analyst, design & production lead), set the work split, and integrated five workstreams into one coherent story I then presented to PwC.</p>
       </div>
-      <div class=”prose” data-reveal>
-        <p>The concept nearly didn't survive its own pressure-test. When we ran it past tutors and a mock client review, the objection was blunt: a Big Four firm sells <em>authority</em>, and putting its experts on camera getting things wrong looks reckless — no risk-averse brand team would sign it off. The idea was one meeting away from being sanded down into a safe, glossy “expert explainer” — which would have quietly killed the only thing that made it work.</p>
-        <p>I treated that objection as the brief, not a roadblock. The fear underneath it wasn't “bad idea” — it was “I can't defend this internally.” So the job was to make saying yes feel safe. I argued it back in PwC's own language, not mine: 56% of CEOs say they get nothing from AI, lack of expertise is the #1 barrier, and EU buyers trust before they deploy — so here, controlled candor <em>is</em> the authority move, and it delivers PwC's own “human-led” promise instead of contradicting it. Then I drew the edges of the risk myself: the candor stays on the <em>process</em>, never on competence, client work or confidential outcomes; the visual system stays locked to PwC's restrained palette so the boldness lives in the story, not the brand; consent and sign-off gates are built in. I folded the doubters' concerns back in as guardrails — so the people who'd pushed hardest ended up co-owning the version we kept.</p>
-        <p><strong>The concept survived intact — not watered down — earned the top grade, and went to PwC.</strong> And it held for the same reason the film would: the honesty disarmed a wary room instead of pitching at it, and a light touch let people look straight at a hard problem instead of flinching — the defence quietly proved its own thesis. What I took from it: a bold idea survives a cautious client when you defend it with the client's own logic instead of your taste, and when you make the “yes” feel safe by drawing the edges of the risk before they have to. Reframing “risky” as “on-strategy, and governed” turned out to be most of the job.</p>
+      <div class="prose" data-reveal>
+        <p>The concept nearly didn't survive its own pressure-test. Run past tutors and a mock client review, the objection was blunt: a Big Four firm sells <em>authority</em>, and putting its experts on camera getting things wrong looks reckless. No risk-averse brand team would sign it off. The idea was one meeting from being sanded into a safe, glossy “expert explainer,” which would have quietly killed the only thing that made it work.</p>
+        <p>I treated that objection as the brief. The fear underneath it wasn't “bad idea,” it was “I can't defend this internally,” so the job was to make saying yes feel safe. I argued it back in PwC's own language: 56% of CEOs say they get nothing from AI, lack of expertise is the #1 barrier, and EU buyers trust before they deploy. Here, controlled candor <em>is</em> the authority move, and it delivers PwC's own “human-led” promise instead of contradicting it.</p>
+        <p>Then I drew the edges of the risk myself. The candor stays on the <em>process</em>, never on competence, client work or confidential outcomes; the visual system stays locked to PwC's restrained palette so the boldness lives in the story, not the brand; consent and sign-off gates are built in. By folding the doubters' concerns back in as guardrails, the people who'd pushed hardest ended up co-owning the version we kept.</p>
+        <p><strong>The concept survived intact, earned the top grade, and went to PwC.</strong> It held for the same reason the film would: honesty disarmed a wary room instead of pitching at it, and the defence quietly proved its own thesis. The lesson: a bold idea survives a cautious client when you defend it with the client's own logic instead of your taste, and make the “yes” feel safe by drawing the edges of the risk before they have to. Reframing “risky” as “on-strategy, and governed” was most of the job.</p>
       </div>
     </div>
     <div class="callouts" data-reveal data-reveal-group>
@@ -891,14 +1056,23 @@ section{padding-block:var(--section-y); position:relative}
 <footer class="foot">
   <div class="wrap">
     <span class="eyebrow" style="color:var(--tangerine)" data-reveal>The takeaway</span>
-    <h2 data-reveal>Hold corporate trust and creative warmth in the same hand.</h2>
-    <p class="measure" data-reveal style="color:#bdbdbd">That's the documentary's pitch — and the point of this page. The look argues the thesis: composed enough to be credibly PwC, warm enough to be credibly human.</p>
+    <h2 data-reveal>Make one strong asset, then atomise it across channels and markets.</h2>
+    <p class="measure" data-reveal style="color:#bdbdbd">That's the bet this concept makes, and it's exactly how a small, video-first agency going overseas works: hold corporate trust and creative warmth in the same hand, build the one thing worth making well, then cut it down for every channel and market. The look argues the thesis: composed enough to be credibly PwC, warm enough to be credibly human.</p>
     <div class="row" data-reveal>
       <div><div class="k">By</div><div class="v">Qiaochu Li</div></div>
       <div><div class="k">This project</div><div class="v">Integrated marketing · EU B2B · 2023–2024</div></div>
-      <div><div class="k">References</div><div class="v">Available on request — incl. a PwC project teammate</div></div>
+      <div><div class="k">References</div><div class="v">Available on request, incl. a PwC project teammate</div></div>
     </div>
-    <p class="fine" data-reveal>Honest note: this is an academic capstone concept created at University College Dublin and presented to PwC's team. It is not a PwC-commissioned campaign and is not affiliated with or endorsed by PwC; the PwC name and brand references are used here to describe the academic brief. Visuals are concept illustrations, not real footage. Every performance figure is a clearly-labelled projection; the only actual outcomes are the top grade and the presentation to PwC.</p>
+
+    <div class="contact" data-reveal>
+      <p class="lead">Want the deck, the five-minute version, or a conversation?</p>
+      <ul>
+        <li><span class="k">Email</span><a href="mailto:qiaochuli123@gmail.com">qiaochuli123@gmail.com</a></li>
+        <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/kaya-qiaochuli/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><span class="k">CV</span>available on request</li>
+      </ul>
+    </div>
+    <p class="fine" data-reveal>Honest note: this is an academic capstone concept created at University College Dublin and presented to PwC's team. It is not a PwC-commissioned campaign and is not affiliated with or endorsed by PwC; the PwC name and brand references are used here to describe the academic brief. The hero image is a representative stock photo of a film shoot (via Pexels), not footage of this concept, which was never produced. Every performance figure is a clearly-labelled projection; the only actual outcomes are the top grade and the presentation to PwC.</p>
   </div>
 </footer>
 
@@ -992,7 +1166,7 @@ section{padding-block:var(--section-y); position:relative}
   var cw=document.getElementById('cwPanel');
   if(cw){
     var warm=cw.querySelector('.warm'), seam=cw.querySelector('.seam'), ic=cw.querySelector('.handle-ic'), input=cw.querySelector('.scrub');
-    function setX(x){ x=Math.min(85,Math.max(15,x)); cw.style.setProperty('--x', x+'%'); if(warm)warm.style.clipPath='inset(0 0 0 '+x+'%)'; if(seam)seam.style.left=x+'%'; if(ic)ic.style.left=x+'%'; }
+    function setX(x){ x=Math.min(85,Math.max(15,x)); cw.style.setProperty('--x', x+'%'); if(warm)warm.style.clipPath='inset(0 0 0 '+x+'%)'; if(seam)seam.style.left=x+'%'; if(ic)ic.style.left=x+'%'; if(input){ input.setAttribute('aria-valuetext', Math.round(x)+'% warm'); } }
     if(input){ input.addEventListener('input',function(){ setX(parseFloat(input.value)); }); }
     setX(50);
     if(!reduce){
