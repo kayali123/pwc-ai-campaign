@@ -468,6 +468,9 @@ section{padding-block:var(--section-y); position:relative}
 .shot-img{margin:var(--s-7) 0 0; border-radius:var(--r-2); overflow:hidden; box-shadow:0 24px 60px -34px var(--shadow-2)}
 .shot-img img{display:block; width:100%; aspect-ratio:2.1/1; object-fit:cover}
 .shot-img.warm img{filter:saturate(1.06) sepia(.1)}
+.shot-img.idea-img{max-width:680px; margin-left:auto; margin-right:auto}
+.shot-img.idea-img img{aspect-ratio:2.3/1}
+.shot-img.idea-img + .frame-cap{max-width:680px; margin-left:auto; margin-right:auto; text-align:center}
 
 /* ---- atomisation diagram (one hero film -> many cut-downs) ---- */
 .atomise{display:flex; flex-wrap:wrap; align-items:center; gap:var(--s-6) var(--s-8); margin-top:var(--s-7); padding:clamp(24px,3.5vw,40px); border:var(--border); border-radius:var(--r-2); background:var(--white)}
@@ -645,8 +648,8 @@ html{scroll-snap-type:y proximity; scroll-padding-top:6px}
       <span class="eyebrow"><span class="num">03</span>The Big Idea</span>
       <h2>A documentary about PwC's AI experts getting it wrong before they get it right.</h2>
     </div>
-    <figure class="shot-img warm" data-reveal>
-      <img src="idea.jpg" alt="A small team, including a senior expert, working through a problem together at a laptop." width="1600" height="900" loading="lazy" decoding="async">
+    <figure class="shot-img warm idea-img" data-reveal>
+      <img src="idea.jpg" alt="Two colleagues working through a live data dashboard on a laptop together." width="1320" height="742" loading="lazy" decoding="async">
     </figure>
     <span class="frame-cap">What the film follows: PwC's people in the ordinary middle of an AI project, the wins and the misfires both. Representative stock image.</span>
     <div class="cols split" style="margin-top:var(--s-7)">
@@ -1069,7 +1072,6 @@ html{scroll-snap-type:y proximity; scroll-padding-top:6px}
       <ul>
         <li><span class="k">Email</span><a href="mailto:qiaochuli123@gmail.com">qiaochuli123@gmail.com</a></li>
         <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/kaya-qiaochuli/" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><span class="k">CV</span>available on request</li>
       </ul>
     </div>
     <p class="fine" data-reveal>Honest note: this is an academic capstone concept created at University College Dublin and presented to PwC's team. It is not a PwC-commissioned campaign and is not affiliated with or endorsed by PwC; the PwC name and brand references are used here to describe the academic brief. The hero image is a representative stock photo of a film shoot (via Pexels), not footage of this concept, which was never produced. Every performance figure is a clearly-labelled projection; the only actual outcomes are the top grade and the presentation to PwC.</p>
