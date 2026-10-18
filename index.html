@@ -1,1186 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>document.documentElement.classList.add('js')</script>
-<title>Human, on Camera · A PwC AI campaign concept · Qiaochu Li</title>
-<meta name="description" content="An EU integrated-campaign concept that turns PwC's 'human-led, tech-powered' slogan into a Clarkson's-Farm-style documentary. UCD MSc capstone, presented to PwC. Case study by Qiaochu Li.">
-<meta name="theme-color" content="#FAFAF8">
-<link rel="canonical" href="https://kayali123.github.io/pwc-ai-campaign/">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://kayali123.github.io/pwc-ai-campaign/">
-<meta property="og:title" content="Human, on Camera · A PwC AI campaign concept">
-<meta property="og:description" content="An EU integrated-campaign concept that turns PwC's 'human-led, tech-powered' slogan into a Clarkson's-Farm-style documentary. UCD MSc capstone, presented to PwC. Case study by Qiaochu Li.">
-<meta property="og:image" content="https://kayali123.github.io/pwc-ai-campaign/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Human, on Camera · A PwC AI campaign concept">
-<meta name="twitter:description" content="Turning PwC's 'human-led, tech-powered' slogan into footage: an EU documentary campaign concept. Case study by Qiaochu Li.">
-<meta name="twitter:image" content="https://kayali123.github.io/pwc-ai-campaign/og.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
-<style>
-/* ============================================================
-   TOKENS
-   ============================================================ */
-:root {
-  /* PwC core greys */
-  --ink:#000000; --ink-2:#2D2D2D; --ink-3:#464646; --grey:#5F5F5F;
-  --line:#DEDEDE; --paper:#FAFAF8; --paper-2:#F2F1ED; --white:#FFFFFF;
-  /* Warm appeal accents, used sparingly */
-  --orange:#D04A02; --tangerine:#EB8C00; --yellow:#FFB600; --rose:#DB536A; --red:#E0301E;
-  --orange-12:rgba(208,74,2,.12); --orange-06:rgba(208,74,2,.06);
-  /* Cold / clinical (contrast panel only) */
-  --cold-1:#0B1020; --cold-2:#1B2550; --cold-3:#3A2E7A; --cold-glow:#5B7CFF; --cold-glow-2:#9B6CFF; --cold-text:#AEB9E8;
-  --shadow:rgba(0,0,0,.08); --shadow-2:rgba(0,0,0,.14);
-
-  /* type scale */
-  --step--1:clamp(1.0rem,.95rem + .25vw,1.125rem);
-  --step-0:clamp(1.16rem,1.06rem + .42vw,1.32rem);
-  --step-1:clamp(1.34rem,1.18rem + .62vw,1.72rem);
-  --step-2:clamp(1.7rem,1.4rem + 1.2vw,2.6rem);
-  --step-3:clamp(2.2rem,1.7rem + 2.3vw,3.9rem);
-  --step-4:clamp(2.70rem,1.90rem + 4.00vw,5.75rem);
-  --step-5:clamp(3.40rem,2.10rem + 6.60vw,8.50rem);
-
-  /* spacing */
-  --s-3:12px; --s-4:16px; --s-5:24px; --s-6:32px; --s-7:48px; --s-8:64px; --s-9:96px;
-  --section-y:clamp(52px,5.5vw,96px);
-  --gutter:clamp(20px,5vw,72px);
-  --measure:66ch; --content:1160px;
-  --r-1:4px; --r-2:8px; --r-pill:999px;
-  --border:1px solid var(--line);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
-body{
-  margin:0; background:var(--paper); color:var(--ink-2);
-  font:400 var(--step-0)/1.62 'Inter',Arimo,Arial,'Helvetica Neue',sans-serif;
-  font-feature-settings:'cv05' 1; -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
-h1,h2,h3{font-family:'Newsreader',Charter,Georgia,'Times New Roman',serif; color:var(--ink); font-weight:500; letter-spacing:-.01em; margin:0}
-h1{font-size:var(--step-4); line-height:1.02}
-h2{font-size:var(--step-3); line-height:1.06}
-h3{font-size:var(--step-2); line-height:1.12}
-p{margin:0 0 1.1em}
-a{color:var(--orange); text-decoration:none}
-a:hover{text-decoration:underline}
-strong{font-weight:600; color:var(--ink)}
-::selection{background:var(--orange-12); color:var(--ink)}
-:focus-visible{outline:2px solid var(--orange); outline-offset:3px; border-radius:2px}
-
-.eyebrow{font:600 var(--step--1)/1 'Inter',sans-serif; text-transform:uppercase; letter-spacing:.14em; color:var(--orange)}
-.eyebrow .num{color:var(--grey); margin-right:.7em}
-.measure{max-width:var(--measure)}
-.lede{font-size:var(--step-1); line-height:1.45; color:var(--ink-2)}
-
-/* ============================================================
-   LAYOUT SHELL
-   ============================================================ */
-.wrap{max-width:var(--content); margin-inline:auto; padding-inline:var(--gutter)}
-.wrap-wide{max-width:1340px; margin-inline:auto; padding-inline:var(--gutter)}
-section{padding-block:var(--section-y); position:relative}
-.section-head{margin-bottom:var(--s-7)}
-.section-head h2{margin-top:.35em; max-width:18ch}
-
-/* top progress hairline */
-.topbar{position:fixed; inset:0 0 auto 0; height:3px; background:transparent; z-index:60}
-.topbar .fill{height:100%; width:100%; background:var(--orange); transform:scaleX(var(--p,0)); transform-origin:left; will-change:transform}
-
-/* sticky act index (desktop) */
-.railnav{position:fixed; left:max(20px,calc((100vw - var(--content))/2 - 150px)); top:50%; transform:translateY(-50%);
-  z-index:55; display:none}
-.railnav ol{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:13px; position:relative}
-.railnav .track{position:absolute; left:3px; top:4px; bottom:4px; width:2px; background:var(--line)}
-.railnav .track i{position:absolute; inset:0; background:var(--orange); transform:scaleY(var(--p,0)); transform-origin:top}
-.railnav li{position:relative; padding-left:20px}
-.railnav a{display:flex; align-items:center; gap:11px; color:var(--grey); font:500 15.5px/1.15 'Newsreader',serif; letter-spacing:.01em; transition:color .25s}
-.railnav .dot{position:absolute; left:-1px; width:9px; height:9px; border-radius:50%; background:var(--paper); border:1.5px solid var(--line); transition:all .25s}
-.railnav li.active a{color:var(--ink)}
-.railnav li.active .dot{background:var(--orange); border-color:var(--orange); box-shadow:0 0 0 4px var(--orange-12)}
-.railnav .rn-label{opacity:0; transform:translateX(-4px); transition:.25s; max-width:0; overflow:hidden; white-space:nowrap}
-.railnav li.active .rn-label{opacity:1; transform:none; max-width:160px}
-@media(min-width:1180px){ .railnav{display:block} }
-
-/* ============================================================
-   HERO
-   ============================================================ */
-.hero{padding-top:clamp(56px,8vh,110px); padding-bottom:var(--section-y)}
-.hero .kicker{display:flex; align-items:center; gap:14px; margin-bottom:var(--s-6); flex-wrap:wrap}
-.hero .kicker .by{font:600 var(--step--1)/1 'Inter'; text-transform:uppercase; letter-spacing:.16em; color:var(--ink-2)}
-.hero .kicker .sep{width:26px; height:1px; background:var(--line)}
-.hero .kicker .tag{font:500 var(--step--1)/1 'Inter'; color:var(--grey)}
-.hero h1{max-width:15ch; margin-bottom:.4em}
-.hero h1 .hl{color:var(--orange); font-style:italic; font-weight:400}
-.hero .sub{font-size:var(--step-1); line-height:1.45; color:var(--ink-3); max-width:54ch; margin-bottom:var(--s-7)}
-
-/* documentary frame device */
-.docframe{position:relative; aspect-ratio:2.3/1; width:100%; border-radius:2px; overflow:hidden;
-  background:linear-gradient(180deg,#1a2030,#0e1320); box-shadow:0 30px 70px -30px var(--shadow-2); isolation:isolate}
-.docframe .scene{position:absolute; inset:0}
-.docframe .sky{position:absolute; inset:0; background:linear-gradient(165deg,#f1e7d5 0%,#ecd2a6 52%,#d6b884 100%)}
-.docframe .scene-art{position:absolute; inset:0; width:100%; height:100%; display:block}
-.docframe .scene-photo{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; z-index:0}
-.docframe .chrome-grad{position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,transparent 15%,transparent 85%,rgba(0,0,0,.55) 100%)}
-.docframe .sun{position:absolute; width:46%; aspect-ratio:1; right:10%; top:6%; border-radius:50%;
-  background:radial-gradient(circle,rgba(255,182,0,.85),rgba(255,182,0,.15) 55%,transparent 70%); filter:blur(2px)}
-.docframe svg.hills{position:absolute; inset:auto 0 0 0; width:100%; height:62%; display:block}
-.docframe .grain{position:absolute; inset:0; opacity:.07; mix-blend-mode:overlay; pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  animation:grain .4s steps(3) infinite}
-@keyframes grain{0%{background-position:0 0}100%{background-position:30px 18px}}
-.docframe .scan{position:absolute; inset:0; pointer-events:none; opacity:.5;
-  background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(0,0,0,.045) 2px 3px)}
-.docframe .bar{position:absolute; left:0; right:0; height:6%; background:#000; z-index:3}
-.docframe .bar.t{top:0} .docframe .bar.b{bottom:0}
-.docframe .hud{position:absolute; z-index:4; font:600 12px/1 'Inter'; letter-spacing:.08em; color:rgba(255,255,255,.95); font-variant-numeric:tabular-nums; text-shadow:0 1px 4px rgba(0,0,0,.7)}
-.docframe .rec{top:11%; left:4%; display:flex; align-items:center; gap:7px}
-.docframe .rec b{width:9px; height:9px; border-radius:50%; background:var(--red); display:inline-block; animation:blink 1.4s steps(1) infinite}
-@keyframes blink{50%{opacity:.25}}
-.docframe .tc{top:11%; right:4%}
-.docframe .br{position:absolute; width:26px; height:26px; border:2px solid rgba(255,255,255,.7); z-index:4}
-.docframe .br.tl{top:13%; left:4%; border-right:0; border-bottom:0; display:none}
-.docframe .br.tr{top:18%; right:4%; border-left:0; border-bottom:0}
-.docframe .br.bl{bottom:18%; left:4%; border-right:0; border-top:0}
-.docframe .br.brr{bottom:18%; right:4%; border-left:0; border-top:0}
-.docframe .figure{position:absolute; bottom:7.5%; left:50%; transform:translateX(-50%); height:48%; z-index:2}
-.frame-cap{font:400 var(--step--1)/1.4 'Newsreader',serif; font-style:italic; color:var(--grey); margin-top:12px; display:block}
-
-/* meta strip + disclaimer */
-.metastrip{margin-top:var(--s-8); border-top:var(--border); border-bottom:var(--border); padding-block:var(--s-5);
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--s-5) var(--s-6)}
-.metastrip .m .k{font:600 12px/1 'Inter'; text-transform:uppercase; letter-spacing:.13em; color:var(--grey); margin-bottom:8px}
-.metastrip .m .v{font:500 var(--step-0)/1.3 'Newsreader',serif; color:var(--ink)}
-.disclaimer{margin-top:var(--s-6); display:flex; gap:14px; align-items:flex-start; max-width:64ch;
-  font-size:var(--step--1); color:var(--ink-3); line-height:1.6}
-.disclaimer .badge{flex:0 0 auto; font:600 10px/1 'Inter'; letter-spacing:.1em; text-transform:uppercase;
-  color:var(--orange); border:1px solid var(--orange); border-radius:var(--r-pill); padding:6px 11px; margin-top:1px}
-
-/* callout chips */
-.callouts{display:flex; flex-wrap:wrap; gap:var(--s-4); margin-top:var(--s-7)}
-.chip{border:var(--border); border-radius:var(--r-2); padding:22px 26px; background:var(--white); min-width:170px; flex:1 1 auto}
-.chip .stat{font-family:'Newsreader',serif; font-weight:600; font-size:clamp(2.05rem,1.55rem + 1.95vw,3.2rem); line-height:1.04; color:var(--ink); display:block; letter-spacing:-.015em}
-.chip .stat.warm{color:var(--orange)}
-.chip .lbl{font-size:var(--step--1); color:var(--ink-3); margin-top:12px; display:block; line-height:1.4}
-
-/* body prose two-col */
-.cols{display:grid; grid-template-columns:1fr; gap:var(--s-7)}
-@media(min-width:880px){ .cols.split{grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:var(--s-9); align-items:start} }
-.prose p{color:var(--ink-2); max-width:var(--measure)}
-
-/* reveal: hidden only when JS runs; no-JS / archived = everything visible */
-.js [data-reveal]{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1)}
-.js [data-reveal].in{opacity:1; transform:none}
-
-/* band */
-.band{background:var(--paper-2)}
-.band-ink{background:var(--ink); color:#cfcfcf}
-.band-ink h2,.band-ink h3{color:#fff}
-.band-ink .eyebrow{color:var(--tangerine)}
-
-/* pull quote */
-.pull{position:relative; padding:var(--s-8) 0}
-.pull .rule{width:48px; height:3px; background:var(--orange); margin-bottom:var(--s-6)}
-.pull blockquote{margin:0; font:400 var(--step-3)/1.18 'Newsreader',serif; color:var(--ink); max-width:20ch; position:relative}
-.pull blockquote .q{position:absolute; left:-.55em; top:-.35em; font-size:1.4em; color:var(--orange); opacity:.85}
-.pull cite{display:block; margin-top:var(--s-6); font:600 var(--step--1)/1 'Inter'; text-transform:uppercase; letter-spacing:.13em; color:var(--grey); font-style:normal}
-
-/* ============================================================
-   SLOGAN -> FOOTAGE diptych
-   ============================================================ */
-.diptych{display:grid; gap:var(--s-6); margin-top:var(--s-7)}
-@media(min-width:760px){ .diptych{grid-template-columns:1fr 1fr} }
-.dip{border:var(--border); border-radius:var(--r-2); padding:var(--s-6); background:var(--white); position:relative; overflow:hidden}
-.dip .word{font:400 var(--step-2)/1 'Newsreader',serif; letter-spacing:-.02em}
-.dip.human .word{color:var(--orange); font-style:italic}
-.dip.tech .word{color:var(--ink)}
-.dip .role{font-size:var(--step--1); color:var(--grey); margin:10px 0 18px}
-.dip .viz{height:120px; border-radius:var(--r-1); position:relative; overflow:hidden}
-.dip.human .viz{background:linear-gradient(135deg,#f7ecd9,var(--orange-12))}
-.dip.human .viz .fg{position:absolute; bottom:0; left:50%; transform:translateX(-50%); height:80%}
-.dip.tech .viz{background:#0e1320}
-.dip .arrow{text-align:center; font-size:var(--step--1); color:var(--grey); letter-spacing:.1em; text-transform:uppercase; margin-top:14px}
-
-/* ============================================================
-   LOGIC pillars (quality -> mechanism -> fit)
-   ============================================================ */
-.pillars{display:grid; gap:2px; margin-top:var(--s-7); background:var(--line); border:var(--border); border-radius:var(--r-2); overflow:hidden}
-@media(min-width:820px){ .pillars{grid-template-columns:repeat(3,1fr)} }
-.pillar{background:var(--paper); padding:var(--s-6); display:flex; flex-direction:column}
-.pillar .pq{font:500 var(--step-1)/1.18 'Newsreader',serif; color:var(--ink); margin-bottom:var(--s-5); display:flex; gap:11px; align-items:baseline; min-height:2.4em}
-.pillar .pq .pn{font:600 12px/1 'Inter'; color:var(--orange); flex:0 0 auto}
-.pillar .step{padding:14px 0; border-top:var(--border)}
-.pillar .step:first-of-type{border-top:0; padding-top:0}
-.pillar .step .lbl{font:600 11px/1 'Inter'; letter-spacing:.13em; text-transform:uppercase; color:var(--grey); margin-bottom:8px; display:flex; align-items:center; gap:7px}
-.pillar .step .lbl::before{content:""; width:5px; height:5px; border-radius:50%; background:var(--line)}
-.pillar .step.fit .lbl{color:var(--orange)}
-.pillar .step.fit .lbl::before{background:var(--orange)}
-.pillar .step p{margin:0; font-size:var(--step--1); color:var(--ink-3); line-height:1.55}
-.pillar .step.fit p{color:var(--ink-2)}
-.grounding{margin-top:var(--s-6); font-size:var(--step--1); color:var(--grey); line-height:1.6; max-width:var(--measure)}
-
-/* ============================================================
-   COLD vs WARM panel
-   ============================================================ */
-.cw{position:relative; min-height:88svh; color:#fff; overflow:hidden; isolation:isolate}
-.cw .layer{position:absolute; inset:0; display:flex; align-items:flex-end; padding:clamp(30px,7vw,90px) var(--gutter)}
-.cw .cold{background:linear-gradient(135deg,var(--cold-1) 0%,var(--cold-2) 55%,var(--cold-3) 100%); justify-content:flex-start; z-index:1}
-.cw .cold svg.grid{position:absolute; inset:0; width:100%; height:100%; opacity:.5; z-index:0}
-.cw .cold .jargon{position:absolute; inset:0; z-index:0}
-.cw .cold .jargon span{position:absolute; font:600 clamp(13px,1.4vw,20px)/1 'Inter'; text-transform:uppercase; letter-spacing:.18em;
-  color:var(--cold-text); mix-blend-mode:screen; white-space:nowrap}
-.cw .warm{background:linear-gradient(135deg,var(--paper) 0%,#F6ECDD 50%,var(--orange-12) 100%);
-  clip-path:inset(0 0 0 var(--x,50%)); color:var(--ink-2); justify-content:flex-end; text-align:right; z-index:2}
-.cw .warm .sun{position:absolute; width:42%; aspect-ratio:1; right:8%; top:8%; border-radius:50%; z-index:0;
-  background:radial-gradient(circle,rgba(255,182,0,.55),transparent 62%)}
-.cw .warm svg.hills{position:absolute; inset:auto 0 0 0; width:100%; height:50%; z-index:0}
-.cw .warm .figure{position:absolute; bottom:0; left:46%; transform:translateX(-50%); height:52%; z-index:0}
-.cw .grainw{position:absolute; inset:0; opacity:.05; mix-blend-mode:multiply; pointer-events:none; z-index:1;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.cw .lab{position:relative; z-index:3; max-width:46%}
-.cw .lab .eyebrow{color:inherit}
-.cw .cold-lab{color:var(--cold-text)}
-.cw .cold-lab h3{color:#fff}
-.cw .warm-lab{color:var(--ink-3)}
-.cw .warm-lab h3{color:var(--ink); font-style:italic}
-.cw .warm-lab .hand{font-family:'Caveat',cursive; font-size:clamp(22px,3vw,34px); color:var(--ink-2); display:inline-block; transform:rotate(-2deg); line-height:1.2}
-.cw .warm-lab .strat{font-size:var(--step--1); color:var(--ink-3); margin-top:10px}
-.cw .seam{position:absolute; top:0; bottom:0; left:var(--x,50%); width:3px; z-index:6;
-  background:linear-gradient(var(--cold-glow),var(--orange)); transform:translateX(-50%)}
-.cw input.scrub{position:absolute; z-index:7; left:0; top:50%; width:100%; height:46px; transform:translateY(-50%);
-  -webkit-appearance:none; appearance:none; background:transparent; margin:0; cursor:ew-resize}
-.cw input.scrub::-webkit-slider-thumb{-webkit-appearance:none; width:46px; height:46px; border-radius:50%;
-  background:var(--white); border:2px solid var(--orange); box-shadow:0 6px 18px rgba(0,0,0,.25); cursor:ew-resize}
-.cw input.scrub::-moz-range-thumb{width:46px; height:46px; border-radius:50%; background:var(--white); border:2px solid var(--orange); cursor:ew-resize}
-.cw .handle-ic{position:absolute; top:50%; left:var(--x,50%); transform:translate(-50%,-50%); z-index:6; pointer-events:none;
-  width:46px; height:46px; border-radius:50%; background:var(--white); border:2px solid var(--orange);
-  display:grid; place-items:center; color:var(--orange); font-size:18px; box-shadow:0 6px 18px rgba(0,0,0,.25)}
-.cw .subcap{position:absolute; bottom:14px; left:0; right:0; text-align:center; z-index:6;
-  font-size:var(--step--1); color:rgba(255,255,255,.6)}
-@media(max-width:680px){
-  .cw{min-height:auto}
-  .cw .layer{position:relative; inset:auto; min-height:58svh; clip-path:none!important; padding:var(--s-7) var(--gutter)}
-  .cw .warm{justify-content:flex-start; text-align:left}
-  .cw .lab{max-width:100%}
-  .cw .seam,.cw input.scrub,.cw .handle-ic{display:none}
-  .cw .subcap{position:static; text-align:left; background:var(--paper-2); color:var(--grey); padding:14px var(--gutter)}
-}
-
-/* ============================================================
-   STORYBOARD strip
-   ============================================================ */
-.reel-wrap{position:relative; margin-top:var(--s-7)}
-.reel{display:flex; gap:var(--s-5); overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:var(--s-5);
-  scrollbar-width:none}
-.reel::-webkit-scrollbar{display:none}
-.shot{flex:0 0 300px; scroll-snap-align:center}
-.shot .cell{position:relative; aspect-ratio:16/9; border-radius:2px; overflow:hidden; background:#0e1320; box-shadow:0 14px 30px -16px var(--shadow-2)}
-.shot .cell .sky{position:absolute; inset:0; background:linear-gradient(180deg,#1a2233,#0e1320)}
-.shot .cell .glow{position:absolute; width:60%; aspect-ratio:1; border-radius:50%; filter:blur(6px)}
-.shot .cell .bar{position:absolute; left:0; right:0; height:9%; background:#000} .shot .cell .bar.t{top:0} .shot .cell .bar.b{bottom:0}
-.shot .cell .num{position:absolute; top:12%; left:6%; z-index:3; font:600 11px/1 'Inter'; letter-spacing:.13em; color:var(--orange)}
-.shot .cell .dur{position:absolute; bottom:12%; right:6%; z-index:3; font:600 11px/1 'Inter'; color:rgba(255,255,255,.85);
-  background:rgba(0,0,0,.4); border-radius:var(--r-pill); padding:4px 9px}
-.shot .cap{font:400 var(--step--1)/1.4 'Newsreader',serif; font-style:italic; color:var(--ink-3); margin-top:12px; padding-right:10px}
-.reel-rail{height:2px; background:var(--line); margin-top:6px; border-radius:2px; overflow:hidden}
-.reel-rail i{display:block; height:100%; background:var(--orange); width:30%; transform-origin:left}
-
-/* ============================================================
-   CHANNEL plan (hero + spokes)
-   ============================================================ */
-.spokes{display:grid; gap:var(--s-5); margin-top:var(--s-7)}
-@media(min-width:760px){ .spokes{grid-template-columns:1.3fr 1fr 1fr 1fr; align-items:stretch} }
-.node{border:var(--border); border-radius:var(--r-2); padding:var(--s-5); background:var(--white)}
-.node.hero{border-color:var(--ink); border-width:1.5px}
-.node .tier{font:600 11px/1 'Inter'; text-transform:uppercase; letter-spacing:.12em; color:var(--orange); margin-bottom:10px}
-.node h3{margin:0 0 8px; font:500 var(--step-1)/1.15 'Newsreader',serif; color:var(--ink)}
-.node p{margin:0; font-size:var(--step--1); color:var(--ink-3); line-height:1.5}
-.flowline{display:flex; align-items:center; gap:10px; color:var(--grey); font:600 var(--step--1)/1 'Inter';
-  text-transform:uppercase; letter-spacing:.1em; margin:var(--s-6) 0 0; flex-wrap:wrap}
-.flowline b{color:var(--ink); font-weight:600}
-.flowline .ar{color:var(--orange)}
-
-/* ============================================================
-   CALENDAR
-   ============================================================ */
-.cal{margin-top:var(--s-7); border-top:var(--border)}
-.phase{display:grid; grid-template-columns:auto 1fr; gap:var(--s-5) var(--s-6); padding:var(--s-6) 0; border-bottom:var(--border); position:relative}
-@media(min-width:760px){ .phase{grid-template-columns:200px 1fr} }
-.phase .when{position:relative}
-.phase .when .pname{font:500 var(--step-1)/1 'Newsreader',serif; color:var(--ink); display:flex; align-items:center; gap:10px}
-.phase .when .pname .pn{width:24px; height:24px; border-radius:50%; background:var(--orange); color:#fff; display:grid; place-items:center; font:600 12px/1 'Inter'}
-.phase .when .wk{font-size:var(--step--1); color:var(--grey); margin-top:8px}
-.phase .when .role{font-size:var(--step--1); color:var(--ink-3); margin-top:10px; font-style:italic; max-width:24ch}
-.phase .detail .ch{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px}
-.phase .detail .ch span{font:500 12px/1 'Inter'; color:var(--ink-3); border:var(--border); border-radius:var(--r-pill); padding:6px 11px; background:var(--white)}
-.phase .detail .ct{font-size:var(--step--1); color:var(--ink-2); line-height:1.55}
-.phase .detail .obj{font-size:var(--step--1); color:var(--grey); margin-top:10px}
-.phase .detail .obj b{color:var(--orange); font-weight:600}
-
-/* ============================================================
-   BUDGET
-   ============================================================ */
-.budget{margin-top:var(--s-7)}
-.budget .total{display:flex; align-items:baseline; gap:14px; margin-bottom:var(--s-5); flex-wrap:wrap}
-.budget .total .big{font:600 var(--step-3)/1 'Newsreader',serif; color:var(--ink); letter-spacing:-.015em}
-.budget .total .cap{font-size:var(--step--1); color:var(--grey)}
-.bar{display:flex; width:100%; height:60px; border-radius:var(--r-2); overflow:hidden; background:var(--paper-2)}
-.bar .seg{height:100%; transform-origin:left; transition:transform .9s cubic-bezier(.2,.7,.2,1); position:relative}
-.js .bar .seg{transform:scaleX(0)}
-.js .bar.in .seg{transform:scaleX(1)}
-.legend{display:grid; grid-template-columns:1fr; gap:2px; margin-top:var(--s-5)}
-@media(min-width:640px){ .legend{grid-template-columns:1fr 1fr; gap:2px var(--s-7)} }
-.legend .row{display:grid; grid-template-columns:14px 1fr auto auto; gap:12px; align-items:baseline; padding:11px 0; border-bottom:var(--border)}
-.legend .sw{width:13px; height:13px; border-radius:3px; align-self:center}
-.legend .nm{font-size:var(--step--1); color:var(--ink-2)}
-.legend .amt{font:600 var(--step--1)/1 'Inter'; color:var(--ink); font-variant-numeric:tabular-nums}
-.legend .pc{font-size:13px; color:var(--grey); font-variant-numeric:tabular-nums; min-width:34px; text-align:right}
-.legend .rat{grid-column:2/-1; font-size:var(--step--1); color:var(--ink-3); line-height:1.5; margin-top:4px}
-.logicnote{margin-top:var(--s-6); padding:var(--s-5) var(--s-6); background:var(--paper-2); border-left:3px solid var(--orange);
-  border-radius:0 var(--r-1) var(--r-1) 0; font-size:var(--step--1); color:var(--ink-3); line-height:1.6}
-.logicnote b{color:var(--ink)}
-
-/* projected/actual chip */
-.tagchip{display:inline-flex; align-items:center; gap:7px; font:600 10px/1 'Inter'; letter-spacing:.1em; text-transform:uppercase;
-  padding:6px 10px; border-radius:var(--r-pill)}
-.tagchip.proj{color:var(--grey); border:1px solid var(--line); background:var(--white)}
-.tagchip.act{color:#fff; background:var(--orange)}
-.tagchip::before{content:""; width:7px; height:7px; border-radius:50%; background:currentColor}
-
-/* ============================================================
-   COMPETITIVE map
-   ============================================================ */
-.posmap{position:relative; width:100%; max-width:560px; aspect-ratio:1; margin-top:var(--s-6); border:var(--border); border-radius:var(--r-2); background:var(--white)}
-.posmap .axis{position:absolute; background:var(--line)}
-.posmap .axis.x{left:8%; right:8%; top:50%; height:1px}
-.posmap .axis.y{top:8%; bottom:8%; left:50%; width:1px}
-.posmap .axlab{position:absolute; font:400 12px/1 'Newsreader',serif; font-style:italic; color:var(--grey)}
-.posmap .axlab.l{left:10px; top:50%; transform:translateY(-50%)}
-.posmap .axlab.r{right:10px; top:50%; transform:translateY(-50%)}
-.posmap .axlab.t{top:10px; left:50%; transform:translateX(-50%)}
-.posmap .axlab.b{bottom:10px; left:50%; transform:translateX(-50%)}
-.posmap .pt{position:absolute; transform:translate(-50%,-50%); display:flex; align-items:center; gap:7px}
-.posmap .pt .o{width:10px; height:10px; border-radius:50%; background:var(--grey); border:1px solid var(--white); box-shadow:0 0 0 1px var(--line)}
-.posmap .pt .t{font:500 12px/1 'Inter'; color:var(--ink-3); white-space:nowrap}
-.posmap .pt.pwc .o{width:20px; height:20px; background:var(--orange); box-shadow:0 0 0 12px var(--orange-12); animation:pulse 2.6s ease-in-out infinite}
-.posmap .pt.pwc .t{color:var(--orange); font-weight:600; font-size:14px}
-@keyframes pulse{50%{box-shadow:0 0 0 18px rgba(208,74,2,.05)}}
-.posmap .lasso{position:absolute; border:1.5px dashed var(--line); border-radius:50%; width:40%; height:40%; left:55%; top:25%}
-.posmap .lassolab{position:absolute; left:60%; top:18%; font:400 13px/1 'Newsreader',serif; font-style:italic; color:var(--grey)}
-
-/* ============================================================
-   KPI / results cards
-   ============================================================ */
-.kpigrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2px; margin-top:var(--s-7);
-  background:var(--line); border:var(--border); border-radius:var(--r-2); overflow:hidden}
-.kpi{background:var(--paper); padding:var(--s-6)}
-.kpi .obj{font-size:var(--step--1); color:var(--grey); min-height:2.6em; line-height:1.4; margin-bottom:14px}
-.kpi .num{font:600 var(--step-3)/1 'Newsreader',serif; color:var(--ink); font-variant-numeric:tabular-nums; letter-spacing:-.015em}
-.kpi .num.warm{color:var(--orange)}
-.kpi .met{font-size:var(--step--1); color:var(--ink-3); margin-top:10px; line-height:1.45}
-.kpi .basis{font-size:var(--step--1); color:var(--ink-3); margin-top:12px; line-height:1.55; border-top:var(--border); padding-top:12px}
-.kpi .pillrow{margin-bottom:14px}
-/* the one real result: full-width banner */
-.realbanner{margin-top:var(--s-5); background:var(--ink); color:#cfcfcf; border-radius:var(--r-2); padding:clamp(28px,4vw,48px); display:grid; gap:var(--s-6); align-items:center}
-@media(min-width:780px){ .realbanner{grid-template-columns:minmax(240px,.85fr) 1.15fr; gap:var(--s-9)} }
-.realbanner .rb-num{font:500 var(--step-3)/1.02 'Newsreader',serif; color:#fff; margin-top:18px}
-.realbanner .rb-num .rb-sub{display:block; font:400 var(--step-0)/1.3 'Newsreader',serif; font-style:italic; color:var(--tangerine); margin-top:10px}
-.realbanner .rb-right p{margin:0; color:#cfcfcf; font-size:var(--step-1); line-height:1.5}
-.realbanner .rb-right strong{color:#fff}
-
-/* ============================================================
-   FOOTER / CTA
-   ============================================================ */
-.foot{background:var(--ink); color:#cfcfcf; padding-block:var(--s-9)}
-.foot h2{color:#fff; max-width:16ch; margin-bottom:var(--s-6)}
-.foot .row{display:flex; gap:var(--s-7) var(--s-9); flex-wrap:wrap; margin-top:var(--s-7); padding-top:var(--s-7); border-top:1px solid #2c2c2c}
-.foot .row .k{font:600 11px/1 'Inter'; text-transform:uppercase; letter-spacing:.13em; color:#8a8a8a; margin-bottom:9px}
-.foot .row .v{font:500 var(--step-0)/1.4 'Newsreader',serif; color:#fff}
-.foot .row a{color:var(--tangerine)}
-.foot .fine{margin-top:var(--s-8); font-size:var(--step--1); color:#7d7d7d; line-height:1.6; max-width:70ch}
-
-/* reduced motion */
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation-duration:.001ms!important; animation-iteration-count:1!important; transition-duration:.001ms!important}
-  [data-reveal]{opacity:1; transform:none}
-  .bar .seg{transform:scaleX(1)}
-  .cw .warm{clip-path:inset(0 0 0 50%)}
-}
-
-/* ============================================================
-   PRINT  → clean PDF deck
-   ============================================================ */
-@media print{
-  @page{size:A4 landscape; margin:14mm}
-  body{background:#fff; font-size:11pt; color:#111}
-  .topbar,.railnav,.cw input.scrub,.cw .handle-ic,.reel-rail{display:none!important}
-  section{padding-block:0; break-inside:avoid; page-break-inside:avoid; margin-bottom:10mm}
-  .hero{padding:0}
-  [data-reveal]{opacity:1!important; transform:none!important}
-  .bar .seg{transform:scaleX(1)!important}
-  .cw{min-height:auto; color:#111} .cw .warm{position:static; clip-path:none}
-  .cw .layer.cold{position:static; min-height:120mm}
-  .cw .content{position:static; min-height:auto; grid-template-columns:1fr 1fr}
-  .docframe{box-shadow:none; border:1px solid #ccc}
-  .reel{flex-wrap:wrap; overflow:visible}
-  .shot{flex:0 0 31%}
-  .foot{background:#fff; color:#333} .foot h2,.foot .row .v{color:#111}
-  a{color:#111; text-decoration:underline}
-  .band-ink{background:#fff; color:#333} .band-ink h2{color:#111}
-}
-
-/* ============================================================
-   APPENDED: a11y utilities + new content blocks
-   ============================================================ */
-/* visually-hidden utility (screen-reader-only) */
-.vh{position:absolute!important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
-  clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap; border:0}
-
-/* skip link: off-screen until focused */
-.skip{position:absolute; left:-9999px; top:0; z-index:100;
-  background:var(--ink); color:#fff; padding:12px 18px; border-radius:0 0 var(--r-2) 0;
-  font:600 var(--step--1)/1 'Inter',sans-serif; text-decoration:none}
-.skip:focus{left:0}
-
-/* at-a-glance strip in the hero */
-.glance{margin-top:var(--s-7); display:grid; gap:var(--s-5) var(--s-6);
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  border-top:var(--border); border-bottom:var(--border); padding-block:var(--s-5)}
-.glance .g .k{font:600 11px/1 'Inter',sans-serif; text-transform:uppercase; letter-spacing:.13em;
-  color:var(--grey); margin-bottom:8px}
-.glance .g .v{font:500 var(--step-0)/1.32 'Newsreader',serif; color:var(--ink)}
-
-/* footer contact block */
-.foot .contact{margin-top:var(--s-7); padding-top:var(--s-7); border-top:1px solid #2c2c2c}
-.foot .contact .lead{color:#bdbdbd; margin-bottom:14px; max-width:46ch}
-.foot .contact ul{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:10px var(--s-7)}
-.foot .contact li{font:500 var(--step-0)/1.4 'Newsreader',serif; color:#fff}
-.foot .contact .k{font:600 11px/1 'Inter',sans-serif; text-transform:uppercase; letter-spacing:.13em;
-  color:#8a8a8a; margin-right:9px}
-.foot .contact a{color:var(--tangerine)}
-
-/* ---- supporting framed photo ---- */
-.shot-img{margin:var(--s-7) 0 0; border-radius:var(--r-2); overflow:hidden; box-shadow:0 24px 60px -34px var(--shadow-2)}
-.shot-img img{display:block; width:100%; aspect-ratio:2.1/1; object-fit:cover}
-.shot-img.warm img{filter:saturate(1.06) sepia(.1)}
-.shot-img.idea-img{max-width:680px; margin-left:auto; margin-right:auto}
-.shot-img.idea-img img{aspect-ratio:2.3/1}
-.shot-img.idea-img + .frame-cap{max-width:680px; margin-left:auto; margin-right:auto; text-align:center}
-
-/* ---- atomisation diagram (one hero film -> many cut-downs) ---- */
-.atomise{display:flex; flex-wrap:wrap; align-items:center; gap:var(--s-6) var(--s-8); margin-top:var(--s-7); padding:clamp(24px,3.5vw,40px); border:var(--border); border-radius:var(--r-2); background:var(--white)}
-.atom-hero{display:flex; flex-direction:column; align-items:center; gap:13px; flex:0 0 auto}
-.atom-film{width:138px; aspect-ratio:16/9; border-radius:5px; background:linear-gradient(135deg,#3a2c20,#0f0c08); display:grid; place-items:center; box-shadow:0 12px 26px -14px var(--shadow-2); position:relative; overflow:hidden}
-.atom-film::before,.atom-film::after{content:""; position:absolute; left:0; right:0; height:13%; background:#000}
-.atom-film::before{top:0} .atom-film::after{bottom:0}
-.atom-film .play{width:0; height:0; border-left:17px solid rgba(255,255,255,.92); border-top:11px solid transparent; border-bottom:11px solid transparent; margin-left:4px}
-.atom-hero .cap{font:600 var(--step--1)/1.25 'Inter',sans-serif; color:var(--ink); text-align:center}
-.atom-hero .cap small{display:block; font-weight:400; color:var(--grey); margin-top:3px}
-.atom-link{display:flex; flex-direction:column; align-items:center; gap:6px; flex:0 0 auto}
-.atom-link .arr{font-size:30px; color:var(--orange); line-height:1}
-.atom-link .t{font:600 11px/1 'Inter',sans-serif; text-transform:uppercase; letter-spacing:.12em; color:var(--grey)}
-.atom-clips{flex:1 1 280px; min-width:240px}
-.atom-clips .ttl{font:600 var(--step--1)/1 'Inter',sans-serif; color:var(--ink); margin-bottom:13px}
-.clip-grid{display:flex; flex-wrap:wrap; gap:6px}
-.clip{width:17px; height:30px; border-radius:3px}
-.atom-legend{display:flex; flex-wrap:wrap; gap:var(--s-5); margin-top:16px}
-.atom-legend span{display:flex; align-items:center; gap:8px; font-size:var(--step--1); color:var(--ink-3)}
-.atom-legend i{width:13px; height:13px; border-radius:3px; display:inline-block; flex:0 0 auto}
-@media(max-width:680px){ .atom-link .arr{transform:rotate(90deg)} }
-
-/* ---- The System engine ---- */
-.engine{display:grid; gap:var(--s-5); margin-top:var(--s-7); align-items:stretch}
-@media(min-width:920px){ .engine{grid-template-columns:1fr auto .82fr auto 1fr} }
-.engine > .ar{align-self:center; color:var(--orange); font-size:30px; text-align:center; line-height:1}
-.stage{border:var(--border); border-radius:var(--r-2); padding:var(--s-5); background:var(--white); display:flex; flex-direction:column}
-.stage-h{display:flex; align-items:center; gap:11px; font:600 var(--step-1)/1 'Newsreader',serif; color:var(--ink); margin-bottom:var(--s-4)}
-.stage-h .sn{width:27px; height:27px; border-radius:50%; background:var(--orange); color:#fff; display:grid; place-items:center; font:600 13px/1 'Inter',sans-serif; flex:0 0 auto}
-.ecard{padding:14px 0; border-top:var(--border)}
-.stage .ecard:first-of-type{border-top:0; padding-top:0}
-.ecard b{display:block; font:600 var(--step-0)/1.25 'Inter',sans-serif; color:var(--ink); margin-bottom:5px}
-.ecard b i{color:var(--orange); font-style:normal; font-size:var(--step--1); font-weight:600}
-.ecard p{margin:0; font-size:var(--step--1); color:var(--ink-3); line-height:1.5}
-.ecard.moat{background:var(--orange-06); border-radius:var(--r-1); padding:13px 14px; margin-top:12px; border-top:0}
-.loopline{margin-top:var(--s-5); font-size:var(--step--1); color:var(--grey); display:flex; gap:11px; align-items:baseline; max-width:var(--measure)}
-.loopline .lar{color:var(--orange); font-size:22px; line-height:1; flex:0 0 auto}
-.subh{margin:var(--s-8) 0 0; font:500 var(--step-2)/1.12 'Newsreader',serif; color:var(--ink)}
-.mechs{display:grid; gap:2px; margin-top:var(--s-5); background:var(--line); border:var(--border); border-radius:var(--r-2); overflow:hidden}
-@media(min-width:760px){ .mechs{grid-template-columns:repeat(4,1fr)} }
-.mech{background:var(--paper); padding:var(--s-5)}
-.mech b{display:block; font:600 var(--step-0)/1.2 'Inter',sans-serif; color:var(--ink); margin-bottom:6px}
-.mech p{margin:0; font-size:var(--step--1); color:var(--ink-3); line-height:1.5}
-@media(max-width:919px){ .engine > .ar{transform:rotate(90deg)} }
-
-/* ---- scroll-snap page-turn ---- */
-html{scroll-snap-type:y proximity; scroll-padding-top:6px}
-.hero, section[id], .foot{scroll-snap-align:start; scroll-snap-stop:normal}
-@media (prefers-reduced-motion:reduce){ html{scroll-snap-type:none} }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf9f6">
+  <title>Human judgment, on camera · PwC AI campaign proposal · Qiaochu Li</title>
+  <meta name="description" content="A 2024 UCD team proposal presented to PwC's EU marketing team. Qiaochu Li led the team and developed a documentary concept that makes human judgment in AI advisory visible.">
+  <link rel="canonical" href="https://www.flowwithkaya.com/pwc-ai-campaign/">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.flowwithkaya.com/pwc-ai-campaign/">
+  <meta property="og:title" content="Human judgment, on camera · PwC AI campaign proposal">
+  <meta property="og:description" content="How a 2024 UCD proposal made PwC's human-led AI promise visible to European business buyers.">
+  <meta name="twitter:card" content="summary">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper:#faf9f6; --white:#fff; --wash:#f1eee9; --line:#d9d4cd;
+      --ink:#1d1e1d; --body:#343839; --muted:#5d6262; --orange:#c74704;
+      --amber:#ef9900; --dark:#202625; --darkline:#54605c;
+      --max:1180px; --reading:690px;
+      --serif:'Newsreader', Charter, Georgia, serif;
+      --sans:'Inter', Arial, sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--body);font:400 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+    a{color:var(--orange);text-decoration-thickness:1px;text-underline-offset:3px}
+    a:hover{color:#8e3100}
+    :focus-visible{outline:3px solid var(--orange);outline-offset:4px}
+    img{max-width:100%;display:block}
+    p{margin:0 0 1.1em}
+    h1,h2,h3,blockquote{font-family:var(--serif);color:var(--ink);font-weight:500}
+    h1,h2,h3{margin:0;letter-spacing:-.025em}
+    h1{font-size:clamp(3.3rem,5.3vw,5.1rem);line-height:1;max-width:14ch}
+    h2{font-size:clamp(2.55rem,4.6vw,4.6rem);line-height:1.04;max-width:15ch}
+    h3{font-size:clamp(1.5rem,2vw,2rem);line-height:1.16}
+    .wrap{width:min(var(--max),calc(100% - 64px));margin-inline:auto}
+    .measure{max-width:var(--reading)}
+    .skip{position:absolute;left:16px;top:-60px;padding:10px 16px;background:var(--ink);color:#fff;z-index:100}
+    .skip:focus{top:12px}
+    .site-header{position:relative;border-bottom:1px solid var(--line);background:rgba(250,249,246,.96)}
+    .header-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-size:12px;letter-spacing:.16em;font-weight:700;color:var(--ink);text-decoration:none;white-space:nowrap}
+    .brand span{color:var(--orange)}
+    .nav{display:flex;align-items:center;gap:clamp(12px,2vw,28px);flex-wrap:wrap}
+    .nav a{font-size:12px;font-weight:600;color:var(--muted);text-decoration:none}
+    .nav a:hover,.nav a:focus-visible{color:var(--orange)}
+    .nav .nav-work{border-left:1px solid var(--line);padding-left:22px;color:var(--ink)}
+    section[id]{scroll-margin-top:24px}
+    .eyebrow{display:flex;align-items:center;gap:12px;font-size:11px;line-height:1.35;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--orange)}
+    .eyebrow::before{content:"";width:25px;height:2px;background:currentColor;flex:none}
+    .hero{padding:clamp(56px,7vw,100px) 0 70px;border-bottom:1px solid var(--line)}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(340px,.92fr);gap:clamp(40px,6vw,96px);align-items:center}
+    .hero h1{margin-top:24px}
+    .hero h1 em{font-weight:400;color:var(--orange)}
+    .hero .intro{font-size:clamp(1.1rem,1.55vw,1.3rem);line-height:1.56;max-width:57ch;margin-top:30px;color:var(--body)}
+    .hero .intro strong{color:var(--ink);font-weight:600}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+    .btn{min-height:46px;display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;font-size:13px;font-weight:700;text-decoration:none;border:1px solid var(--ink);transition:background .2s,color .2s}
+    .btn.primary{background:var(--ink);color:#fff}
+    .btn.primary:hover{background:var(--orange);border-color:var(--orange)}
+    .btn.secondary{color:var(--ink)}
+    .btn.secondary:hover{background:var(--wash)}
+    .hero-frame{background:var(--dark);color:#eef1ee;min-height:445px;position:relative;overflow:hidden;box-shadow:16px 16px 0 #e5ded5}
+    .frame-top{height:54px;padding:0 22px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--darkline);font-size:11px;font-weight:700;letter-spacing:.13em;color:#cbd0cb}
+    .rec{display:inline-flex;align-items:center;gap:8px}
+    .rec::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--orange)}
+    .frame-content{padding:30px clamp(24px,3vw,42px) 34px;position:relative}
+    .frame-content::after{content:"";position:absolute;right:-55px;top:12px;width:220px;height:220px;border:1px solid rgba(255,255,255,.12);border-radius:50%;box-shadow:0 0 0 48px rgba(255,255,255,.03),0 0 0 96px rgba(255,255,255,.025);pointer-events:none}
+    .frame-kicker{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#bdc7bf}
+    .model-box{border:1px solid #626e67;background:#29312e;margin-top:19px;padding:21px 22px 24px;position:relative;z-index:1}
+    .model-box .label{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:#b9c3bc}
+    .model-box .answer{font-family:var(--serif);font-size:clamp(2.1rem,3.2vw,3.45rem);line-height:1.03;color:#fff;margin:15px 0 9px}
+    .model-box .signal{display:flex;align-items:center;gap:9px;font-size:12px;color:#cbd4ce}
+    .model-box .signal::before{content:"";width:9px;height:9px;background:var(--amber);border-radius:50%}
+    .human-note{position:relative;z-index:2;margin:-7px 0 0 40px;padding:20px 23px;background:#fbf8f3;color:var(--ink);border-left:5px solid var(--orange);box-shadow:0 12px 30px rgba(0,0,0,.18)}
+    .human-note span{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--orange);margin-bottom:6px}
+    .human-note strong{font-family:var(--serif);font-size:clamp(1.55rem,2.1vw,2.2rem);line-height:1.08;font-weight:500}
+    .frame-foot{padding:0 clamp(24px,3vw,42px) 28px;font-size:11px;letter-spacing:.08em;color:#b7c2bb}
+    .facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:64px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .fact{padding:18px 26px 18px 0}
+    .fact + .fact{padding-left:26px;border-left:1px solid var(--line)}
+    .fact .key{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:7px}
+    .fact .value{font-family:var(--serif);font-size:1.25rem;line-height:1.2;color:var(--ink)}
+    .section{padding:clamp(70px,8vw,122px) 0;border-bottom:1px solid var(--line)}
+    .section-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,95px);align-items:start;margin-bottom:42px}
+    .section-head h2{margin-top:17px}
+    .section-head .lede{font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.58;padding-top:36px;max-width:52ch}
+    .section-head .lede strong{font-weight:600;color:var(--ink)}
+    .section-head .lede p:last-child{margin-bottom:0}
+    .brief-band{background:var(--wash);padding:26px 30px;border-left:4px solid var(--orange);display:grid;grid-template-columns:170px 1fr;gap:24px;align-items:start}
+    .brief-band b{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+    .brief-band p{font-family:var(--serif);font-size:clamp(1.55rem,2.3vw,2.1rem);line-height:1.2;color:var(--ink);margin:0}
+    .evidence-line{font-size:12px;color:var(--muted);margin:12px 0 0}
+    .buyers{display:grid;grid-template-columns:repeat(3,1fr);margin-top:50px;border-top:1px solid var(--line)}
+    .buyer{padding:26px 28px 0 0}
+    .buyer + .buyer{border-left:1px solid var(--line);padding-left:28px}
+    .buyer .num{font-size:11px;font-weight:700;color:var(--orange);letter-spacing:.15em}
+    .buyer h3{margin:15px 0 12px}
+    .buyer p{font-size:14px;line-height:1.55;max-width:29ch}
+    .pivot{margin-top:42px;display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .pivot .small-title{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--orange);margin-bottom:10px}
+    .pivot p{font-size:14px;line-height:1.58;margin:0}
+    .pivot strong{color:var(--ink)}
+    .concept{background:#f7f4ef}
+    .concept .section-head h2{max-width:13ch}
+    .storyboard{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:46px}
+    .shot{background:var(--white);border:1px solid var(--line);min-width:0}
+    .shot-screen{height:182px;background:#313a37;position:relative;overflow:hidden;padding:16px}
+    .shot-screen::before{content:"";position:absolute;inset:auto -40px -90px auto;width:170px;height:170px;border:1px solid rgba(255,255,255,.16);border-radius:50%;box-shadow:0 0 0 32px rgba(255,255,255,.025)}
+    .shot-time{font-size:10px;font-weight:700;letter-spacing:.12em;color:#d0d7d0}
+    .shot-glyph{position:absolute;left:18px;right:18px;top:61px;color:#fff;font-family:var(--serif);font-size:clamp(1.65rem,2.25vw,2.45rem);line-height:1.03}
+    .shot:nth-child(2) .shot-screen{background:#bd490b}
+    .shot:nth-child(3) .shot-screen{background:#4d5651}
+    .shot:nth-child(4) .shot-screen{background:#242926}
+    .shot:nth-child(2) .shot-glyph{font-style:italic}
+    .shot-detail{padding:18px 18px 22px}
+    .shot-detail .stage{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+    .shot-detail h3{font-size:1.45rem;margin:7px 0 8px}
+    .shot-detail p{font-size:13px;line-height:1.55;margin:0}
+    .caption{font-size:11px;line-height:1.55;color:var(--muted);margin:14px 0 0}
+    .idea-payoff{display:grid;grid-template-columns:1fr 1fr;gap:42px;margin-top:55px}
+    .idea-payoff div{border-top:2px solid var(--orange);padding-top:19px}
+    .idea-payoff h3{font-size:1.6rem;margin-bottom:10px}
+    .idea-payoff p{font-size:14px;line-height:1.6;margin:0}
+    .journey-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
+    .journey-step{padding:26px 24px 28px 0;position:relative}
+    .journey-step + .journey-step{padding-left:24px;border-left:1px solid var(--line)}
+    .journey-step .index{font:700 11px var(--sans);letter-spacing:.15em;color:var(--orange)}
+    .journey-step h3{font-size:1.55rem;margin:11px 0}
+    .journey-step p{font-size:13px;line-height:1.58;margin:0}
+    .journey-step .move{display:inline-block;margin-top:18px;font-size:11px;line-height:1.45;font-weight:700;color:var(--orange)}
+    .timeline{margin-top:55px}
+    .timeline h3{margin-bottom:18px}
+    .timeline-rows{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .phase{padding:18px;background:var(--wash);border-top:3px solid var(--orange)}
+    .phase span{font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:var(--orange)}
+    .phase strong{display:block;color:var(--ink);font-size:14px;margin:10px 0 5px}
+    .phase p{font-size:12px;line-height:1.55;margin:0}
+    .metrics{margin-top:58px}
+    .metrics h3{margin-bottom:8px}
+    .metrics .intro-metric{font-size:14px;color:var(--muted);max-width:67ch}
+    .metric-table{width:100%;border-collapse:collapse;margin-top:20px;font-size:14px}
+    .metric-table th{text-align:left;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:12px 18px 12px 0}
+    .metric-table td{padding:16px 18px 16px 0;vertical-align:top;border-bottom:1px solid var(--line);line-height:1.55}
+    .metric-table td:first-child{font-weight:700;color:var(--ink);width:28%}
+    .metric-table td:nth-child(2){width:38%}
+    .metric-table td:last-child{color:var(--muted)}
+    .budget-section{background:var(--wash)}
+    .budget-top{display:flex;gap:20px;align-items:baseline;flex-wrap:wrap;margin:10px 0 25px}
+    .budget-total{font-family:var(--serif);font-size:clamp(3rem,6vw,5.8rem);line-height:1;color:var(--ink)}
+    .budget-top span:last-child{font-size:13px;color:var(--muted)}
+    .budget-bar{height:24px;display:flex;overflow:hidden;background:var(--line)}
+    .budget-bar i{display:block;height:100%}
+    .budget-bar i:nth-child(1){width:7.142857%;background:#9d3807}
+    .budget-bar i:nth-child(2){width:42.857143%;background:var(--orange)}
+    .budget-bar i:nth-child(3){width:25%;background:var(--amber)}
+    .budget-bar i:nth-child(4){width:8.333333%;background:#df6951}
+    .budget-bar i:nth-child(5){width:5.952381%;background:#9d704e}
+    .budget-bar i:nth-child(6){width:5.952381%;background:#6f746f}
+    .budget-bar i:nth-child(7){width:4.761905%;background:#b5b6ae}
+    .budget-table{width:100%;border-collapse:collapse;margin-top:28px;font-size:14px}
+    .budget-table th{text-align:left;padding:10px 12px 12px 0;border-bottom:1px solid var(--ink);font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted)}
+    .budget-table td{padding:15px 12px 15px 0;border-bottom:1px solid #d0cbc4;vertical-align:top;line-height:1.48}
+    .budget-table td:first-child{font-weight:700;color:var(--ink);width:26%}
+    .budget-table td:nth-child(2){font-weight:700;color:var(--ink);white-space:nowrap;width:9%}
+    .budget-table td:nth-child(3){width:9%;color:var(--muted)}
+    .swatch{display:inline-block;width:9px;height:9px;margin-right:9px;vertical-align:1px;background:var(--sw)}
+    .budget-table tfoot td{border-bottom:0;border-top:2px solid var(--ink);font-weight:700;color:var(--ink)}
+    .gate{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:35px}
+    .gate article{background:var(--white);padding:26px;border:1px solid var(--line)}
+    .gate .gate-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+    .gate h3{margin:11px 0}
+    .gate p{font-size:13px;line-height:1.62;margin:0}
+    .outcome{background:var(--dark);color:#e2e5df;border-bottom:0}
+    .outcome h2,.outcome h3{color:#fff}
+    .outcome .eyebrow{color:#ffa35b}
+    .outcome .section-head .lede{color:#e0e5df}
+    .outcome-main{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+    .outcome-card{border-top:1px solid #7a847c;padding-top:20px}
+    .outcome-card .small-title{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#ffad70;margin-bottom:10px}
+    .outcome-card h3{font-size:2rem;margin-bottom:11px}
+    .outcome-card p{font-size:14px;line-height:1.65;color:#d4dad4}
+    .outcome-card p:last-child{margin-bottom:0}
+    .reflection{margin-top:55px;padding:25px 28px;background:#2c3530;border-left:3px solid #ffa35b}
+    .reflection .small-title{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#ffad70;margin-bottom:9px}
+    .reflection p{font-size:14px;line-height:1.65;color:#e3e8e2;margin:0}
+    .footer{padding:50px 0 56px;background:#171c1a;color:#d1d7d0}
+    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:45px}
+    .footer h2{font-size:2rem;color:#fff;margin-bottom:12px}
+    .footer p{font-size:12px;line-height:1.7;max-width:65ch}
+    .footer a{color:#ffad70}
+    .footer .links{display:flex;flex-wrap:wrap;gap:12px 23px;margin-top:18px}
+    .footer .links a{font-size:12px}
+    .source-list{list-style:none;padding:0;margin:0}
+    .source-list li{margin:0 0 8px;font-size:12px}
+    .source-list a{text-decoration:none}
+    .source-list a:hover{text-decoration:underline}
+    @media(max-width:900px){
+      .header-inner{padding-block:13px;align-items:flex-start}
+      .nav{justify-content:flex-end;gap:8px 16px}
+      .hero-grid,.section-head{grid-template-columns:1fr}
+      .hero h1{max-width:14ch}
+      .hero-frame{max-width:670px}
+      .section-head .lede{padding-top:0}
+      .storyboard{grid-template-columns:repeat(2,1fr)}
+      .journey-grid{grid-template-columns:repeat(2,1fr)}
+      .journey-step:nth-child(3){border-left:0;border-top:1px solid var(--line);padding-left:0}
+      .journey-step:nth-child(4){border-top:1px solid var(--line)}
+      .timeline-rows{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:620px){
+      .wrap{width:min(var(--max),calc(100% - 36px))}
+      body{font-size:15px}
+      .header-inner{display:block}
+      .brand{display:block;margin-bottom:11px}
+      .nav{justify-content:flex-start}
+      .nav a{font-size:11px}
+      .nav .nav-work{padding-left:0;border-left:0}
+      .hero{padding-top:49px}
+      .hero h1{font-size:clamp(3.1rem,13vw,4.4rem)}
+      .hero-frame{min-height:405px;box-shadow:8px 8px 0 #e5ded5}
+      .facts{grid-template-columns:1fr}
+      .fact,.fact+.fact{padding:14px 0;border-left:0}
+      .fact+.fact{border-top:1px solid var(--line)}
+      .section{padding:68px 0}
+      .section-head{gap:20px;margin-bottom:32px}
+      .brief-band{grid-template-columns:1fr;padding:23px}
+      .buyers{grid-template-columns:1fr;margin-top:35px}
+      .buyer,.buyer+.buyer{padding:20px 0;border-left:0}
+      .buyer+.buyer{border-top:1px solid var(--line)}
+      .buyer h3{margin:6px 0}
+      .buyer p{max-width:none}
+      .pivot,.idea-payoff,.gate,.outcome-main,.footer-grid{grid-template-columns:1fr}
+      .pivot{gap:20px}
+      .storyboard{grid-template-columns:1fr 1fr;gap:6px}
+      .shot-screen{height:150px}
+      .shot-glyph{font-size:1.52rem;top:54px}
+      .shot-detail{padding:15px}
+      .shot-detail h3{font-size:1.25rem}
+      .shot-detail p{font-size:12px}
+      .journey-grid{grid-template-columns:1fr}
+      .journey-step,.journey-step+.journey-step,.journey-step:nth-child(3),.journey-step:nth-child(4){padding:20px 0;border-left:0;border-top:1px solid var(--line)}
+      .journey-step:first-child{border-top:0}
+      .timeline-rows{grid-template-columns:1fr 1fr}
+      .table-scroll{overflow-x:auto}
+      .metric-table,.budget-table{min-width:620px}
+      .metric-table th,.metric-table td,.budget-table th,.budget-table td{min-width:95px}
+      .metric-table td:first-child{min-width:145px}
+      .budget-table td:first-child{min-width:170px}
+      .budget-table td:last-child{min-width:240px}
+    }
+    @media(max-width:390px){
+      .storyboard,.timeline-rows{grid-template-columns:1fr}
+      .shot-screen{height:165px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+  </style>
 </head>
 <body>
-<a href="#challenge" class="skip">Skip to content</a>
-
-<div class="topbar" aria-hidden="true"><div class="fill"></div></div>
-
-<nav class="railnav" aria-label="Sections">
-  <ol>
-    <div class="track"><i></i></div>
-    <li data-link="top"><a href="#top"><span class="dot"></span><span class="rn-label">Start</span></a></li>
-    <li data-link="challenge"><a href="#challenge"><span class="dot"></span><span class="rn-label">Challenge</span></a></li>
-    <li data-link="insight"><a href="#insight"><span class="dot"></span><span class="rn-label">Insight</span></a></li>
-    <li data-link="idea"><a href="#idea"><span class="dot"></span><span class="rn-label">The idea</span></a></li>
-    <li data-link="system"><a href="#system"><span class="dot"></span><span class="rn-label">The system</span></a></li>
-    <li data-link="contrast"><a href="#contrast"><span class="dot"></span><span class="rn-label">Cold vs warm</span></a></li>
-    <li data-link="plan"><a href="#plan"><span class="dot"></span><span class="rn-label">The plan</span></a></li>
-    <li data-link="budget"><a href="#budget"><span class="dot"></span><span class="rn-label">Budget</span></a></li>
-    <li data-link="edge"><a href="#edge"><span class="dot"></span><span class="rn-label">The edge</span></a></li>
-    <li data-link="results"><a href="#results"><span class="dot"></span><span class="rn-label">Results</span></a></li>
-    <li data-link="role"><a href="#role"><span class="dot"></span><span class="rn-label">My role</span></a></li>
-  </ol>
-</nav>
-
-<!-- ===================== HERO ===================== -->
-<header class="hero wrap" id="top">
-  <div class="kicker" data-reveal>
-    <span class="by">Qiaochu Li · Case study</span>
-    <span class="sep"></span>
-    <span class="tag">Integrated marketing · EU B2B · 2023–2024</span>
-  </div>
-  <h1 data-reveal>We turned PwC's own slogan into <span class="hl">footage.</span></h1>
-  <p class="sub" data-reveal>An EU campaign concept that makes <strong>“human-led, tech-powered”</strong> something you can watch: a behind-the-scenes documentary of PwC's AI experts getting it wrong before they get it right.</p>
-
-  <div class="glance" data-reveal>
-    <div class="g"><div class="k">Role</div><div class="v">Team lead & creative originator</div></div>
-    <div class="g"><div class="k">Brief</div><div class="v">Make PwC's “human-led, tech-powered” line something you can watch</div></div>
-    <div class="g"><div class="k">Result</div><div class="v">Top grade, and presented to PwC's team</div></div>
-    <div class="g"><div class="k">Scope</div><div class="v">A €420k integrated EU pilot</div></div>
-    <div class="g"><div class="k">Why it travels</div><div class="v">Make one strong asset, then atomise it across channels and markets</div></div>
-  </div>
-
-  <div class="docframe" data-reveal role="img" aria-label="A photograph of a documentary film shoot: a crew filming a seated subject under studio lights, with a clapperboard and a director's chair. Representative stock image, not footage of the concept.">
-    <img class="scene-photo" src="hero.jpg" alt="" width="1600" height="900" loading="eager" decoding="async">
-    <div class="chrome-grad"></div>
-    <div class="bar t"></div><div class="bar b"></div>
-    <div class="hud rec"><b></b> REC</div>
-    <div class="hud tc">00:14:32:09</div>
-    <span class="br tr"></span><span class="br bl"></span><span class="br brr"></span>
-  </div>
-  <span class="frame-cap">A documentary film shoot. Representative stock image, not footage of the concept, which was presented to PwC rather than produced.</span>
-
-  <div class="metastrip" data-reveal>
-    <div class="m"><div class="k">Subject</div><div class="v">PwC AI advisory</div></div>
-    <div class="m"><div class="k">Category</div><div class="v">Integrated B2B concept</div></div>
-    <div class="m"><div class="k">Audience</div><div class="v">EU decision-makers</div></div>
-    <div class="m"><div class="k">My role</div><div class="v">Team lead & originator</div></div>
-    <div class="m"><div class="k">Context</div><div class="v">UCD MSc capstone</div></div>
-  </div>
-
-  <div class="disclaimer" data-reveal>
-    <span class="badge">Honest note</span>
-    <span>A UCD MSc capstone concept presented to PwC, <strong>not a campaign PwC ran</strong>. Every figure here is a labelled projection; the real wins are the top grade and the presentation.</span>
-  </div>
-
-  <div class="callouts" data-reveal data-reveal-group>
-    <div class="chip" style="--d:0"><span class="stat">Top grade</span><span class="lbl">UCD MSc Digital Marketing</span></div>
-    <div class="chip" style="--d:90"><span class="stat">Presented to PwC</span><span class="lbl">Concept pitched to the client's team</span></div>
-    <div class="chip" style="--d:180"><span class="stat warm">€420k</span><span class="lbl">Proposed single-market EU pilot</span></div>
-  </div>
-</header>
-
-<!-- ===================== 01 CONTEXT ===================== -->
-<section id="challenge">
-  <div class="wrap">
-    <div class="section-head" data-reveal>
-      <span class="eyebrow"><span class="num">01</span>Context & Challenge</span>
-      <h2>In Europe, you don't win AI on performance. You win it on trust.</h2>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="https://www.flowwithkaya.com/work/">QIAOCHU LI <span>·</span> CASE STUDY</a>
+      <nav class="nav" aria-label="Case study sections">
+        <a href="#brief">Brief</a><a href="#idea">Idea</a><a href="#journey">Journey</a><a href="#budget">Budget</a><a href="#outcome">Outcome</a>
+        <a class="nav-work" href="https://www.flowwithkaya.com/work/">All work ↗</a>
+      </nav>
     </div>
-    <div class="cols split">
-      <div class="prose" data-reveal>
-        <p class="lede">The EU AI market is trust-gated, not performance-gated. American buyers tend to use first and trust later; European buyers do the reverse, trusting before they deploy.</p>
-        <p>With the EU AI Act carrying fines up to €35M or 7% of global turnover, and high-risk obligations enforceable from 2 August 2026, the question in the room isn't “is it powerful?” It's <strong>“will this get me personally blamed?”</strong></p>
-      </div>
-      <div class="prose" data-reveal>
-        <p>The market is also early and anxious. Only around 20% of EU enterprises used AI in 2025, and the number-one barrier to adoption is lack of expertise. Even among firms claiming AI is “scaled”, only a third have proper responsible-AI protocols.</p>
-        <p>PwC has the answer to all of this: IDC MarketScape Leader for European AI Services, ~500 active AI clients, responsible-AI assurance aligned to the Act. The challenge was never the substance. It was that PwC's marketing, like everyone's, spoke the cold language of capability to an audience governed by fear.</p>
-      </div>
-    </div>
-    <div class="callouts" data-reveal data-reveal-group>
-      <div class="chip" style="--d:0"><span class="stat warm">€35M / 7%</span><span class="lbl">Max EU AI Act fine (of global turnover)</span></div>
-      <div class="chip" style="--d:80"><span class="stat">~20%</span><span class="lbl">EU enterprises using AI (2025)</span></div>
-      <div class="chip" style="--d:160"><span class="stat">33%</span><span class="lbl">C-suite with real responsible-AI protocols</span></div>
-    </div>
-  </div>
-</section>
+  </header>
 
-<!-- ===================== 03 INSIGHT (pull quote) ===================== -->
-<section id="insight" class="band">
-  <div class="wrap">
-    <span class="eyebrow" data-reveal><span class="num">02</span>Audience Insight</span>
-    <div class="pull">
-      <div class="rule" data-reveal></div>
-      <blockquote data-reveal><span class="q" aria-hidden="true">“</span>Behind every cautious AI decision is a person afraid of being personally accountable for a black box.</blockquote>
-      <cite data-reveal>The one truth the whole campaign hangs on</cite>
-    </div>
-    <div class="cols split">
-      <div class="prose" data-reveal>
-        <p>The sharpest thing we found wasn't a statistic. It was the human truth underneath the statistics. The EU decision-maker evaluating an AI partner isn't really worried about model accuracy. They're worried about standing in front of a board, or a regulator, and being personally accountable for a system they can't fully explain.</p>
-      </div>
-      <div class="prose" data-reveal>
-        <p>Cold competence doesn't soothe that fear; it amplifies it. A firm that only ever shows polished authority implies that any mistake is yours alone. But a firm that shows its own experts wrestling honestly with hard problems says something different: <strong>you won't be alone in the room.</strong> The way to sell trust to a frightened buyer is to be the one brand willing to be human about how hard this is.</p>
-      </div>
-    </div>
-    <div class="callouts" data-reveal data-reveal-group>
-      <div class="chip" style="--d:0"><span class="stat warm">~71%</span><span class="lbl">Of non-adopters cite lack of expertise</span></div>
-      <div class="chip" style="--d:90"><span class="stat">56%</span><span class="lbl">Of CEOs say AI gives them “nothing” <span style="opacity:.7">· PwC CEO Survey</span></span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 04 THE IDEA ===================== -->
-<section id="idea">
-  <div class="wrap">
-    <div class="section-head" data-reveal>
-      <span class="eyebrow"><span class="num">03</span>The Big Idea</span>
-      <h2>A documentary about PwC's AI experts getting it wrong before they get it right.</h2>
-    </div>
-    <figure class="shot-img warm idea-img" data-reveal>
-      <img src="idea.jpg" alt="Two colleagues working through a live data dashboard on a laptop together." width="1320" height="742" loading="lazy" decoding="async">
-    </figure>
-    <span class="frame-cap">What the film follows: PwC's people in the ordinary middle of an AI project, the wins and the misfires both. Representative stock image.</span>
-    <div class="cols split" style="margin-top:var(--s-7)">
-      <div class="prose" data-reveal>
-        <p class="lede">One sentence, and the logic is fully traceable.</p>
-        <p><strong>Insight.</strong> EU buyers fear being personally accountable for a black box, so they trust before they deploy. <strong>Idea.</strong> A behind-the-scenes documentary, in the candid, affectionate style of Clarkson's Farm, that follows PwC's people as they actually use AI on real client work. Not a highlight reel. The ordinary days: the tool that nails one task and fumbles the next, the model that gets it confidently wrong, the human who catches it, the slow climb from a half-working prototype to something a client can rely on. <strong>Objective.</strong> Move perception from cold to human, because showing the hard parts honestly is what earns trust in a market that trusts before it buys.</p>
-      </div>
-      <div class="prose" data-reveal>
-        <p>The move is counter-intuitive on purpose. Every competitor sells AI as a clean, finished superpower. This does the opposite. It puts AI on camera as the double-edged tool it really is, the wins and the misfires both, and lets the audience watch PwC's people handle that edge with judgment.</p>
-        <p>Nobody pretends the tech is flawless, and that is the whole point. You do not win a cautious buyer by insisting your service is great. You win them by being open about the hard parts and letting them decide for themselves. Trust given heart to heart, not bought with a louder claim. It also makes PwC's own line, “human-led, tech-powered”, literal: not a claim about humans, but footage of them.</p>
-      </div>
-    </div>
-
-    <!-- slogan -> footage diptych -->
-    <div class="diptych" data-reveal data-reveal-group>
-      <div class="dip human" style="--d:0">
-        <div class="word">Human-led</div>
-        <div class="role">What every competitor claims, nobody shows.</div>
-        <div class="viz">
-          <svg class="fg" viewBox="0 0 100 120" aria-hidden="true">
-            <ellipse cx="50" cy="26" rx="15" ry="16" fill="#8a5a32"/>
-            <path d="M34,58 C34,46 66,46 66,58 L70,120 L30,120 Z" fill="#a8682f"/>
-          </svg>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">UCD summer project · Presented to PwC's EU marketing team · Jul–Aug 2024</div>
+            <h1 id="hero-title">When AI says scale, <em>who says wait?</em></h1>
+            <p class="intro">I led a five-person UCD team to propose a B2B campaign for PwC's AI advisory business. Our idea: <strong>show the human judgment behind an AI decision</strong>, then connect that proof to a qualified conversation with a prospective client.</p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#idea">See the creative idea ↓</a>
+              <a class="btn secondary" href="#outcome">My role and actual outcome</a>
+            </div>
+          </div>
+          <div class="hero-frame" role="img" aria-label="Illustrative concept frame. An AI system recommends scaling a pilot, while a human reviewer asks which cases were excluded.">
+            <div class="frame-top"><span class="rec">CONCEPT FRAME</span><span>00:47 / HUMAN CHECK</span></div>
+            <div class="frame-content">
+              <div class="frame-kicker">An AI advisory decision</div>
+              <div class="model-box">
+                <div class="label">Model recommendation</div>
+                <div class="answer">Ready to scale.</div>
+                <div class="signal">Based on the average result</div>
+              </div>
+              <div class="human-note">
+                <span>Consultant's question</span>
+                <strong>Which cases did we leave out?</strong>
+              </div>
+            </div>
+            <div class="frame-foot">THE MOMENT A SLOGAN BECOMES A DECISION</div>
+          </div>
         </div>
-        <div class="arrow">Shown as → real faces</div>
-      </div>
-      <div class="dip tech" style="--d:120">
-        <div class="word">Tech-powered</div>
-        <div class="role">The agents, the platform, the governance mesh.</div>
-        <div class="viz">
-          <svg viewBox="0 0 200 120" width="100%" height="100%" aria-hidden="true">
-            <g stroke="#3a4a8a" stroke-width="1" fill="none" opacity=".9">
-              <path d="M40,60 L90,30 M40,60 L90,90 M90,30 L150,45 M90,90 L150,75 M150,45 L150,75"/>
-            </g>
-            <g fill="#5B7CFF">
-              <circle cx="40" cy="60" r="4"/><circle cx="90" cy="30" r="4"/><circle cx="90" cy="90" r="4"/>
-              <circle cx="150" cy="45" r="4"/><circle cx="150" cy="75" r="4"/>
-            </g>
-          </svg>
-        </div>
-        <div class="arrow">Shown as → systems</div>
-      </div>
-    </div>
-    <div class="callouts" data-reveal data-reveal-group>
-      <div class="chip" style="--d:0"><span class="stat warm">Slogan → footage</span><span class="lbl">“Human-led, tech-powered” made literal</span></div>
-      <div class="chip" style="--d:90"><span class="stat">1 hero asset</span><span class="lbl">Four 8–12 min episodes</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 04 THE SYSTEM ===================== -->
-<section id="system">
-  <div class="wrap">
-    <div class="section-head" data-reveal>
-      <span class="eyebrow"><span class="num">04</span>The Strategy</span>
-      <h2>The film is the trailer. The trust engine is the product.</h2>
-    </div>
-    <p class="lede measure" data-reveal>Most teams would stop at the documentary. The bigger idea is to turn that honesty into a system PwC can own, one named platform where the film is only the most visible part. Call it <strong>The Open Standard</strong>: show the seams, so a personally liable board can sign its name.</p>
-
-    <div class="engine" data-reveal>
-      <div class="stage">
-        <div class="stage-h"><span class="sn">1</span>Show</div>
-        <div class="ecard"><b>The Messy Middle</b><p>The documentary. Real consultants, real misfires, the human who catches them before they ship. The Pratfall engine, and the source of dozens of social cut-downs.</p></div>
-        <div class="ecard moat"><b>The Open Post-Mortem Register <i>· the moat</i></b><p>An always-on, published log of real AI failures and fixes, in the governance format a risk committee already trusts. Cheap to keep, and impossible for a perfection-marketer to copy without indicting their own past claims.</p></div>
-      </div>
-      <div class="ar">→</div>
-      <div class="stage">
-        <div class="stage-h"><span class="sn">2</span>Standardise</div>
-        <div class="ecard"><b>The Open Standard</b><p>A named, public PwC standard for AI transparency, mapped to the EU AI Act. It discloses model failure, human oversight, and recovery. Once buyers ask "is it to the Open Standard?", PwC owns the vocabulary, the way SOC 2 and ISO became un-ignorable.</p></div>
-      </div>
-      <div class="ar">→</div>
-      <div class="stage">
-        <div class="stage-h"><span class="sn">3</span>Convert</div>
-        <div class="ecard"><b>Client-as-Witness</b><p>Named clients on record: not "PwC was flawless," but "PwC was honest, and the governed process is what let us defend it to our own board."</p></div>
-        <div class="ecard"><b>Witness Pilots</b><p>A first engagement with part of the fee at risk, where the buyer sits inside the process and sees the failures surfaced live.</p></div>
-        <div class="ecard"><b>The Board-Defensible Pack</b><p>The audit trail mapped to AI Act obligations. It reframes the buy from "best capability" to "most defensible judgment," and turns brand trust into signed revenue.</p></div>
-      </div>
-    </div>
-    <p class="loopline" data-reveal><span class="lar">↩</span> Every signed deal feeds new consented post-mortems back into the Register, so the engine fuels itself instead of ending like a campaign.</p>
-
-    <h3 class="subh" data-reveal>Why a skeptical C-suite buys it</h3>
-    <div class="mechs" data-reveal data-reveal-group>
-      <div class="mech"><b>Pratfall Effect</b><p>A visible flaw raises trust, but only for an expert already assumed competent. PwC can borrow it; a weaker rival who confesses just looks unsafe.</p></div>
-      <div class="mech"><b>Reactance</b><p>Hype hardens a skeptic. Candour removes the claim they were braced to argue against, so there is nothing to push back on.</p></div>
-      <div class="mech"><b>Transparency to trust</b><p>Comfort with business AI is about 44% and falling. Showing the work supplies the one signal the category is starving for.</p></div>
-      <div class="mech"><b>Costly signal</b><p>Only a firm genuinely good at the recovery can afford to broadcast the failure. That is proof a brochure cannot fake.</p></div>
-    </div>
-
-    <div class="callouts" data-reveal data-reveal-group>
-      <div class="chip"><span class="stat warm">2 Aug 2026</span><span class="lbl">EU AI Act high-risk obligations enforceable. Liability turns personal and board-level, so a defensible record sells harder than capability.</span></div>
-      <div class="chip"><span class="stat">Empty lane</span><span class="lbl">Six Big-Four and tech rivals all chose perfection messaging. The honest ground is structurally empty, and the first mover owns it.</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 05 COLD vs WARM ===================== -->
-<section id="contrast" style="padding:0">
-  <h2 class="vh">Why Clarkson's Farm</h2>
-  <div class="cw" id="cwPanel" role="group" aria-label="Comparison: conventional cold AI marketing versus the warm documentary concept">
-    <div class="layer cold">
-      <svg class="grid" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs><filter id="gl"><feGaussianBlur stdDeviation="2.2"/></filter></defs>
-        <g stroke="#5B7CFF" stroke-width="1" opacity=".55" filter="url(#gl)">
-          <line x1="500" y1="0" x2="120" y2="600"/><line x1="500" y1="0" x2="300" y2="600"/>
-          <line x1="500" y1="0" x2="500" y2="600"/><line x1="500" y1="0" x2="700" y2="600"/>
-          <line x1="500" y1="0" x2="880" y2="600"/>
-          <line x1="0" y1="240" x2="1000" y2="240"/><line x1="0" y1="320" x2="1000" y2="320"/>
-          <line x1="0" y1="420" x2="1000" y2="420"/><line x1="0" y1="540" x2="1000" y2="540"/>
-        </g>
-        <g fill="#9B6CFF"><circle cx="300" cy="420" r="3"/><circle cx="700" cy="420" r="3"/><circle cx="500" cy="320" r="3"/><circle cx="180" cy="540" r="3"/><circle cx="820" cy="540" r="3"/></g>
-      </svg>
-      <div class="jargon" aria-hidden="true">
-        <span style="top:18%; left:8%; transform:rotate(-4deg)">End-to-end agentic orchestration</span>
-        <span style="top:34%; left:14%; opacity:.4">Hyperscale digital core</span>
-        <span style="top:52%; left:6%; transform:rotate(3deg); opacity:.3">Synergistic AI-native paradigm</span>
-        <span style="top:68%; left:12%; opacity:.45">Leveraging generative frameworks</span>
-      </div>
-      <div class="lab cold-lab" data-reveal>
-        <span class="eyebrow" style="color:var(--cold-text)"><span class="num" style="color:#6b78b8">05</span>Why Clarkson's Farm</span>
-        <h3>How everyone else sells AI.</h3>
-      </div>
-    </div>
-    <div class="layer warm">
-      <div class="sun" aria-hidden="true"></div>
-      <svg class="hills" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,170 C260,110 520,150 780,130 C980,115 1100,160 1200,140 L1200,300 L0,300 Z" fill="#d8b878" opacity=".6"/>
-        <path d="M0,230 C300,190 560,225 820,210 C1010,200 1110,235 1200,222 L1200,300 L0,300 Z" fill="#a9893f"/>
-      </svg>
-      <svg class="figure" viewBox="0 0 100 220" aria-hidden="true">
-        <ellipse cx="50" cy="36" rx="16" ry="18" fill="#5a4a30"/>
-        <path d="M34,70 C34,58 66,58 66,70 L70,160 C70,172 58,178 50,178 C42,178 30,172 30,160 Z" fill="#7a5a32"/>
-      </svg>
-      <div class="grainw" aria-hidden="true"></div>
-      <div class="lab warm-lab" data-reveal>
-        <span class="hand">…experts who get it wrong before they get it right.</span>
-        <h3>How we'd sell it instead.</h3>
-        <div class="strat">Turning “human-led, tech-powered” into footage.</div>
-      </div>
-    </div>
-
-    <input class="scrub" type="range" min="15" max="85" value="50" aria-label="Drag to compare cold versus warm" />
-    <div class="seam"></div>
-    <div class="handle-ic" aria-hidden="true">↔</div>
-    <div class="subcap">Illustrative. Competitive territory built from public AI marketing; frames are concept visualizations.</div>
-  </div>
-
-  <div class="wrap" style="padding-top:var(--section-y)">
-    <p class="lede measure" data-reveal>Clarkson's Farm isn't a tone we borrowed. Its three defining qualities <em>are</em> the strategy. The show is unscripted, funny, and unafraid to show its star failing; each one is a precise answer to a specific reason the EU buyer keeps their wallet shut. We're not dressing up a sales asset; we're removing the reasons to resist it.</p>
-
-    <div class="pillars" data-reveal data-reveal-group>
-      <div class="pillar" style="--d:0">
-        <div class="pq"><span class="pn">01</span>Authentic, not advertised</div>
-        <div class="step"><div class="lbl">The show</div><p>Real working farmers, filmed mid-job. Clarkson's own words: "It isn't created or written or planned. The cameras just film us doing stuff."</p></div>
-        <div class="step"><div class="lbl">The effect</div><p>Perceived realness reads as the <em>absence</em> of a sales motive: the audience's persuasion-detector never fires, so the trust gate opens (brand authenticity → trust).</p></div>
-        <div class="step fit"><div class="lbl">Why it fits PwC</div><p>Comfort with AI in marketing now sits around 44%, and polished AI-speak reads as a red flag. Observed realness is the one credibility a rival can't fake with another whitepaper.</p></div>
-      </div>
-      <div class="pillar" style="--d:90">
-        <div class="pq"><span class="pn">02</span>Funny, so the hard parts feel safe to look at</div>
-        <div class="step"><div class="lbl">The show</div><p>Clarkson plays the buffoon who gets it wrong while the real experts are right, so viewers happily sit with hard, high-stakes problems because it's entertaining, not preachy.</p></div>
-        <div class="step"><div class="lbl">The effect</div><p>Humour lowers defences: it occupies the energy that would otherwise build counter-arguments, and positive mood shifts people into open, receptive processing (mood-as-information).</p></div>
-        <div class="step fit"><div class="lbl">Why it fits PwC</div><p>A buyer facing €35M fines and personal board-level accountability is threat-primed and flinches from jargon-heavy "risk &amp; governance" pitches. Humour relaxes them enough to stay in the room.</p></div>
-      </div>
-      <div class="pillar" style="--d:180">
-        <div class="pq"><span class="pn">03</span>Shows the struggle, not just the win</div>
-        <div class="step"><div class="lbl">The show</div><p>Year one cleared £144 profit after a ~£90,000 hole, and Clarkson filmed his disasters on purpose. The engine is a capable person visibly humbled, working through it.</p></div>
-        <div class="step"><div class="lbl">The effect</div><p>The pratfall effect (Aronson, 1966): a visible stumble makes an already-competent expert <em>more</em> likeable and human, and showing the process reads as documentary truth, not a sales claim.</p></div>
-        <div class="step fit"><div class="lbl">Why it fits PwC</div><p>Lack of expertise is the #1 EU adoption barrier, and ~76% of executives can't explain their AI's outputs (Accenture). An expert who wrestles honestly on camera says: "you won't be alone when you own this."</p></div>
-      </div>
-    </div>
-
-    <p class="prose measure" data-reveal style="margin-top:var(--s-8)">Rivals can copy the documentary format; they can't copy realness, because their own glossy AI marketing is built to suppress it. That leaves the warm, human, fallible lane completely empty, exactly as public comfort with AI in marketing is falling. <strong>The differentiation is structural, not decorative.</strong></p>
-    <p class="grounding" data-reveal>Grounded in the pratfall effect (Aronson, Willerman &amp; Floyd, 1966), reduced counter-arguing (Lyttle, 2001), mood-as-information (Schwarz &amp; Clore), and brand-authenticity → trust research (Edelman). Full sources in the project notes.</p>
-  </div>
-</section>
-
-<!-- ===================== 06/07 THE PLAN ===================== -->
-<section id="plan">
-  <div class="wrap">
-    <div class="section-head" data-reveal>
-      <span class="eyebrow"><span class="num">06</span>Integrated Channel Plan</span>
-      <h2>One exceptional owned asset, sequenced to earn its own reach.</h2>
-    </div>
-    <p class="lede measure" data-reveal>The architecture is hero-and-spokes. The documentary is the hero, the thing worth making well. From it we cut roughly twenty social pieces, each engineered for a channel and a moment in the funnel.</p>
-
-    <div class="atomise" data-reveal role="img" aria-label="One hero documentary is cut into about twenty channel-native clips, split across LinkedIn, YouTube Shorts and Meta.">
-      <div class="atom-hero">
-        <div class="atom-film" aria-hidden="true"><span class="play"></span></div>
-        <div class="cap">1 hero documentary<small>4 × 8–12 min</small></div>
-      </div>
-      <div class="atom-link" aria-hidden="true"><span class="arr">→</span><span class="t">atomised into</span></div>
-      <div class="atom-clips">
-        <div class="ttl">~20 channel-native cut-downs</div>
-        <div class="clip-grid" aria-hidden="true">
-          <span class="clip" style="background:var(--orange)"></span><span class="clip" style="background:var(--orange)"></span><span class="clip" style="background:var(--orange)"></span><span class="clip" style="background:var(--orange)"></span><span class="clip" style="background:var(--orange)"></span><span class="clip" style="background:var(--orange)"></span><span class="clip" style="background:var(--orange)"></span><span class="clip" style="background:var(--orange)"></span><span class="clip" style="background:var(--tangerine)"></span><span class="clip" style="background:var(--tangerine)"></span><span class="clip" style="background:var(--tangerine)"></span><span class="clip" style="background:var(--tangerine)"></span><span class="clip" style="background:var(--tangerine)"></span><span class="clip" style="background:var(--tangerine)"></span><span class="clip" style="background:var(--tangerine)"></span><span class="clip" style="background:var(--rose)"></span><span class="clip" style="background:var(--rose)"></span><span class="clip" style="background:var(--rose)"></span><span class="clip" style="background:var(--rose)"></span><span class="clip" style="background:var(--rose)"></span>
-        </div>
-        <div class="atom-legend">
-          <span><i style="background:var(--orange)"></i>LinkedIn · 8</span>
-          <span><i style="background:var(--tangerine)"></i>YouTube Shorts · 7</span>
-          <span><i style="background:var(--rose)"></i>Meta · 5</span>
+        <div class="facts" aria-label="Project facts">
+          <div class="fact"><span class="key">My role</span><span class="value">Team lead and creative originator</span></div>
+          <div class="fact"><span class="key">Portfolio plan</span><span class="value">EU B2B AI advisory · €420k pilot scenario</span></div>
+          <div class="fact"><span class="key">Actual outcome</span><span class="value">Highest programme mark; presented to PwC</span></div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="spokes" data-reveal data-reveal-group>
-      <div class="node hero" style="--d:0"><div class="tier">Hero</div><h3>The documentary</h3><p>4 × 8–12 min episodes. Hosted on YouTube + gated. The asset everything else is cut from.</p></div>
-      <div class="node" style="--d:90"><div class="tier">Convert engine</div><h3>LinkedIn-led</h3><p>Primary EU B2B channel: thought-leadership, paid, and lead-gen where the decision-makers are.</p></div>
-      <div class="node" style="--d:180"><div class="tier">Reach</div><h3>Social cut-downs</h3><p>~20 vertical clips (one expert, one mistake, one fix), plus Meta retargeting.</p></div>
-      <div class="node" style="--d:270"><div class="tier">Earned</div><h3>PR & premiere</h3><p>An invite-only screening turns the film into trade-press coverage and share of voice.</p></div>
-    </div>
-
-    <div class="flowline" data-reveal>
-      <b>Tease</b><span class="ar">→</span><b>Launch</b><span class="ar">→</span><b>Sustain</b><span class="ar">→</span><b>Convert</b>
-      <span style="color:var(--grey); text-transform:none; letter-spacing:0; font-weight:400">Trust is built first; the ask comes only once it's real.</span>
-    </div>
-
-    <p class="prose measure" data-reveal style="margin-top:var(--s-7)">The bet is deliberate: we weighted spend toward production rather than media because one genuinely good owned asset earns organic reach in a category where every rival runs cold paid content. And it's worth naming the relevance. <strong>This video-first, hero-then-cut-downs logic is exactly how a small, aesthetics-driven China-to-overseas agency wins</strong>: make one beautiful thing, then atomise it across channels and markets.</p>
-
-    <!-- calendar -->
-    <div class="section-head" data-reveal style="margin-top:var(--s-9)">
-      <span class="eyebrow"><span class="num">07</span>Phased Content Calendar</span>
-      <h2>Sixteen weeks, four phases.</h2>
-    </div>
-    <div class="cal" data-reveal>
-      <div class="phase">
-        <div class="when"><div class="pname"><span class="pn">1</span>Tease</div><div class="wk">Weeks 1–3</div><div class="role">Pattern-interrupt: signal a documentary, not an ad.</div></div>
-        <div class="detail">
-          <div class="ch"><span>LinkedIn (organic + exec)</span><span>Consultant profiles</span><span>YouTube trailer</span></div>
-          <div class="ct">30–60s teaser cut, “confessions” stills of experts admitting AI is hard, the 56%-of-CEOs hook card, premiere save-the-dates. 2–3 organic posts/week, employee advocacy seeded.</div>
-          <div class="obj"><b>Objective.</b> Awareness + intrigue; establish the human, candid tone before any sell.</div>
+    <section class="section" id="brief" aria-labelledby="brief-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">01 · The brief</div><h2 id="brief-title">A credible promise needed a buying reason.</h2></div>
+          <div class="lede"><p>PwC already described its approach as <strong>“human-led, tech-powered.”</strong> For a company weighing an AI advisory partner, the missing piece was a concrete view of what the people would do when the technology gave an incomplete answer.</p><p>Our proposal used a documentary format to make that judgment visible. The business objective was to help relevant enterprise buyers take a next step with PwC, not simply to earn views.</p></div>
+        </div>
+        <div class="brief-band"><b>The question we answered</b><p>How can a global brand line become evidence that an enterprise buyer can discuss with colleagues and take into a first advisory meeting?</p></div>
+        <p class="evidence-line">PwC used the “human-led, tech-powered” line in <a href="https://www.pwc.com/gx/en/services/alliances/microsoft/partner-year-announcement/2024.html" target="_blank" rel="noopener noreferrer">its 2024 AI communications</a>.</p>
+        <p class="evidence-line">For a live pilot, these buying-group questions would be tested with the selected market and service line.</p>
+        <div class="buyers" aria-label="Questions across a buying group">
+          <article class="buyer"><span class="num">01 / BUSINESS SPONSOR</span><h3>Will this create value?</h3><p>Needs a clear use case, a credible path from pilot to work, and a partner who can make a decision.</p></article>
+          <article class="buyer"><span class="num">02 / TECHNOLOGY LEAD</span><h3>Where might it fail?</h3><p>Needs to see testing, exceptions, human review and the limits of the system.</p></article>
+          <article class="buyer"><span class="num">03 / RISK &amp; PROCUREMENT</span><h3>Can we explain the choice?</h3><p>Needs a documented process and confidence in the people responsible for it.</p></article>
+        </div>
+        <div class="pivot">
+          <div><div class="small-title">A sharper competitive claim</div><p><strong>Putting people in an AI campaign was already familiar.</strong> EY's 2023 “Face of the Future” campaign featured more than 200 employees. Our proposed difference was to show what experts <em>decide</em> when an AI answer needs checking. <a href="https://www.ey.com/en_nz/newsroom/2023/10/ey-launches-the-face-of-the-future-a-creative-marketing-campaign-that-puts-people-at-the-center-of-ai-to-boost-confidence" target="_blank" rel="noopener noreferrer">See EY's announcement ↗</a></p></div>
+          <div><div class="small-title">Cross-cultural translation</div><p><strong>Keep the global promise; choose local proof.</strong> A live pilot would select one EU market, one service line and target accounts with PwC's sales team, then adapt language, industry examples and the buying group. “Europe” is a context for the proposal, not one uniform buyer.</p></div>
         </div>
       </div>
-      <div class="phase">
-        <div class="when"><div class="pname"><span class="pn">2</span>Launch</div><div class="wk">Weeks 4–6</div><div class="role">The hero moment: maximum reach and earned media.</div></div>
-        <div class="detail">
-          <div class="ch"><span>YouTube (hero film)</span><span>LinkedIn (paid + organic)</span><span>PR / trade press</span><span>Premiere event</span></div>
-          <div class="ct">Hero film drops week 4; invite-only premiere generates earned press; a partner explains on the record why PwC chose to film its own mistakes. Then 3–4 posts/week sustaining the spike.</div>
-          <div class="obj"><b>Objective.</b> Reach + perception shift; land “human-led, tech-powered” as lived footage.</div>
+    </section>
+
+    <section class="section concept" id="idea" aria-labelledby="idea-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">02 · The creative idea</div><h2 id="idea-title">Film the moment an expert says “wait.”</h2></div>
+          <div class="lede"><p>The 2024 proposal was a documentary-led campaign. Instead of a polished claim about responsible AI, viewers would watch consultants question an answer, test its limits and explain the decision that follows.</p><p>The story gains tension from an apparently good recommendation that turns out to need a closer look. <strong>Expert judgment is the plot.</strong></p></div>
+        </div>
+        <div class="storyboard" aria-label="Illustrative four-scene storyboard">
+          <article class="shot"><div class="shot-screen"><span class="shot-time">00:12 · MODEL</span><div class="shot-glyph">“Ready to scale.”</div></div><div class="shot-detail"><span class="stage">1 · The answer</span><h3>It looks convincing.</h3><p>AI recommends rolling out a pilot based on a strong average result.</p></div></article>
+          <article class="shot"><div class="shot-screen"><span class="shot-time">00:47 · HUMAN</span><div class="shot-glyph">“What did we miss?”</div></div><div class="shot-detail"><span class="stage">2 · The pause</span><h3>Someone challenges it.</h3><p>A consultant asks which cases were excluded from the result.</p></div></article>
+          <article class="shot"><div class="shot-screen"><span class="shot-time">01:31 · TEST</span><div class="shot-glyph">Check the edge cases.</div></div><div class="shot-detail"><span class="stage">3 · The work</span><h3>The team checks.</h3><p>They test exceptions, record a limitation and bring in the right reviewer.</p></div></article>
+          <article class="shot"><div class="shot-screen"><span class="shot-time">02:06 · DECISION</span><div class="shot-glyph">Pilot, with oversight.</div></div><div class="shot-detail"><span class="stage">4 · The decision</span><h3>The plan changes.</h3><p>They recommend a narrower rollout, human review and a clear escalation point.</p></div></article>
+        </div>
+        <p class="caption">Illustrative storyboard created for this portfolio page.</p>
+        <div class="idea-payoff">
+          <div><h3>“Human-led” becomes an action.</h3><p>The expert questions the model, checks the edge cases and owns the recommendation. That is more useful to a buyer than another portrait of a confident consultant.</p></div>
+          <div><h3>“Tech-powered” still matters.</h3><p>The AI result starts the story. Showing where it helps and where human review changes the decision makes the proposition more credible.</p></div>
         </div>
       </div>
-      <div class="phase">
-        <div class="when"><div class="pname"><span class="pn">3</span>Sustain</div><div class="wk">Weeks 7–12</div><div class="role">Drip the narrative; keep completion high.</div></div>
-        <div class="detail">
-          <div class="ch"><span>LinkedIn cut-downs</span><span>YouTube Shorts</span><span>Meta retargeting</span><span>Newsletter</span></div>
-          <div class="ct">~20 episodic cut-downs and verticals, behind-the-scenes, an EU AI Act explainer tied to the characters, proof-point carousels (IDC Leader, 500 clients). 3–4 cut-downs/week.</div>
-          <div class="obj"><b>Objective.</b> Sustained engagement + mid-funnel nurture; move warmed viewers toward consideration.</div>
+    </section>
+
+    <section class="section" id="journey" aria-labelledby="journey-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">03 · Business path</div><h2 id="journey-title">From a scene worth watching to a reason to meet.</h2></div>
+          <div class="lede"><p>The film does one job: make PwC's method legible. This portfolio plan develops the idea into four proposed episodes and about twenty channel cuts over 16 weeks. A live pilot would release them in stages, with the series open to view.</p><p>Each channel then moves a relevant buyer toward a practical conversation. PR supports credibility; sales qualifies whether the attention has become a real AI advisory discussion.</p></div>
+        </div>
+        <div class="journey-grid" aria-label="Proposed buyer journey">
+          <article class="journey-step"><span class="index">01 / NOTICE</span><h3>Short scene</h3><p>A 15–30 second LinkedIn cut shows the precise moment the consultant questions the model. Target named accounts and relevant roles.</p><span class="move">Next → Watch the decision</span></article>
+          <article class="journey-step"><span class="index">02 / UNDERSTAND</span><h3>Open episode</h3><p>A public episode follows the full problem, check and decision. Industry PR and a small screening add third-party attention.</p><span class="move">Next → Apply the question</span></article>
+          <article class="journey-step"><span class="index">03 / EVALUATE</span><h3>Discussion guide</h3><p>A proposed one-page guide helps a buying group ask how an AI pilot will be tested, reviewed and escalated.</p><span class="move">Next → Speak to an adviser</span></article>
+          <article class="journey-step"><span class="index">04 / CONVERSE</span><h3>Qualified meeting</h3><p>Sales follows up when a relevant account has a defined AI workstream and a reason to discuss PwC's approach.</p><span class="move">Next → Scope an opportunity</span></article>
+        </div>
+        <div class="timeline">
+          <h3>16 weeks, with distinct jobs</h3>
+          <div class="timeline-rows">
+            <div class="phase"><span>Weeks 1–3</span><strong>Validate &amp; tease</strong><p>Test whether buyers understand the scene; clear people, material and claims before release.</p></div>
+            <div class="phase"><span>Weeks 4–6</span><strong>Launch</strong><p>Publish the first episode, seed a trade story and concentrate account-targeted distribution.</p></div>
+            <div class="phase"><span>Weeks 7–12</span><strong>Deepen</strong><p>Release approved follow-ups and channel-native cuts. Learn which roles engage and what they ask.</p></div>
+            <div class="phase"><span>Weeks 13–16</span><strong>Convert &amp; review</strong><p>Offer the discussion guide, hand relevant interest to sales and review account-level signals.</p></div>
+          </div>
+        </div>
+        <div class="metrics">
+          <h3>Measure progress through the buying journey</h3>
+          <p class="intro-metric">These are proposed definitions for a live pilot, rather than results claimed for the 2024 academic project.</p>
+          <div class="table-scroll" role="region" aria-label="Proposed measurement framework" tabindex="0">
+          <table class="metric-table">
+            <thead><tr><th scope="col">Question</th><th scope="col">Primary signal</th><th scope="col">What to guard against</th></tr></thead>
+            <tbody>
+              <tr><td>Did the right people see it?</td><td>Reach and completion within named target accounts and relevant roles.</td><td>Celebrating broad views outside the buying group.</td></tr>
+              <tr><td>Did it explain PwC's value?</td><td>Can exposed buyers describe the human check and why it changed the decision?</td><td>Warmth that makes consultants seem less capable.</td></tr>
+              <tr><td>Did interest become action?</td><td>Sales-accepted meetings with a defined AI workstream and next step.</td><td>Counting every download as a qualified opportunity.</td></tr>
+              <tr><td>Did it help the pipeline?</td><td>Follow-on opportunities reviewed with sales after the 16-week campaign.</td><td>Claiming that the film alone created signed revenue.</td></tr>
+            </tbody>
+          </table>
+          </div>
         </div>
       </div>
-      <div class="phase">
-        <div class="when"><div class="pname"><span class="pn">4</span>Convert</div><div class="wk">Weeks 13–16</div><div class="role">Turn earned attention into pipeline.</div></div>
-        <div class="detail">
-          <div class="ch"><span>LinkedIn Lead Gen</span><span>Document Ads</span><span>Retargeting</span><span>Email nurture</span></div>
-          <div class="ct">Gated assets (Responsible-AI guide, “pilots-to-production” playbook, agent OS 30-day explainer) served to people who watched to the end. Retargeting prioritised by video-completion audiences.</div>
-          <div class="obj"><b>Objective.</b> Lead generation; turn trust earned by the film into qualified conversations.</div>
+    </section>
+
+    <section class="section budget-section" id="budget" aria-labelledby="budget-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">04 · Budget logic</div><h2 id="budget-title">Spend to make the proof. Release the rest when it works.</h2></div>
+          <div class="lede"><p>For this portfolio exercise, I use a <strong>€420k single-market pilot scenario</strong>. The allocation below revises my earlier planning assumptions for a possible live test. The largest line pays for the evidence on screen; distribution then brings it to the right accounts.</p><p>The key refinement is a release rule: validate buyer response and brand safety before committing to the full series.</p></div>
+        </div>
+        <div class="budget-top"><span class="budget-total">€420,000</span><span>planning scenario · one market · one AI advisory service line</span></div>
+        <div class="budget-bar" role="img" aria-label="Budget shares: research and pretest 7%, production and edit 43%, targeted media 25%, sales content and nurture 8%, PR 6%, measurement 6%, contingency 5%."><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="table-scroll" role="region" aria-label="Proposed budget allocation" tabindex="0">
+        <table class="budget-table">
+          <thead><tr><th scope="col">Investment</th><th scope="col">Amount</th><th scope="col">Share</th><th scope="col">Why it earns its place</th></tr></thead>
+          <tbody>
+            <tr><td><span class="swatch" style="--sw:#9d3807"></span>Buyer research &amp; pretest</td><td>€30k</td><td>7%</td><td>Check the film's clarity and credibility with target roles before a full production commitment.</td></tr>
+            <tr><td><span class="swatch" style="--sw:#c74704"></span>Production &amp; edit</td><td>€180k</td><td>43%</td><td>Make one first cut, then complete the proposed series and social edits if the story and permissions hold.</td></tr>
+            <tr><td><span class="swatch" style="--sw:#ef9900"></span>LinkedIn account reach</td><td>€105k</td><td>25%</td><td>Put the right scenes in front of selected accounts and decision roles, then learn which messages earn attention.</td></tr>
+            <tr><td><span class="swatch" style="--sw:#df6951"></span>Sales content &amp; nurture</td><td>€35k</td><td>8%</td><td>Build the discussion guide, landing experience and follow-up route that turn interest into a useful meeting.</td></tr>
+            <tr><td><span class="swatch" style="--sw:#9d704e"></span>Trade PR &amp; screening</td><td>€25k</td><td>6%</td><td>Give the film a credible launch moment; assess it on quality of coverage, not direct lead volume.</td></tr>
+            <tr><td><span class="swatch" style="--sw:#6f746f"></span>Measurement</td><td>€25k</td><td>6%</td><td>Fund buyer comprehension research, account engagement and sales feedback.</td></tr>
+            <tr><td><span class="swatch" style="--sw:#b5b6ae"></span>Contingency</td><td>€20k</td><td>5%</td><td>Protect the plan against shoot changes, extra clearance and review cycles.</td></tr>
+          </tbody>
+          <tfoot><tr><td>Total</td><td>€420k</td><td>100%</td><td>Amounts are planning allocations, not actual PwC spend.</td></tr></tfoot>
+        </table>
+        </div>
+        <div class="gate">
+          <article><div class="gate-label">Gate 1 · Before the full series</div><h3>Can the audience explain the value?</h3><p>Use the €30k research line and a €55k first cut within production. Proceed only if target buyers understand the human check, perceived expertise holds, and PwC can clear the story and materials.</p></article>
+          <article><div class="gate-label">Gate 2 · Before heavier media</div><h3>Does it create useful demand?</h3><p>Release the remaining production and distribution in stages. Review target-account engagement and the questions sales hears; change the cut or stop scaling if attention does not turn into credible conversations.</p></article>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ===================== 08 BUDGET ===================== -->
-<section id="budget" class="band">
-  <div class="wrap">
-    <div class="section-head" data-reveal>
-      <span class="eyebrow"><span class="num">08</span>Budget</span>
-      <h2>€420k, weighted toward the asset, not the ad spend.</h2>
-    </div>
-    <div class="budget">
-      <div class="total" data-reveal>
-        <span class="big">€420,000</span>
-        <span class="cap">proposed total · single-market EU pilot ·</span>
-        <span class="tagchip proj">Projected</span>
-      </div>
-      <div class="bar" id="budgetBar" data-reveal aria-hidden="true">
-        <div class="seg" style="flex:130; background:var(--orange);   --d:0"></div>
-        <div class="seg" style="flex:55;  background:var(--tangerine);--d:120"></div>
-        <div class="seg" style="flex:95;  background:var(--yellow);   --d:240"></div>
-        <div class="seg" style="flex:40;  background:var(--rose);     --d:360"></div>
-        <div class="seg" style="flex:30;  background:#b06a3a;         --d:480"></div>
-        <div class="seg" style="flex:25;  background:var(--grey);     --d:600"></div>
-        <div class="seg" style="flex:15;  background:#9a9a9a;         --d:720"></div>
-        <div class="seg" style="flex:30;  background:var(--line);     --d:840"></div>
-      </div>
-      <div class="legend" data-reveal>
-        <div class="row"><span class="sw" style="background:var(--orange)"></span><span class="nm">Documentary production <span style="color:var(--grey)">(hero film)</span></span><span class="amt">€130k</span><span class="pc">31%</span><span class="rat">Crew, 6–8 shoot days, real-consultant releases. You can't fake Clarkson's-Farm authenticity with stock B-roll.</span></div>
-        <div class="row"><span class="sw" style="background:var(--tangerine)"></span><span class="nm">Post & edit <span style="color:var(--grey)">(+ cut-downs)</span></span><span class="amt">€55k</span><span class="pc">13%</span><span class="rat">One hero edit + ~20 cut-downs. The “human, imperfect” narrative is actually built in the edit.</span></div>
-        <div class="row"><span class="sw" style="background:var(--yellow)"></span><span class="nm">Paid social amplification</span><span class="amt">€95k</span><span class="pc">23%</span><span class="rat">Largest media line. EU B2B LinkedIn CPMs of €25–40 make decision-maker reach genuinely expensive.</span></div>
-        <div class="row"><span class="sw" style="background:var(--rose)"></span><span class="nm">LinkedIn lead-gen</span><span class="amt">€40k</span><span class="pc">10%</span><span class="rat">The conversion layer: gated responsible-AI assets for the ~71% citing “lack of expertise.”</span></div>
-        <div class="row"><span class="sw" style="background:#b06a3a"></span><span class="nm">PR & earned media</span><span class="amt">€30k</span><span class="pc">7%</span><span class="rat">An invite premiere + embargoed trade coverage buys share of voice cheaply vs paid.</span></div>
-        <div class="row"><span class="sw" style="background:var(--grey)"></span><span class="nm">Creative, strategy & PM</span><span class="amt">€25k</span><span class="pc">6%</span><span class="rat">Concepting, channel architecture, calendar, governance with a risk-averse brand team.</span></div>
-        <div class="row"><span class="sw" style="background:#9a9a9a"></span><span class="nm">Analytics & brand-lift study</span><span class="amt">€15k</span><span class="pc">4%</span><span class="rat">Perception shift is the #1 goal, so a pre/post survey is funded explicitly, not assumed.</span></div>
-        <div class="row"><span class="sw" style="background:var(--line)"></span><span class="nm">Contingency</span><span class="amt">€30k</span><span class="pc">7%</span><span class="rat">Standard reserve for production-heavy work: shoot overruns and Big-Four compliance review.</span></div>
-      </div>
-      <div class="logicnote" data-reveal><b>How it's sized (so I can defend every line).</b> €420k reads as a single-market EU pilot for one business line: big enough to be credible for a Big-Four documentary, small enough to be an academically realistic pilot, not an inflated agency pitch. Production + post take ~44% on purpose: the strategic bet is that one exceptional owned asset out-earns a wall of cold paid content. Media is ~33% because EU B2B reach genuinely costs that much; the rest is PR, fees, explicit measurement, and a disciplined 7% contingency.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 09 EDGE ===================== -->
-<section id="edge">
-  <div class="wrap">
-    <div class="section-head" data-reveal>
-      <span class="eyebrow"><span class="num">09</span>Competitive Differentiation</span>
-      <h2>Everyone else is selling machines. Nobody is showing the people.</h2>
-    </div>
-    <div class="cols split">
-      <div data-reveal>
-        <div class="posmap" role="img" aria-label="Positioning map: McKinsey, Deloitte, Accenture, EY, KPMG and IBM cluster in the cold-corporate quadrant; PwC sits alone in the open warm-human quadrant.">
-          <div class="axis x"></div><div class="axis y"></div>
-          <span class="axlab l">Cold</span><span class="axlab r">Warm</span><span class="axlab t">Corporate</span><span class="axlab b">Human</span>
-          <div class="pt" style="left:24%; top:22%"><span class="o"></span><span class="t">McKinsey</span></div>
-          <div class="pt" style="left:33%; top:33%"><span class="o"></span><span class="t">Deloitte</span></div>
-          <div class="pt" style="left:21%; top:40%"><span class="o"></span><span class="t">Accenture</span></div>
-          <div class="pt" style="left:34%; top:18%"><span class="o"></span><span class="t">EY</span></div>
-          <div class="pt" style="left:28%; top:30%"><span class="o"></span><span class="t">KPMG</span></div>
-          <div class="pt" style="left:40%; top:46%"><span class="o"></span><span class="t">IBM watsonx</span></div>
-          <div class="lasso"></div><span class="lassolab">unclaimed</span>
-          <div class="pt pwc" style="left:74%; top:74%"><span class="o"></span><span class="t">PwC</span></div>
+    <section class="section outcome" id="outcome" aria-labelledby="outcome-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">05 · My role &amp; outcome</div><h2 id="outcome-title">The concept had to work in a cautious room.</h2></div>
+          <div class="lede"><p>I originated the documentary idea and led a five-person team. I brought the creative, channel plan, budget and measurement into one English-language proposal for PwC's EU marketing team.</p><p>The creative boundary matters: show the <strong>check and decision</strong>, use cleared material, and put consent and review into production. That preserves the tension without treating client confidentiality as an afterthought.</p></div>
         </div>
+        <div class="outcome-main">
+          <article class="outcome-card"><div class="small-title">What actually happened in 2024</div><h3>Presented to PwC. Highest mark.</h3><p>The team completed the academic proposal, presented it to PwC's EU marketing team and received the highest mark in the UCD programme. The campaign itself was not commissioned or launched, so this case does not claim commercial performance.</p></article>
+          <article class="outcome-card"><div class="small-title">What this case shows</div><h3>Translation across contexts.</h3><p>I took a global English-language brand promise and asked what evidence a European enterprise buying group would need to discuss it seriously. I also had to make the creative case in an English client presentation while balancing brand, risk and commercial goals.</p></article>
+        </div>
+        <div class="reflection"><div class="small-title">2026 portfolio reflection · separate from the original pitch</div><p>Before a live launch, I would select one EU market with PwC's commercial team, test the first episode before producing the full series, and agree on sales-accepted meeting criteria. Market adoption differs substantially across EU countries, and AI rules have changed since 2024. Those checks would precede any new claim or local rollout. <a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20251211-2?etrans=it" target="_blank" rel="noopener noreferrer">Eurostat, 2025 ↗</a> · <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">European Commission AI Act timeline ↗</a></p></div>
       </div>
-      <div class="prose" data-reveal>
-        <p class="lede">Map the field and it converges.</p>
-        <p>McKinsey publishes agentic-AI reports. Deloitte sells process and efficiency through “State of AI”. Accenture has “AI Refinery” and the “digital core”. EY and KPMG run Microsoft-partnership press releases with no faces in them. IBM watsonx's “Let's create” is the most human of the set, and still glossy. Every one of them lives in the cold, capability-first register. The warm, behind-the-scenes territory isn't crowded; it's vacant.</p>
-        <p>And the differentiation ties straight back to PwC's real assets. “The New Equation” and “human-led, tech-powered” already point here; the documentary just delivers on them. The boldness lives in the <strong>story</strong>, never in the brand assets, which stay locked to PwC's restrained grey palette and plain voice. That's how you claim an empty lane without breaking a conservative brand: out-human the category, don't out-shout it.</p>
-      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div><h2>Human judgment, on camera.</h2><p>A 2024 UCD team proposal presented to PwC's EU marketing team, developed here into an illustrative single-market pilot plan.</p><div class="links"><a href="https://www.flowwithkaya.com/work/">More work ↗</a><a href="mailto:qiaochuli123@gmail.com">Email Qiaochu ↗</a><a href="https://www.linkedin.com/in/kaya-qiaochuli/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div>
+      <div><div class="eyebrow">Sources &amp; context</div><ul class="source-list"><li><a href="https://www.pwc.com/gx/en/services/alliances/microsoft/partner-year-announcement/2024.html" target="_blank" rel="noopener noreferrer">PwC's 2024 human-led AI positioning ↗</a></li><li><a href="https://www.ey.com/en_nz/newsroom/2023/10/ey-launches-the-face-of-the-future-a-creative-marketing-campaign-that-puts-people-at-the-center-of-ai-to-boost-confidence" target="_blank" rel="noopener noreferrer">EY's 2023 AI campaign ↗</a></li><li><a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20251211-2?etrans=it" target="_blank" rel="noopener noreferrer">Eurostat AI adoption, 2025 ↗</a></li><li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">European Commission AI Act timeline ↗</a></li></ul></div>
     </div>
-  </div>
-</section>
-
-<!-- ===================== 10 RESULTS ===================== -->
-<section id="results" class="band">
-  <div class="wrap">
-    <div class="section-head" data-reveal>
-      <span class="eyebrow"><span class="num">10</span>Projected Results</span>
-      <h2>What it could do, and the one thing it actually did.</h2>
-    </div>
-    <p class="lede measure" data-reveal>Every number here is a projection, mapped one-to-one to the objectives and benchmarked against published B2B norms, and deliberately set conservative. We'd rather under-promise on paper than inflate a student concept.</p>
-
-    <div class="kpigrid" data-reveal data-reveal-group>
-      <div class="kpi" style="--d:0">
-        <div class="pillrow"><span class="tagchip proj">Projected</span></div>
-        <div class="obj">Shift perception toward “human-led, tech-powered”</div>
-        <div class="num warm" data-count="13" data-prefix="+" data-suffix="pt">+13pt</div>
-        <div class="met">+9 to +13pt brand-lift among exposed decision-makers (target +12pt).</div>
-        <div class="basis">Basis: strong B2B creative typically shifts attributes high-single to low-double digits; conservative for an empty “warm” territory.</div>
-      </div>
-      <div class="kpi" style="--d:90">
-        <div class="pillrow"><span class="tagchip proj">Projected</span></div>
-        <div class="obj">Generate qualified pipeline interest</div>
-        <div class="num" data-count="1300" data-suffix="">1,300</div>
-        <div class="met">~1,000–1,300 LinkedIn MQLs from gated responsible-AI assets.</div>
-        <div class="basis">Basis: €40k lead-gen at a realistic €30–40 cost-per-MQL for high-intent EU B2B.</div>
-      </div>
-      <div class="kpi" style="--d:180">
-        <div class="pillrow"><span class="tagchip proj">Projected</span></div>
-        <div class="obj">Prove the content actually holds attention</div>
-        <div class="num" data-count="35" data-suffix="%">35%</div>
-        <div class="met">28–35% completion on long-form; 50–60% on cut-downs.</div>
-        <div class="basis">Basis: B2B video VTR norms ~15–25%; the “imperfect human” hook drives retention above them.</div>
-      </div>
-      <div class="kpi" style="--d:270">
-        <div class="pillrow"><span class="tagchip proj">Projected</span></div>
-        <div class="obj">Acquire pipeline efficiently</div>
-        <div class="num warm" data-count="110" data-prefix="€">€110</div>
-        <div class="met">Blended €95–130 cost per qualified lead.</div>
-        <div class="basis">Basis: EU professional-services CPQL commonly €120–250; documentary earned reach lowers the blended cost.</div>
-      </div>
-    </div>
-    <div class="realbanner" data-reveal>
-      <div class="rb-left">
-        <span class="tagchip act">Actual</span>
-        <div class="rb-num">Top grade<span class="rb-sub">· and presented directly to PwC's team</span></div>
-      </div>
-      <div class="rb-right">
-        <p>The one thing that isn't a projection: this concept earned the <strong>top grade</strong> in the UCD MSc programme and was presented to PwC's team. The differentiation argument held up under scrutiny because it was anchored in PwC's own research and brand strategy, not in our taste.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 11 ROLE ===================== -->
-<section id="role">
-  <div class="wrap">
-    <div class="section-head" data-reveal>
-      <span class="eyebrow"><span class="num">11</span>My Role & Reflection</span>
-      <h2>I originated the idea, then defended it with the client's own data.</h2>
-    </div>
-    <div class="cols split">
-      <div class="prose" data-reveal>
-        <p class="lede">I was team lead and creative originator.</p>
-        <p>I came up with the documentary idea, turned PwC's “human-led, tech-powered” tagline into the creative spine, architected the integrated channel plan, and owned the budget, the KPI framework and the top-down sizing logic. I coordinated a five-person team (media planner, content strategist, competitive analyst, design & production lead), set the work split, and integrated five workstreams into one coherent story I then presented to PwC.</p>
-      </div>
-      <div class="prose" data-reveal>
-        <p>The concept nearly didn't survive its own pressure-test. Run past tutors and a mock client review, the objection was blunt: a Big Four firm sells <em>authority</em>, and putting its experts on camera getting things wrong looks reckless. No risk-averse brand team would sign it off. The idea was one meeting from being sanded into a safe, glossy “expert explainer,” which would have quietly killed the only thing that made it work.</p>
-        <p>I treated that objection as the brief. The fear underneath it wasn't “bad idea,” it was “I can't defend this internally,” so the job was to make saying yes feel safe. I argued it back in PwC's own language: 56% of CEOs say they get nothing from AI, lack of expertise is the #1 barrier, and EU buyers trust before they deploy. Here, controlled candor <em>is</em> the authority move, and it delivers PwC's own “human-led” promise instead of contradicting it.</p>
-        <p>Then I drew the edges of the risk myself. The candor stays on the <em>process</em>, never on competence, client work or confidential outcomes; the visual system stays locked to PwC's restrained palette so the boldness lives in the story, not the brand; consent and sign-off gates are built in. By folding the doubters' concerns back in as guardrails, the people who'd pushed hardest ended up co-owning the version we kept.</p>
-        <p><strong>The concept survived intact, earned the top grade, and went to PwC.</strong> It held for the same reason the film would: honesty disarmed a wary room instead of pitching at it, and the defence quietly proved its own thesis. The lesson: a bold idea survives a cautious client when you defend it with the client's own logic instead of your taste, and make the “yes” feel safe by drawing the edges of the risk before they have to. Reframing “risky” as “on-strategy, and governed” was most of the job.</p>
-      </div>
-    </div>
-    <div class="callouts" data-reveal data-reveal-group>
-      <div class="chip" style="--d:0"><span class="stat warm">Team lead</span><span class="lbl">Originated the idea, owned delivery end-to-end</span></div>
-      <div class="chip" style="--d:90"><span class="stat">Held the line</span><span class="lbl">Bold concept survived the brand bar</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== FOOTER ===================== -->
-<footer class="foot">
-  <div class="wrap">
-    <span class="eyebrow" style="color:var(--tangerine)" data-reveal>The takeaway</span>
-    <h2 data-reveal>Make one strong asset, then atomise it across channels and markets.</h2>
-    <p class="measure" data-reveal style="color:#bdbdbd">That's the bet this concept makes, and it's exactly how a small, video-first agency going overseas works: hold corporate trust and creative warmth in the same hand, build the one thing worth making well, then cut it down for every channel and market. The look argues the thesis: composed enough to be credibly PwC, warm enough to be credibly human.</p>
-    <div class="row" data-reveal>
-      <div><div class="k">By</div><div class="v">Qiaochu Li</div></div>
-      <div><div class="k">This project</div><div class="v">Integrated marketing · EU B2B · 2023–2024</div></div>
-      <div><div class="k">References</div><div class="v">Available on request, incl. a PwC project teammate</div></div>
-    </div>
-
-    <div class="contact" data-reveal>
-      <p class="lead">Want the deck, the five-minute version, or a conversation?</p>
-      <ul>
-        <li><span class="k">Email</span><a href="mailto:qiaochuli123@gmail.com">qiaochuli123@gmail.com</a></li>
-        <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/kaya-qiaochuli/" target="_blank" rel="noopener">LinkedIn</a></li>
-      </ul>
-    </div>
-    <p class="fine" data-reveal>Honest note: this is an academic capstone concept created at University College Dublin and presented to PwC's team. It is not a PwC-commissioned campaign and is not affiliated with or endorsed by PwC; the PwC name and brand references are used here to describe the academic brief. The hero image is a representative stock photo of a film shoot (via Pexels), not footage of this concept, which was never produced. Every performance figure is a clearly-labelled projection; the only actual outcomes are the top grade and the presentation to PwC.</p>
-  </div>
-</footer>
-
-<script>
-(function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ---- reveal on scroll ---- */
-  var reveals = document.querySelectorAll('[data-reveal]');
-  document.querySelectorAll('[data-reveal-group]').forEach(function(g){
-    Array.prototype.forEach.call(g.children, function(c,i){ if(!c.style.getPropertyValue('--d')) c.style.setProperty('--d', i*80); });
-  });
-  function show(el){ el.classList.add('in'); }
-  function revealInView(){
-    reveals.forEach(function(el){
-      if(el.classList.contains('in')) return;
-      var r=el.getBoundingClientRect();
-      if(r.top < (window.innerHeight||800)*0.96 && r.bottom > 0) show(el);
-    });
-  }
-  if(reduce || !('IntersectionObserver' in window)){
-    reveals.forEach(show);
-  } else {
-    var rio = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ show(e.target); rio.unobserve(e.target); } });
-    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
-    reveals.forEach(function(el){ rio.observe(el); });
-    revealInView();                                  // show above-the-fold at once, don't wait for IO
-    window.addEventListener('load', revealInView);
-    setTimeout(revealInView, 250);
-    setTimeout(function(){ reveals.forEach(show); }, 4000);   // ultimate safety: never leave content hidden
-  }
-
-  /* ---- scroll progress var ---- */
-  var ticking=false;
-  function onScroll(){
-    if(ticking) return; ticking=true;
-    requestAnimationFrame(function(){
-      var h=document.documentElement;
-      var p=h.scrollTop/((h.scrollHeight-h.clientHeight)||1);
-      document.documentElement.style.setProperty('--p', Math.min(1,Math.max(0,p)));
-      ticking=false;
-    });
-  }
-  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
-
-  /* ---- active nav via section center ---- */
-  var navItems={}; document.querySelectorAll('.railnav li').forEach(function(li){ navItems[li.getAttribute('data-link')]=li; });
-  var secs=document.querySelectorAll('section[id], header[id]');
-  var sio=new IntersectionObserver(function(es){
-    es.forEach(function(e){
-      if(e.isIntersecting){
-        var id=e.target.id;
-        Object.keys(navItems).forEach(function(k){ navItems[k].classList.toggle('active', k===id); });
-      }
-    });
-  }, {rootMargin:'-45% 0px -45% 0px', threshold:0});
-  secs.forEach(function(s){ sio.observe(s); });
-
-  /* ---- budget bar reveal ---- */
-  var bb=document.getElementById('budgetBar');
-  if(bb){
-    if(reduce){ bb.classList.add('in'); }
-    else{
-      new IntersectionObserver(function(es,o){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); o.disconnect(); } }); },{threshold:0.4}).observe(bb);
-    }
-  }
-
-  /* ---- KPI count-up ---- */
-  function fmt(n){ return n.toLocaleString('en-US'); }
-  function countUp(el){
-    var target=parseFloat(el.getAttribute('data-count'));
-    var pre=el.getAttribute('data-prefix')||''; var suf=el.getAttribute('data-suffix')||'';
-    if(reduce){ el.textContent=pre+fmt(target)+suf; return; }
-    var dur=1100, start=null;
-    function step(ts){ if(!start)start=ts; var t=Math.min(1,(ts-start)/dur); var e=1-Math.pow(1-t,3);
-      var v=target>=1000?Math.round(target*e/10)*10:Math.round(target*e);
-      el.textContent=pre+fmt(v)+suf; if(t<1) requestAnimationFrame(step); else el.textContent=pre+fmt(target)+suf; }
-    requestAnimationFrame(step);
-  }
-  document.querySelectorAll('[data-count]').forEach(function(el){
-    if(reduce){ countUp(el); return; }
-    new IntersectionObserver(function(es,o){ es.forEach(function(e){ if(e.isIntersecting){ countUp(el); o.disconnect(); } }); },{threshold:0.6}).observe(el);
-  });
-
-  /* ---- reel progress ---- */
-  var reel=document.querySelector('.reel'), reelFill=document.querySelector('.reel-rail i');
-  if(reel&&reelFill){ reel.addEventListener('scroll',function(){ var m=reel.scrollWidth-reel.clientWidth; var r=m>0?reel.scrollLeft/m:0; reelFill.style.transform='scaleX('+(0.3+r*0.7)+')'; },{passive:true}); }
-
-  /* ---- cold/warm scrub ---- */
-  var cw=document.getElementById('cwPanel');
-  if(cw){
-    var warm=cw.querySelector('.warm'), seam=cw.querySelector('.seam'), ic=cw.querySelector('.handle-ic'), input=cw.querySelector('.scrub');
-    function setX(x){ x=Math.min(85,Math.max(15,x)); cw.style.setProperty('--x', x+'%'); if(warm)warm.style.clipPath='inset(0 0 0 '+x+'%)'; if(seam)seam.style.left=x+'%'; if(ic)ic.style.left=x+'%'; if(input){ input.setAttribute('aria-valuetext', Math.round(x)+'% warm'); } }
-    if(input){ input.addEventListener('input',function(){ setX(parseFloat(input.value)); }); }
-    setX(50);
-    if(!reduce){
-      // gentle arrival animation: warm side "wins" slightly as it scrolls in
-      new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){
-        var from=60, to=50, t0=null;
-        function a(ts){ if(!t0)t0=ts; var t=Math.min(1,(ts-t0)/700); var e2=1-Math.pow(1-t,3); var x=from+(to-from)*e2; setX(x); if(input)input.value=x; if(t<1)requestAnimationFrame(a); }
-        requestAnimationFrame(a);
-      } }); },{threshold:0.5}).observe(cw);
-    }
-  }
-})();
-</script>
+  </footer>
 </body>
 </html>
+
